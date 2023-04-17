@@ -81,7 +81,7 @@ namespace Flexstudio_for_OBS
             // 
             this.LbldefaultDrive.AutoSize = true;
             this.LbldefaultDrive.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbldefaultDrive.ForeColor = System.Drawing.Color.White;
+            this.LbldefaultDrive.ForeColor = System.Drawing.Color.LightGray;
             this.LbldefaultDrive.Location = new System.Drawing.Point(417, 333);
             this.LbldefaultDrive.Name = "LbldefaultDrive";
             this.LbldefaultDrive.Size = new System.Drawing.Size(80, 37);
@@ -92,7 +92,7 @@ namespace Flexstudio_for_OBS
             // 
             this.lblDefaultOBS.AutoSize = true;
             this.lblDefaultOBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefaultOBS.ForeColor = System.Drawing.Color.White;
+            this.lblDefaultOBS.ForeColor = System.Drawing.Color.LightGray;
             this.lblDefaultOBS.Location = new System.Drawing.Point(417, 393);
             this.lblDefaultOBS.Name = "lblDefaultOBS";
             this.lblDefaultOBS.Size = new System.Drawing.Size(80, 37);

@@ -43,12 +43,13 @@ namespace Flexstudio_for_OBS
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnGithub = new FontAwesome.Sharp.IconButton();
+            this.lblAppname = new System.Windows.Forms.Label();
             this.btnWindowMinimize = new FontAwesome.Sharp.IconButton();
             this.btnWindowMaximize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMsg = new FontAwesome.Sharp.IconButton();
             this.pnlMsg = new System.Windows.Forms.Panel();
-            this.lblAppname = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlSideMenuHeader.SuspendLayout();
             this.pnlHeading.SuspendLayout();
@@ -197,7 +198,7 @@ namespace Flexstudio_for_OBS
             // 
             this.lblTabTitle.AutoSize = true;
             this.lblTabTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTabTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTabTitle.ForeColor = System.Drawing.Color.LightGray;
             this.lblTabTitle.Location = new System.Drawing.Point(10, 6);
             this.lblTabTitle.Name = "lblTabTitle";
             this.lblTabTitle.Size = new System.Drawing.Size(153, 29);
@@ -227,6 +228,7 @@ namespace Flexstudio_for_OBS
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.pnlTop.Controls.Add(this.btnGithub);
             this.pnlTop.Controls.Add(this.lblAppname);
             this.pnlTop.Controls.Add(this.btnWindowMinimize);
             this.pnlTop.Controls.Add(this.btnWindowMaximize);
@@ -238,6 +240,31 @@ namespace Flexstudio_for_OBS
             this.pnlTop.Size = new System.Drawing.Size(1282, 60);
             this.pnlTop.TabIndex = 0;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // btnGithub
+            // 
+            this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGithub.IconChar = FontAwesome.Sharp.IconChar.Github;
+            this.btnGithub.IconColor = System.Drawing.Color.White;
+            this.btnGithub.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGithub.Location = new System.Drawing.Point(1044, 4);
+            this.btnGithub.Name = "btnGithub";
+            this.btnGithub.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnGithub.Size = new System.Drawing.Size(50, 50);
+            this.btnGithub.TabIndex = 15;
+            this.btnGithub.UseVisualStyleBackColor = true;
+            this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
+            // 
+            // lblAppname
+            // 
+            this.lblAppname.AutoSize = true;
+            this.lblAppname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppname.ForeColor = System.Drawing.Color.LightGray;
+            this.lblAppname.Location = new System.Drawing.Point(124, 13);
+            this.lblAppname.Name = "lblAppname";
+            this.lblAppname.Size = new System.Drawing.Size(93, 32);
+            this.lblAppname.TabIndex = 14;
+            this.lblAppname.Text = "label2";
             // 
             // btnWindowMinimize
             // 
@@ -318,17 +345,6 @@ namespace Flexstudio_for_OBS
             this.pnlMsg.Size = new System.Drawing.Size(1033, 42);
             this.pnlMsg.TabIndex = 3;
             // 
-            // lblAppname
-            // 
-            this.lblAppname.AutoSize = true;
-            this.lblAppname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppname.ForeColor = System.Drawing.Color.White;
-            this.lblAppname.Location = new System.Drawing.Point(124, 13);
-            this.lblAppname.Name = "lblAppname";
-            this.lblAppname.Size = new System.Drawing.Size(93, 32);
-            this.lblAppname.TabIndex = 14;
-            this.lblAppname.Text = "label2";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -380,6 +396,7 @@ namespace Flexstudio_for_OBS
         private FontAwesome.Sharp.IconButton btnMsg;
         private System.Windows.Forms.Panel pnlMsg;
         private System.Windows.Forms.Label lblAppname;
+        private FontAwesome.Sharp.IconButton btnGithub;
     }
 }
 

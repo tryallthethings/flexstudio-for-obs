@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
@@ -157,7 +155,7 @@ namespace Flexstudio_for_OBS
 
         private void btnBackup_Click(object sender, EventArgs e)
         {
-            adjustIndicator((Button)sender);
+            LoadForm<FormBackup>((Button)sender);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -336,7 +334,7 @@ namespace Flexstudio_for_OBS
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Remove subst drive if enabled
-            if (sett.ing.HasKeyWithValue("autoRemoveDefaultDrive"))
+            if (sett.ing.HasKeyWithValue("autoRemoveDefaultDrive") && sett.ing.HasKeyWithValue("defaultDrive") && isMapped)
             {
                 try
                 {
@@ -408,6 +406,11 @@ namespace Flexstudio_for_OBS
 
             string appNameVersion = applicationName + " v" + applicationVersion.Major + "." + applicationVersion.Minor + "." + applicationVersion.Build;
             return appNameVersion;
+        }
+
+        private void btnGithub_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://github.com/tryallthethings/flexstudio-for-obs");
         }
     }
 

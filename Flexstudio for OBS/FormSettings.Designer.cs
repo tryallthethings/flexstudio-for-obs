@@ -83,7 +83,7 @@ namespace Flexstudio_for_OBS
             // cbAutoMapDefaultDrive
             // 
             this.cbAutoMapDefaultDrive.AutoSize = true;
-            this.cbAutoMapDefaultDrive.ForeColor = System.Drawing.Color.White;
+            this.cbAutoMapDefaultDrive.ForeColor = System.Drawing.Color.LightGray;
             this.cbAutoMapDefaultDrive.Location = new System.Drawing.Point(161, 423);
             this.cbAutoMapDefaultDrive.Name = "cbAutoMapDefaultDrive";
             this.cbAutoMapDefaultDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -96,7 +96,7 @@ namespace Flexstudio_for_OBS
             // cbAutoRemoveDefaultDrive
             // 
             this.cbAutoRemoveDefaultDrive.AutoSize = true;
-            this.cbAutoRemoveDefaultDrive.ForeColor = System.Drawing.Color.White;
+            this.cbAutoRemoveDefaultDrive.ForeColor = System.Drawing.Color.LightGray;
             this.cbAutoRemoveDefaultDrive.Location = new System.Drawing.Point(161, 466);
             this.cbAutoRemoveDefaultDrive.Name = "cbAutoRemoveDefaultDrive";
             this.cbAutoRemoveDefaultDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -109,7 +109,7 @@ namespace Flexstudio_for_OBS
             // cbAutoStartOBS
             // 
             this.cbAutoStartOBS.AutoSize = true;
-            this.cbAutoStartOBS.ForeColor = System.Drawing.Color.White;
+            this.cbAutoStartOBS.ForeColor = System.Drawing.Color.LightGray;
             this.cbAutoStartOBS.Location = new System.Drawing.Point(161, 508);
             this.cbAutoStartOBS.Name = "cbAutoStartOBS";
             this.cbAutoStartOBS.RightToLeft = System.Windows.Forms.RightToLeft.No;

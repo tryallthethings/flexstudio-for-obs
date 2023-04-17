@@ -9,18 +9,21 @@ namespace Flexstudio_for_OBS
 {
     class Updates
     {
-        private static readonly HttpClient httpClient = new HttpClient();
+        private static HttpClient httpClient;
         private const string RepoOwner = "obsproject";
         private const string RepoName = "obs-studio";
-        private const string AccessToken = "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";
-        private const bool isDebug = false;
+        private static bool isDebug = false;
 
         public static async Task<List<ReleaseInfo>> FetchLastReleasesAsync(int count)
         {
+            httpClient = new HttpClient();
             await CheckRateLimitAsync();
             httpClient.DefaultRequestHeaders.Add("User-Agent", "Flexstudio for OBS");
-            if (isDebug)
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"token {AccessToken}");
+
+            if (sett.ing.HasKeyWithValue("isDebug"))
+                isDebug = bool.Parse(sett.ing["isDebug"]);
+            if (isDebug && sett.ing.HasKeyWithValue("githubAccessToken"))
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"token {sett.ing["githubAccessToken"]}");
 
             var url = $"https://api.github.com/repos/{RepoOwner}/{RepoName}/releases";
             var response = await httpClient.GetAsync(url);

@@ -50,6 +50,10 @@ namespace Flexstudio_for_OBS
             // btnDownloadSelected
             // 
             this.btnDownloadSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownloadSelected.FlatAppearance.BorderSize = 0;
+            this.btnDownloadSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownloadSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownloadSelected.ForeColor = System.Drawing.Color.LightGray;
             this.btnDownloadSelected.Location = new System.Drawing.Point(995, 587);
             this.btnDownloadSelected.Name = "btnDownloadSelected";
             this.btnDownloadSelected.Size = new System.Drawing.Size(236, 42);
@@ -76,7 +80,7 @@ namespace Flexstudio_for_OBS
             // 
             this.versionHint.AutoSize = true;
             this.versionHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.versionHint.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.versionHint.ForeColor = System.Drawing.Color.LightGray;
             this.versionHint.Location = new System.Drawing.Point(532, 14);
             this.versionHint.Name = "versionHint";
             this.versionHint.Size = new System.Drawing.Size(615, 26);

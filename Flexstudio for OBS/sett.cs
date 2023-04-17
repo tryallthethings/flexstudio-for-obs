@@ -83,6 +83,7 @@ namespace Flexstudio_for_OBS
             _settings["autoMapDefaultDrive"] = "False";
             _settings["autoRemoveDefaultDrive"] = "True";
             _settings["autoStartDefaultOBS"] = "False";
+            _settings["isDebug"] = "False";
         }
     }
 }
