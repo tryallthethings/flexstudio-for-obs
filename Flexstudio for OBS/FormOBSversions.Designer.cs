@@ -31,22 +31,22 @@ namespace Flexstudio_for_OBS
         {
             this.components = new System.ComponentModel.Container();
             this.gridOBSversions = new System.Windows.Forms.DataGridView();
-            this.contextGridOBSversions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.refreshBtn = new FontAwesome.Sharp.IconButton();
-            this.addNewOBSbtn = new FontAwesome.Sharp.IconButton();
             this.runningImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Default = new System.Windows.Forms.DataGridViewImageColumn();
             this.Folder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OBSversion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartOBS = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contextGridOBSversions = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.refreshBtn = new FontAwesome.Sharp.IconButton();
+            this.addNewOBSbtn = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridOBSversions)).BeginInit();
             this.contextGridOBSversions.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridOBSversions
@@ -55,7 +55,11 @@ namespace Flexstudio_for_OBS
             this.gridOBSversions.AllowUserToDeleteRows = false;
             this.gridOBSversions.AllowUserToResizeColumns = false;
             this.gridOBSversions.AllowUserToResizeRows = false;
+            this.gridOBSversions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridOBSversions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridOBSversions.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.gridOBSversions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridOBSversions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridOBSversions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -65,110 +69,18 @@ namespace Flexstudio_for_OBS
             this.OBSversion,
             this.StartOBS});
             this.gridOBSversions.ContextMenuStrip = this.contextGridOBSversions;
-            this.gridOBSversions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridOBSversions.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridOBSversions.Location = new System.Drawing.Point(0, 0);
+            this.gridOBSversions.Margin = new System.Windows.Forms.Padding(2);
             this.gridOBSversions.Name = "gridOBSversions";
             this.gridOBSversions.ReadOnly = true;
             this.gridOBSversions.RowHeadersVisible = false;
             this.gridOBSversions.RowHeadersWidth = 62;
             this.gridOBSversions.RowTemplate.Height = 28;
-            this.gridOBSversions.Size = new System.Drawing.Size(696, 563);
+            this.gridOBSversions.Size = new System.Drawing.Size(464, 320);
             this.gridOBSversions.TabIndex = 0;
             this.gridOBSversions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOBSversions_CellContentClick);
             this.gridOBSversions.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridOBSversions_CellMouseDown);
-            // 
-            // contextGridOBSversions
-            // 
-            this.contextGridOBSversions.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextGridOBSversions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFolderToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.setAsDefaultToolStripMenuItem});
-            this.contextGridOBSversions.Name = "contextGridOBSversions";
-            this.contextGridOBSversions.Size = new System.Drawing.Size(194, 132);
-            // 
-            // openFolderToolStripMenuItem
-            // 
-            this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
-            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(193, 32);
-            this.openFolderToolStripMenuItem.Text = "Open Folder";
-            this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.openFolderToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(193, 32);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(193, 32);
-            this.updateToolStripMenuItem.Text = "Update";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // setAsDefaultToolStripMenuItem
-            // 
-            this.setAsDefaultToolStripMenuItem.Name = "setAsDefaultToolStripMenuItem";
-            this.setAsDefaultToolStripMenuItem.Size = new System.Drawing.Size(193, 32);
-            this.setAsDefaultToolStripMenuItem.Text = "Set as Default";
-            this.setAsDefaultToolStripMenuItem.Click += new System.EventHandler(this.setAsDefaultToolStripMenuItem_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.refreshBtn);
-            this.panel1.Controls.Add(this.addNewOBSbtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 501);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 62);
-            this.panel1.TabIndex = 5;
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.AutoSize = true;
-            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.refreshBtn.FlatAppearance.BorderSize = 0;
-            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshBtn.ForeColor = System.Drawing.Color.LightGray;
-            this.refreshBtn.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.refreshBtn.IconColor = System.Drawing.Color.White;
-            this.refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refreshBtn.Location = new System.Drawing.Point(351, 0);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(124, 62);
-            this.refreshBtn.TabIndex = 6;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            // 
-            // addNewOBSbtn
-            // 
-            this.addNewOBSbtn.AutoSize = true;
-            this.addNewOBSbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addNewOBSbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.addNewOBSbtn.FlatAppearance.BorderSize = 0;
-            this.addNewOBSbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewOBSbtn.ForeColor = System.Drawing.Color.LightGray;
-            this.addNewOBSbtn.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.addNewOBSbtn.IconColor = System.Drawing.Color.White;
-            this.addNewOBSbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addNewOBSbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addNewOBSbtn.Location = new System.Drawing.Point(475, 0);
-            this.addNewOBSbtn.Name = "addNewOBSbtn";
-            this.addNewOBSbtn.Size = new System.Drawing.Size(221, 62);
-            this.addNewOBSbtn.TabIndex = 5;
-            this.addNewOBSbtn.Text = "Add new OBS version";
-            this.addNewOBSbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addNewOBSbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.addNewOBSbtn.UseVisualStyleBackColor = true;
-            this.addNewOBSbtn.Click += new System.EventHandler(this.addNewOBSbtn_Click);
             // 
             // runningImage
             // 
@@ -211,21 +123,122 @@ namespace Flexstudio_for_OBS
             this.StartOBS.Name = "StartOBS";
             this.StartOBS.ReadOnly = true;
             // 
+            // contextGridOBSversions
+            // 
+            this.contextGridOBSversions.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextGridOBSversions.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFolderToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.setAsDefaultToolStripMenuItem});
+            this.contextGridOBSversions.Name = "contextGridOBSversions";
+            this.contextGridOBSversions.Size = new System.Drawing.Size(146, 92);
+            // 
+            // openFolderToolStripMenuItem
+            // 
+            this.openFolderToolStripMenuItem.Name = "openFolderToolStripMenuItem";
+            this.openFolderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.openFolderToolStripMenuItem.Text = "Open Folder";
+            this.openFolderToolStripMenuItem.Click += new System.EventHandler(this.openFolderToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // setAsDefaultToolStripMenuItem
+            // 
+            this.setAsDefaultToolStripMenuItem.Name = "setAsDefaultToolStripMenuItem";
+            this.setAsDefaultToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.setAsDefaultToolStripMenuItem.Text = "Set as Default";
+            this.setAsDefaultToolStripMenuItem.Click += new System.EventHandler(this.setAsDefaultToolStripMenuItem_Click);
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Controls.Add(this.refreshBtn);
+            this.pnlButtons.Controls.Add(this.addNewOBSbtn);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 324);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(464, 42);
+            this.pnlButtons.TabIndex = 6;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshBtn.AutoSize = true;
+            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Roboto", 10F);
+            this.refreshBtn.ForeColor = System.Drawing.Color.LightGray;
+            this.refreshBtn.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.refreshBtn.IconColor = System.Drawing.Color.White;
+            this.refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.refreshBtn.IconSize = 35;
+            this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refreshBtn.Location = new System.Drawing.Point(178, 0);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(101, 41);
+            this.refreshBtn.TabIndex = 6;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // addNewOBSbtn
+            // 
+            this.addNewOBSbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewOBSbtn.AutoSize = true;
+            this.addNewOBSbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addNewOBSbtn.FlatAppearance.BorderSize = 0;
+            this.addNewOBSbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewOBSbtn.Font = new System.Drawing.Font("Roboto", 10F);
+            this.addNewOBSbtn.ForeColor = System.Drawing.Color.LightGray;
+            this.addNewOBSbtn.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.addNewOBSbtn.IconColor = System.Drawing.Color.White;
+            this.addNewOBSbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addNewOBSbtn.IconSize = 35;
+            this.addNewOBSbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addNewOBSbtn.Location = new System.Drawing.Point(279, 0);
+            this.addNewOBSbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addNewOBSbtn.Name = "addNewOBSbtn";
+            this.addNewOBSbtn.Size = new System.Drawing.Size(185, 41);
+            this.addNewOBSbtn.TabIndex = 5;
+            this.addNewOBSbtn.Text = "Add new OBS version";
+            this.addNewOBSbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addNewOBSbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addNewOBSbtn.UseVisualStyleBackColor = true;
+            this.addNewOBSbtn.Click += new System.EventHandler(this.addNewOBSbtn_Click);
+            // 
             // FormOBSversions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(696, 563);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(464, 366);
             this.Controls.Add(this.gridOBSversions);
+            this.Controls.Add(this.pnlButtons);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormOBSversions";
             this.Text = "FormOBSversions";
             ((System.ComponentModel.ISupportInitialize)(this.gridOBSversions)).EndInit();
             this.contextGridOBSversions.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
+            this.pnlButtons.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,14 +250,14 @@ namespace Flexstudio_for_OBS
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFolderToolStripMenuItem;
-        private FontAwesome.Sharp.IconButton addNewOBSbtn;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton refreshBtn;
         private System.Windows.Forms.ToolStripMenuItem setAsDefaultToolStripMenuItem;
         private System.Windows.Forms.DataGridViewImageColumn runningImage;
         private System.Windows.Forms.DataGridViewImageColumn Default;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folder;
         private System.Windows.Forms.DataGridViewTextBoxColumn OBSversion;
         private System.Windows.Forms.DataGridViewButtonColumn StartOBS;
+        private System.Windows.Forms.Panel pnlButtons;
+        private FontAwesome.Sharp.IconButton refreshBtn;
+        private FontAwesome.Sharp.IconButton addNewOBSbtn;
     }
 }

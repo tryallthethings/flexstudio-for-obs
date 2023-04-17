@@ -17,6 +17,7 @@ public class TextProgressBar : ProgressBar
     {
         Rectangle rect = this.ClientRectangle;
         Graphics g = e.Graphics;
+        Font roboto = new Font("Roboto", 10);
 
         // Draw the background color of the progress bar
         Color backgroundColor = Color.FromArgb(18, 18, 32);
@@ -34,16 +35,16 @@ public class TextProgressBar : ProgressBar
         }
 
         string text = string.IsNullOrEmpty(CustomText) ? $"{Value}%" : CustomText;
-        SizeF textSize = g.MeasureString(text, Font);
+        SizeF textSize = g.MeasureString(text, roboto);
 
         PointF locationToDraw = new PointF((Width / 2) - (textSize.Width / 2), (Height / 2) - (textSize.Height / 2));
 
         // Draw shadow effect for the text
         PointF shadowOffset = new PointF(locationToDraw.X + 1, locationToDraw.Y + 1);
-        g.DrawString(text, Font, Brushes.Black, shadowOffset);
+        g.DrawString(text, roboto, Brushes.Black, shadowOffset);
 
         // Draw the text
-        g.DrawString(text, Font, FontColor, locationToDraw);
+        g.DrawString(text, roboto, FontColor, locationToDraw);
     }
 
 

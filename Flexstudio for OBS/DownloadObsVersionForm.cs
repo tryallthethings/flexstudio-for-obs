@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.Web.WebView2.WinForms;
 using System.IO;
-using System.Net.Http;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Linq;
 using System.Drawing;
 using System.Diagnostics;
+using Microsoft.Web.WebView2.Core;
+using System.Net.Http;
 
 namespace Flexstudio_for_OBS
 {
@@ -23,13 +22,23 @@ namespace Flexstudio_for_OBS
 
         public DownloadObsVersionForm(List<ReleaseInfo> releases)
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                webBrowserReleaseNotes.CoreWebView2InitializationCompleted += WebBrowserReleaseNotes_CoreWebView2InitializationCompleted;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error during form initialization: " + ex.Message);
+            }
             _releases = releases;
 
             cmbVersions.DisplayMember = "DisplayName";
             cmbVersions.DataSource = _releases;
             cmbVersions.SelectedIndex = -1;
             webBrowserReleaseNotes.NavigationCompleted += WebBrowserReleaseNotes_NavigationCompleted;
+
+            AutoScaleDimensions = new SizeF(96F, 96F);
 
         }
 
@@ -46,6 +55,20 @@ namespace Flexstudio_for_OBS
                 webBrowserReleaseNotes.Source = new Uri("about:blank");
             }
         }
+
+        private void WebBrowserReleaseNotes_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+        {
+            if (e.IsSuccess)
+            {
+                // WebView2 initialization succeeded
+            }
+            else
+            {
+                // WebView2 initialization failed
+                MessageBox.Show($"WebView2 initialization failed with error code: {e.InitializationException.HResult.ToString("X")}");
+            }
+        }
+
 
         private async Task DownloadAndExtractRelease(ReleaseInfo releaseInfo, IProgress<DownloadProgressInfo> downloadProgress, CancellationToken cancellationToken)
         {
@@ -273,6 +296,10 @@ namespace Flexstudio_for_OBS
             if (e.IsSuccess)
             {
                 await ScrollToElementWithClass(webBrowserReleaseNotes, "Box-body");
+            }
+            if (e.IsSuccess == false)
+            {
+                MessageBox.Show($"An error occurred during navigation: {e.WebErrorStatus}");
             }
         }
 

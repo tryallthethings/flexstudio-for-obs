@@ -30,37 +30,54 @@ namespace Flexstudio_for_OBS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloadObsVersionForm));
-            this.cmbVersions = new System.Windows.Forms.ComboBox();
             this.btnDownloadSelected = new System.Windows.Forms.Button();
-            this.webBrowserReleaseNotes = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.versionHint = new System.Windows.Forms.Label();
+            this.cmbVersions = new System.Windows.Forms.ComboBox();
+            this.webBrowserReleaseNotes = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.progressBar = new TextProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.webBrowserReleaseNotes)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmbVersions
-            // 
-            this.cmbVersions.FormattingEnabled = true;
-            this.cmbVersions.Location = new System.Drawing.Point(12, 12);
-            this.cmbVersions.Name = "cmbVersions";
-            this.cmbVersions.Size = new System.Drawing.Size(501, 28);
-            this.cmbVersions.TabIndex = 0;
-            this.cmbVersions.SelectedIndexChanged += new System.EventHandler(this.cmbVersions_SelectedIndexChanged);
             // 
             // btnDownloadSelected
             // 
-            this.btnDownloadSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDownloadSelected.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnDownloadSelected.FlatAppearance.BorderSize = 0;
             this.btnDownloadSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDownloadSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownloadSelected.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnDownloadSelected.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDownloadSelected.Location = new System.Drawing.Point(995, 587);
+            this.btnDownloadSelected.Location = new System.Drawing.Point(622, 0);
+            this.btnDownloadSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnDownloadSelected.Name = "btnDownloadSelected";
-            this.btnDownloadSelected.Size = new System.Drawing.Size(236, 42);
+            this.btnDownloadSelected.Size = new System.Drawing.Size(201, 34);
             this.btnDownloadSelected.TabIndex = 2;
             this.btnDownloadSelected.Text = "Download selected version";
             this.btnDownloadSelected.UseVisualStyleBackColor = true;
             this.btnDownloadSelected.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // versionHint
+            // 
+            this.versionHint.AutoSize = true;
+            this.versionHint.Font = new System.Drawing.Font("Roboto", 10F);
+            this.versionHint.ForeColor = System.Drawing.Color.LightGray;
+            this.versionHint.Location = new System.Drawing.Point(355, 10);
+            this.versionHint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.versionHint.Name = "versionHint";
+            this.versionHint.Size = new System.Drawing.Size(385, 17);
+            this.versionHint.TabIndex = 8;
+            this.versionHint.Text = "Only OBS releases with a .ZIP file attached will be shown here";
+            // 
+            // cmbVersions
+            // 
+            this.cmbVersions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVersions.FormattingEnabled = true;
+            this.cmbVersions.Location = new System.Drawing.Point(8, 8);
+            this.cmbVersions.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbVersions.Name = "cmbVersions";
+            this.cmbVersions.Size = new System.Drawing.Size(335, 21);
+            this.cmbVersions.TabIndex = 0;
+            this.cmbVersions.SelectedIndexChanged += new System.EventHandler(this.cmbVersions_SelectedIndexChanged);
             // 
             // webBrowserReleaseNotes
             // 
@@ -70,61 +87,62 @@ namespace Flexstudio_for_OBS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowserReleaseNotes.CreationProperties = null;
             this.webBrowserReleaseNotes.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webBrowserReleaseNotes.Location = new System.Drawing.Point(12, 46);
+            this.webBrowserReleaseNotes.Location = new System.Drawing.Point(8, 30);
+            this.webBrowserReleaseNotes.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowserReleaseNotes.Name = "webBrowserReleaseNotes";
-            this.webBrowserReleaseNotes.Size = new System.Drawing.Size(1219, 535);
-            this.webBrowserReleaseNotes.TabIndex = 3;
+            this.webBrowserReleaseNotes.Size = new System.Drawing.Size(807, 405);
+            this.webBrowserReleaseNotes.TabIndex = 9;
             this.webBrowserReleaseNotes.ZoomFactor = 1D;
             // 
-            // versionHint
+            // panel1
             // 
-            this.versionHint.AutoSize = true;
-            this.versionHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.versionHint.ForeColor = System.Drawing.Color.LightGray;
-            this.versionHint.Location = new System.Drawing.Point(532, 14);
-            this.versionHint.Name = "versionHint";
-            this.versionHint.Size = new System.Drawing.Size(615, 26);
-            this.versionHint.TabIndex = 8;
-            this.versionHint.Text = "Only OBS releases with a .ZIP file attached will be shown here";
+            this.panel1.Controls.Add(this.btnDownloadSelected);
+            this.panel1.Controls.Add(this.progressBar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 440);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(823, 34);
+            this.panel1.TabIndex = 10;
             // 
             // progressBar
             // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.CustomText = null;
+            this.progressBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.progressBar.FillColor = System.Drawing.Color.RoyalBlue;
-            this.progressBar.Location = new System.Drawing.Point(12, 587);
+            this.progressBar.Location = new System.Drawing.Point(0, 0);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(977, 42);
+            this.progressBar.Size = new System.Drawing.Size(618, 34);
             this.progressBar.TabIndex = 7;
             this.progressBar.Visible = false;
             // 
             // DownloadObsVersionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1243, 641);
-            this.Controls.Add(this.versionHint);
-            this.Controls.Add(this.progressBar);
+            this.ClientSize = new System.Drawing.Size(823, 474);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.webBrowserReleaseNotes);
-            this.Controls.Add(this.btnDownloadSelected);
+            this.Controls.Add(this.versionHint);
             this.Controls.Add(this.cmbVersions);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DownloadObsVersionForm";
             this.Text = "Flexstudio for OBS - Download an OBS version";
             ((System.ComponentModel.ISupportInitialize)(this.webBrowserReleaseNotes)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbVersions;
         private System.Windows.Forms.Button btnDownloadSelected;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webBrowserReleaseNotes;
         private TextProgressBar progressBar;
         private System.Windows.Forms.Label versionHint;
+        private System.Windows.Forms.ComboBox cmbVersions;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webBrowserReleaseNotes;
+        private System.Windows.Forms.Panel panel1;
     }
 }

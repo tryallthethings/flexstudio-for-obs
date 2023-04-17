@@ -35,6 +35,9 @@ namespace Flexstudio_for_OBS
             // Set main form instance for user message panel
             MainFormInstance = this;
 
+            //
+            AutoScaleDimensions = new SizeF(96F, 96F);
+
             // Subscribe to FormClosing so we can properly handle things when the user closes the app
             FormClosing += MainForm_FormClosing;
 
@@ -57,7 +60,7 @@ namespace Flexstudio_for_OBS
 
             // Adjust application form border
             Padding = new Padding(borderSize);
-            BackColor = Color.FromArgb(98, 102, 244);
+            //BackColor = Color.FromArgb(98, 102, 244);
         }
 
         // Implement dragging form and default behaviour (snapping to desktop corners, shaking, etc.)

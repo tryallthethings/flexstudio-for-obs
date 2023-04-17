@@ -43,6 +43,7 @@ namespace Flexstudio_for_OBS
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnHelp = new FontAwesome.Sharp.IconButton();
             this.btnGithub = new FontAwesome.Sharp.IconButton();
             this.lblAppname = new System.Windows.Forms.Label();
             this.btnWindowMinimize = new FontAwesome.Sharp.IconButton();
@@ -70,13 +71,13 @@ namespace Flexstudio_for_OBS
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 60);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(249, 741);
+            this.pnlMenu.Size = new System.Drawing.Size(249, 742);
             this.pnlMenu.TabIndex = 1;
             // 
             // pnlNavIndicator
             // 
             this.pnlNavIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(99)))), ((int)(((byte)(135)))));
-            this.pnlNavIndicator.Location = new System.Drawing.Point(3, 144);
+            this.pnlNavIndicator.Location = new System.Drawing.Point(3, 145);
             this.pnlNavIndicator.Name = "pnlNavIndicator";
             this.pnlNavIndicator.Size = new System.Drawing.Size(2, 100);
             this.pnlNavIndicator.TabIndex = 10;
@@ -86,15 +87,17 @@ namespace Flexstudio_for_OBS
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnSettings.ForeColor = System.Drawing.Color.LightGray;
             this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Gears;
             this.btnSettings.IconColor = System.Drawing.Color.White;
             this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSettings.IconSize = 35;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSettings.Location = new System.Drawing.Point(0, 677);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(249, 64);
+            this.btnSettings.Size = new System.Drawing.Size(249, 65);
             this.btnSettings.TabIndex = 9;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,15 +110,17 @@ namespace Flexstudio_for_OBS
             this.btnBackup.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBackup.FlatAppearance.BorderSize = 0;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnBackup.ForeColor = System.Drawing.Color.LightGray;
             this.btnBackup.IconChar = FontAwesome.Sharp.IconChar.CloudUploadAlt;
             this.btnBackup.IconColor = System.Drawing.Color.White;
             this.btnBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackup.IconSize = 35;
             this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBackup.Location = new System.Drawing.Point(0, 243);
+            this.btnBackup.Location = new System.Drawing.Point(0, 215);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnBackup.Size = new System.Drawing.Size(249, 64);
+            this.btnBackup.Size = new System.Drawing.Size(249, 65);
             this.btnBackup.TabIndex = 8;
             this.btnBackup.Text = "Backup";
             this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,15 +132,17 @@ namespace Flexstudio_for_OBS
             this.btnOBSversions.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOBSversions.FlatAppearance.BorderSize = 0;
             this.btnOBSversions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOBSversions.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnOBSversions.ForeColor = System.Drawing.Color.LightGray;
             this.btnOBSversions.IconChar = FontAwesome.Sharp.IconChar.CodeMerge;
             this.btnOBSversions.IconColor = System.Drawing.Color.White;
             this.btnOBSversions.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOBSversions.IconSize = 35;
             this.btnOBSversions.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOBSversions.Location = new System.Drawing.Point(0, 179);
+            this.btnOBSversions.Location = new System.Drawing.Point(0, 150);
             this.btnOBSversions.Name = "btnOBSversions";
             this.btnOBSversions.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOBSversions.Size = new System.Drawing.Size(249, 64);
+            this.btnOBSversions.Size = new System.Drawing.Size(249, 65);
             this.btnOBSversions.TabIndex = 7;
             this.btnOBSversions.Text = "OBS versions";
             this.btnOBSversions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,15 +155,17 @@ namespace Flexstudio_for_OBS
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnDashboard.ForeColor = System.Drawing.Color.LightGray;
             this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.TachographDigital;
             this.btnDashboard.IconColor = System.Drawing.Color.White;
             this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDashboard.IconSize = 35;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 115);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 85);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(249, 64);
+            this.btnDashboard.Size = new System.Drawing.Size(249, 65);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,17 +179,17 @@ namespace Flexstudio_for_OBS
             this.pnlSideMenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideMenuHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenuHeader.Name = "pnlSideMenuHeader";
-            this.pnlSideMenuHeader.Size = new System.Drawing.Size(249, 115);
+            this.pnlSideMenuHeader.Size = new System.Drawing.Size(249, 85);
             this.pnlSideMenuHeader.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 42);
+            this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 29);
+            this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "MENU";
             // 
@@ -197,11 +206,11 @@ namespace Flexstudio_for_OBS
             // lblTabTitle
             // 
             this.lblTabTitle.AutoSize = true;
-            this.lblTabTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabTitle.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblTabTitle.ForeColor = System.Drawing.Color.LightGray;
             this.lblTabTitle.Location = new System.Drawing.Point(10, 6);
             this.lblTabTitle.Name = "lblTabTitle";
-            this.lblTabTitle.Size = new System.Drawing.Size(153, 29);
+            this.lblTabTitle.Size = new System.Drawing.Size(155, 29);
             this.lblTabTitle.TabIndex = 1;
             this.lblTabTitle.Text = "current Menu";
             // 
@@ -212,22 +221,24 @@ namespace Flexstudio_for_OBS
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(249, 144);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1033, 657);
+            this.pnlContent.Size = new System.Drawing.Size(1033, 658);
             this.pnlContent.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(118, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.pnlTop.Controls.Add(this.btnHelp);
             this.pnlTop.Controls.Add(this.btnGithub);
             this.pnlTop.Controls.Add(this.lblAppname);
             this.pnlTop.Controls.Add(this.btnWindowMinimize);
@@ -241,16 +252,37 @@ namespace Flexstudio_for_OBS
             this.pnlTop.TabIndex = 0;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.AutoSize = true;
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.IconChar = FontAwesome.Sharp.IconChar.Question;
+            this.btnHelp.IconColor = System.Drawing.Color.White;
+            this.btnHelp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHelp.IconSize = 30;
+            this.btnHelp.Location = new System.Drawing.Point(1056, 0);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnHelp.Size = new System.Drawing.Size(54, 55);
+            this.btnHelp.TabIndex = 16;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            // 
             // btnGithub
             // 
+            this.btnGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGithub.AutoSize = true;
+            this.btnGithub.FlatAppearance.BorderSize = 0;
             this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGithub.IconChar = FontAwesome.Sharp.IconChar.Github;
             this.btnGithub.IconColor = System.Drawing.Color.White;
             this.btnGithub.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGithub.Location = new System.Drawing.Point(1044, 4);
+            this.btnGithub.IconSize = 30;
+            this.btnGithub.Location = new System.Drawing.Point(996, 0);
             this.btnGithub.Name = "btnGithub";
             this.btnGithub.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnGithub.Size = new System.Drawing.Size(50, 50);
+            this.btnGithub.Size = new System.Drawing.Size(54, 55);
             this.btnGithub.TabIndex = 15;
             this.btnGithub.UseVisualStyleBackColor = true;
             this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
@@ -258,17 +290,19 @@ namespace Flexstudio_for_OBS
             // lblAppname
             // 
             this.lblAppname.AutoSize = true;
-            this.lblAppname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppname.Font = new System.Drawing.Font("Roboto", 14F);
             this.lblAppname.ForeColor = System.Drawing.Color.LightGray;
-            this.lblAppname.Location = new System.Drawing.Point(124, 13);
+            this.lblAppname.Location = new System.Drawing.Point(124, 18);
             this.lblAppname.Name = "lblAppname";
-            this.lblAppname.Size = new System.Drawing.Size(93, 32);
+            this.lblAppname.Size = new System.Drawing.Size(91, 34);
             this.lblAppname.TabIndex = 14;
             this.lblAppname.Text = "label2";
+            this.lblAppname.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
             // 
             // btnWindowMinimize
             // 
             this.btnWindowMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWindowMinimize.AutoSize = true;
             this.btnWindowMinimize.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.btnWindowMinimize.FlatAppearance.BorderSize = 0;
             this.btnWindowMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -276,10 +310,10 @@ namespace Flexstudio_for_OBS
             this.btnWindowMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.btnWindowMinimize.IconColor = System.Drawing.Color.White;
             this.btnWindowMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnWindowMinimize.IconSize = 30;
-            this.btnWindowMinimize.Location = new System.Drawing.Point(1147, 0);
+            this.btnWindowMinimize.IconSize = 25;
+            this.btnWindowMinimize.Location = new System.Drawing.Point(1144, 0);
             this.btnWindowMinimize.Name = "btnWindowMinimize";
-            this.btnWindowMinimize.Size = new System.Drawing.Size(45, 25);
+            this.btnWindowMinimize.Size = new System.Drawing.Size(46, 48);
             this.btnWindowMinimize.TabIndex = 13;
             this.btnWindowMinimize.UseVisualStyleBackColor = false;
             this.btnWindowMinimize.Click += new System.EventHandler(this.btnWindowMinimize_Click);
@@ -287,6 +321,7 @@ namespace Flexstudio_for_OBS
             // btnWindowMaximize
             // 
             this.btnWindowMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWindowMaximize.AutoSize = true;
             this.btnWindowMaximize.BackColor = System.Drawing.Color.Cyan;
             this.btnWindowMaximize.FlatAppearance.BorderSize = 0;
             this.btnWindowMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -294,10 +329,10 @@ namespace Flexstudio_for_OBS
             this.btnWindowMaximize.IconChar = FontAwesome.Sharp.IconChar.UpRightFromSquare;
             this.btnWindowMaximize.IconColor = System.Drawing.Color.White;
             this.btnWindowMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnWindowMaximize.IconSize = 30;
-            this.btnWindowMaximize.Location = new System.Drawing.Point(1192, 0);
+            this.btnWindowMaximize.IconSize = 25;
+            this.btnWindowMaximize.Location = new System.Drawing.Point(1190, 0);
             this.btnWindowMaximize.Name = "btnWindowMaximize";
-            this.btnWindowMaximize.Size = new System.Drawing.Size(45, 25);
+            this.btnWindowMaximize.Size = new System.Drawing.Size(46, 48);
             this.btnWindowMaximize.TabIndex = 12;
             this.btnWindowMaximize.UseVisualStyleBackColor = false;
             this.btnWindowMaximize.Click += new System.EventHandler(this.btnWindowMaximize_Click);
@@ -305,6 +340,7 @@ namespace Flexstudio_for_OBS
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.AutoSize = true;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -312,10 +348,10 @@ namespace Flexstudio_for_OBS
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.btnClose.IconColor = System.Drawing.Color.White;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 30;
-            this.btnClose.Location = new System.Drawing.Point(1237, 0);
+            this.btnClose.IconSize = 25;
+            this.btnClose.Location = new System.Drawing.Point(1236, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(45, 25);
+            this.btnClose.Size = new System.Drawing.Size(46, 48);
             this.btnClose.TabIndex = 11;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.closeApplicationBtn_Click);
@@ -347,10 +383,10 @@ namespace Flexstudio_for_OBS
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1282, 801);
+            this.ClientSize = new System.Drawing.Size(1282, 802);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMsg);
             this.Controls.Add(this.pnlHeading);
@@ -388,15 +424,16 @@ namespace Flexstudio_for_OBS
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Panel pnlNavIndicator;
-        private FontAwesome.Sharp.IconButton btnWindowMinimize;
-        private FontAwesome.Sharp.IconButton btnWindowMaximize;
-        private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Panel pnlSideMenuHeader;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnMsg;
         private System.Windows.Forms.Panel pnlMsg;
         private System.Windows.Forms.Label lblAppname;
+        private FontAwesome.Sharp.IconButton btnHelp;
         private FontAwesome.Sharp.IconButton btnGithub;
+        private FontAwesome.Sharp.IconButton btnWindowMinimize;
+        private FontAwesome.Sharp.IconButton btnWindowMaximize;
+        private FontAwesome.Sharp.IconButton btnClose;
     }
 }
 

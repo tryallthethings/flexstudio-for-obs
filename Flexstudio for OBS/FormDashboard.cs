@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -53,7 +54,7 @@ namespace Flexstudio_for_OBS
             {
                 lblDefaultOBS.Text = "not set";
             }
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
         }
 
         // Function to map the default drive

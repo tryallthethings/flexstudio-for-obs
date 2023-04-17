@@ -29,65 +29,36 @@ namespace Flexstudio_for_OBS
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMapDrive = new FontAwesome.Sharp.IconButton();
             this.cbbDriveLetter = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cbAutoMapDefaultDrive = new System.Windows.Forms.CheckBox();
             this.cbAutoRemoveDefaultDrive = new System.Windows.Forms.CheckBox();
             this.cbAutoStartOBS = new System.Windows.Forms.CheckBox();
-            this.panel1.SuspendLayout();
+            this.lblDefaultDrive = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnMapDrive
-            // 
-            this.btnMapDrive.AutoSize = true;
-            this.btnMapDrive.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnMapDrive.FlatAppearance.BorderSize = 0;
-            this.btnMapDrive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMapDrive.ForeColor = System.Drawing.Color.LightGray;
-            this.btnMapDrive.IconChar = FontAwesome.Sharp.IconChar.HardDrive;
-            this.btnMapDrive.IconColor = System.Drawing.Color.White;
-            this.btnMapDrive.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMapDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMapDrive.Location = new System.Drawing.Point(55, 13);
-            this.btnMapDrive.Name = "btnMapDrive";
-            this.btnMapDrive.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMapDrive.Size = new System.Drawing.Size(232, 54);
-            this.btnMapDrive.TabIndex = 3;
-            this.btnMapDrive.Text = "Set default drive letter";
-            this.btnMapDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMapDrive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnMapDrive.UseVisualStyleBackColor = true;
             // 
             // cbbDriveLetter
             // 
             this.cbbDriveLetter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDriveLetter.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDriveLetter.Font = new System.Drawing.Font("Roboto", 14F);
             this.cbbDriveLetter.FormattingEnabled = true;
-            this.cbbDriveLetter.Location = new System.Drawing.Point(518, 27);
+            this.cbbDriveLetter.Location = new System.Drawing.Point(193, 40);
+            this.cbbDriveLetter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbDriveLetter.Name = "cbbDriveLetter";
-            this.cbbDriveLetter.Size = new System.Drawing.Size(64, 60);
+            this.cbbDriveLetter.Size = new System.Drawing.Size(44, 31);
             this.cbbDriveLetter.TabIndex = 4;
             this.cbbDriveLetter.Tag = "defaultDrive";
             this.cbbDriveLetter.SelectedValueChanged += new System.EventHandler(this.SettingValueChanged);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnMapDrive);
-            this.panel1.Controls.Add(this.cbbDriveLetter);
-            this.panel1.Location = new System.Drawing.Point(161, 281);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 100);
-            this.panel1.TabIndex = 5;
-            // 
             // cbAutoMapDefaultDrive
             // 
             this.cbAutoMapDefaultDrive.AutoSize = true;
+            this.cbAutoMapDefaultDrive.Font = new System.Drawing.Font("Roboto", 10F);
             this.cbAutoMapDefaultDrive.ForeColor = System.Drawing.Color.LightGray;
-            this.cbAutoMapDefaultDrive.Location = new System.Drawing.Point(161, 423);
+            this.cbAutoMapDefaultDrive.Location = new System.Drawing.Point(45, 79);
+            this.cbAutoMapDefaultDrive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAutoMapDefaultDrive.Name = "cbAutoMapDefaultDrive";
             this.cbAutoMapDefaultDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbAutoMapDefaultDrive.Size = new System.Drawing.Size(330, 24);
+            this.cbAutoMapDefaultDrive.Size = new System.Drawing.Size(292, 21);
             this.cbAutoMapDefaultDrive.TabIndex = 6;
             this.cbAutoMapDefaultDrive.Tag = "autoMapDefaultDrive";
             this.cbAutoMapDefaultDrive.Text = "Automatically map default drive on startup";
@@ -96,11 +67,13 @@ namespace Flexstudio_for_OBS
             // cbAutoRemoveDefaultDrive
             // 
             this.cbAutoRemoveDefaultDrive.AutoSize = true;
+            this.cbAutoRemoveDefaultDrive.Font = new System.Drawing.Font("Roboto", 10F);
             this.cbAutoRemoveDefaultDrive.ForeColor = System.Drawing.Color.LightGray;
-            this.cbAutoRemoveDefaultDrive.Location = new System.Drawing.Point(161, 466);
+            this.cbAutoRemoveDefaultDrive.Location = new System.Drawing.Point(45, 108);
+            this.cbAutoRemoveDefaultDrive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAutoRemoveDefaultDrive.Name = "cbAutoRemoveDefaultDrive";
             this.cbAutoRemoveDefaultDrive.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbAutoRemoveDefaultDrive.Size = new System.Drawing.Size(357, 24);
+            this.cbAutoRemoveDefaultDrive.Size = new System.Drawing.Size(314, 21);
             this.cbAutoRemoveDefaultDrive.TabIndex = 7;
             this.cbAutoRemoveDefaultDrive.Tag = "autoRemoveDefaultDrive";
             this.cbAutoRemoveDefaultDrive.Text = "Automatically remove drive on closing this app";
@@ -109,42 +82,54 @@ namespace Flexstudio_for_OBS
             // cbAutoStartOBS
             // 
             this.cbAutoStartOBS.AutoSize = true;
+            this.cbAutoStartOBS.Font = new System.Drawing.Font("Roboto", 10F);
             this.cbAutoStartOBS.ForeColor = System.Drawing.Color.LightGray;
-            this.cbAutoStartOBS.Location = new System.Drawing.Point(161, 508);
+            this.cbAutoStartOBS.Location = new System.Drawing.Point(45, 136);
+            this.cbAutoStartOBS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbAutoStartOBS.Name = "cbAutoStartOBS";
             this.cbAutoStartOBS.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbAutoStartOBS.Size = new System.Drawing.Size(310, 24);
+            this.cbAutoStartOBS.Size = new System.Drawing.Size(271, 21);
             this.cbAutoStartOBS.TabIndex = 8;
             this.cbAutoStartOBS.Tag = "autoStartDefaultOBS";
             this.cbAutoStartOBS.Text = "Automatically start default OBS version";
             this.cbAutoStartOBS.UseVisualStyleBackColor = true;
             // 
+            // lblDefaultDrive
+            // 
+            this.lblDefaultDrive.AutoSize = true;
+            this.lblDefaultDrive.Font = new System.Drawing.Font("Roboto", 10F);
+            this.lblDefaultDrive.ForeColor = System.Drawing.Color.LightGray;
+            this.lblDefaultDrive.Location = new System.Drawing.Point(42, 49);
+            this.lblDefaultDrive.Name = "lblDefaultDrive";
+            this.lblDefaultDrive.Size = new System.Drawing.Size(146, 17);
+            this.lblDefaultDrive.TabIndex = 5;
+            this.lblDefaultDrive.Text = "Set default drive letter:";
+            // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1026, 615);
+            this.ClientSize = new System.Drawing.Size(684, 410);
+            this.Controls.Add(this.cbbDriveLetter);
+            this.Controls.Add(this.lblDefaultDrive);
             this.Controls.Add(this.cbAutoStartOBS);
             this.Controls.Add(this.cbAutoRemoveDefaultDrive);
             this.Controls.Add(this.cbAutoMapDefaultDrive);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormSettings";
             this.Text = "FormSettings";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnMapDrive;
         private System.Windows.Forms.ComboBox cbbDriveLetter;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox cbAutoMapDefaultDrive;
         private System.Windows.Forms.CheckBox cbAutoRemoveDefaultDrive;
         private System.Windows.Forms.CheckBox cbAutoStartOBS;
+        private System.Windows.Forms.Label lblDefaultDrive;
     }
 }
