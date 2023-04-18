@@ -56,7 +56,9 @@ namespace Flexstudio_for_OBS
                         BranchTag = releases[i].tag_name,
                         ReleasePageUrl = releases[i].html_url,
                         DownloadLinks = downloadLinks,
-                        isBeta = isBeta
+                        isBeta = isBeta,
+                        ReleaseNotes = releases[i].body
+
                     });
                 }
 
@@ -99,6 +101,7 @@ namespace Flexstudio_for_OBS
         public string ReleasePageUrl { get; set; }
         public bool isBeta { get; set; }
         public Dictionary<string, string> DownloadLinks { get; set; }
+        public string ReleaseNotes { get; set; }
 
         public string DisplayName
         {

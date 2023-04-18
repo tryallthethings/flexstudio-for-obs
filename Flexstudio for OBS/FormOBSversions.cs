@@ -17,8 +17,7 @@ namespace Flexstudio_for_OBS
     {
         public string menuTitle = "OBS versions";
         public FormMain MainFormReference { get; set; }
-        private const string ObsExecutable = "obs64.exe";
-        private const string ObsSubfolder = "bin\\64bit";
+
 
         public FormOBSversions()
         {
@@ -32,7 +31,7 @@ namespace Flexstudio_for_OBS
 
         private void LoadObsVersions()
         {
-            var obsVersions = FindObsVersions();
+            var obsVersions = HelperFunctions.FindObsVersions();
 
             // Find existing rows and update them
             foreach (var version in obsVersions)
@@ -75,35 +74,6 @@ namespace Flexstudio_for_OBS
             }
         }
 
-        private List<ObsVersionInfo> FindObsVersions()
-        {
-            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var directories = Directory.GetDirectories(currentDirectory);
-
-            var obsVersions = new List<ObsVersionInfo>();
-            foreach (var directory in directories)
-            {
-                string obsSubfolderPath = Path.Combine(directory, ObsSubfolder);
-                if (Directory.Exists(obsSubfolderPath))
-                {
-                    string obsExeFile = Path.Combine(obsSubfolderPath + "\\" + ObsExecutable);
-                    if (File.Exists(obsExeFile))
-                    { 
-                        var versionInfo = FileVersionInfo.GetVersionInfo(obsExeFile);
-                        obsVersions.Add(new ObsVersionInfo
-                        {
-                            RootPath = directory,
-                            FolderName = Path.GetFileName(directory),
-                            ObsVersion = versionInfo.ProductVersion,
-                            ObsExePath = obsExeFile
-                        });
-                    }
-                }
-            }
-
-            return obsVersions;
-        }
-
         private void gridOBSversions_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4 && e.RowIndex >= 0) // Start button column
@@ -111,7 +81,7 @@ namespace Flexstudio_for_OBS
                 var obsVersion = (ObsVersionInfo)gridOBSversions.Rows[e.RowIndex].Tag;
                 string obsPath = HelperFunctions.pathToDrivePath(obsVersion.ObsExePath);
                 // Check if the process is already running
-                if (GlobalState.ObsProcesses.TryGetValue(e.RowIndex, out var existingProcess) && IsProcessRunning(existingProcess.Id))
+                if (GlobalState.ObsProcesses.TryGetValue(e.RowIndex, out var existingProcess) && HelperFunctions.IsProcessRunning(existingProcess.Id))
                 {
                     MessageBox.Show("This OBS version is already running.");
                     return;
@@ -164,7 +134,7 @@ namespace Flexstudio_for_OBS
                 var obsVersion = (ObsVersionInfo)gridOBSversions.SelectedRows[0].Tag;
 
                 // Check if the selected OBS version is running
-                if (GlobalState.ObsProcesses.TryGetValue(gridOBSversions.SelectedRows[0].Index, out var runningProcess) && IsProcessRunning(runningProcess.Id))
+                if (GlobalState.ObsProcesses.TryGetValue(gridOBSversions.SelectedRows[0].Index, out var runningProcess) && HelperFunctions.IsProcessRunning(runningProcess.Id))
                 {
                     MessageBox.Show("The selected OBS version is currently running. Please close it before attempting to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -251,18 +221,7 @@ namespace Flexstudio_for_OBS
             File.WriteAllText(pidFilePath, processId.ToString());
         }
 
-        private bool IsProcessRunning(int processId)
-        {
-            try
-            {
-                var process = Process.GetProcessById(processId);
-                return process.ProcessName.ToLower().Contains("obs") && !process.HasExited;
-            }
-            catch (ArgumentException)
-            {
-                return false;
-            }
-        }
+
 
         private void LoadRunningProcessesForRow(int rowIndex)
         {
@@ -275,7 +234,7 @@ namespace Flexstudio_for_OBS
                 var pidText = File.ReadAllText(pidFilePath);
                 if (int.TryParse(pidText, out int processId))
                 {
-                    if (IsProcessRunning(processId))
+                    if (HelperFunctions.IsProcessRunning(processId))
                     {
                         try
                         {

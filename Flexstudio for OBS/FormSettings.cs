@@ -22,7 +22,6 @@ namespace Flexstudio_for_OBS
             
             cbbDriveLetter.Enabled = !FormMain.isMapped;
             SubscribeComponents(this, true); // Subscribe Events
-            AutoScaleDimensions = new SizeF(96F, 96F);
         }
 
         public static List<char> getAvailableDriveLetters(bool isMapped)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -102,6 +104,91 @@ namespace Flexstudio_for_OBS
                 bool isSubstDrive = output.Contains(substDriveInfo);
 
                 return isSubstDrive;
+            }
+        }
+
+        public static string GetOBSStudioInstallationPath()
+        {
+            string obsStudioPath = FindOBSStudioInRegistry(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall");
+            if (obsStudioPath == null)
+            {
+                obsStudioPath = FindOBSStudioInRegistry(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall");
+            }
+            return obsStudioPath;
+        }
+
+        private static string FindOBSStudioInRegistry(string registryKeyPath)
+        {
+            string obsStudioPath = null;
+            using (RegistryKey key = Registry.LocalMachine.OpenSubKey(registryKeyPath))
+            {
+                if (key != null)
+                {
+                    foreach (string subKeyName in key.GetSubKeyNames())
+                    {
+                        using (RegistryKey subKey = key.OpenSubKey(subKeyName))
+                        {
+                            if (subKey != null)
+                            {
+                                string displayName = subKey.GetValue("DisplayName") as string;
+                                string publisher = subKey.GetValue("Publisher") as string;
+
+                                if (displayName != null && displayName.Equals("OBS Studio", StringComparison.OrdinalIgnoreCase) &&
+                                    publisher != null && publisher.Equals("OBS Project", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    obsStudioPath = subKey.GetValue("DisplayIcon") as string;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return obsStudioPath;
+        }
+
+        public static List<ObsVersionInfo> FindObsVersions()
+        {
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var directories = Directory.GetDirectories(currentDirectory);
+
+            string ObsExecutable = "obs64.exe";
+            string ObsSubfolder = "bin\\64bit";
+
+            var obsVersions = new List<ObsVersionInfo>();
+            foreach (var directory in directories)
+            {
+                string obsSubfolderPath = Path.Combine(directory, ObsSubfolder);
+                if (Directory.Exists(obsSubfolderPath))
+                {
+                    string obsExeFile = Path.Combine(obsSubfolderPath + "\\" + ObsExecutable);
+                    if (File.Exists(obsExeFile))
+                    {
+                        var versionInfo = FileVersionInfo.GetVersionInfo(obsExeFile);
+                        obsVersions.Add(new ObsVersionInfo
+                        {
+                            RootPath = directory,
+                            FolderName = Path.GetFileName(directory),
+                            ObsVersion = versionInfo.ProductVersion,
+                            ObsExePath = obsExeFile
+                        });
+                    }
+                }
+            }
+
+            return obsVersions;
+        }
+
+        public static bool IsProcessRunning(int processId)
+        {
+            try
+            {
+                var process = Process.GetProcessById(processId);
+                return process.ProcessName.ToLower().Contains("obs") && !process.HasExited;
+            }
+            catch (ArgumentException)
+            {
+                return false;
             }
         }
 

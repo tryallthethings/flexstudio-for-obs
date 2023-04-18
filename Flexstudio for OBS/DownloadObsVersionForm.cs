@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Microsoft.Web.WebView2.WinForms;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,8 +8,9 @@ using ICSharpCode.SharpZipLib.Zip;
 using System.Linq;
 using System.Drawing;
 using System.Diagnostics;
-using Microsoft.Web.WebView2.Core;
+using System.Runtime.InteropServices;
 using System.Net.Http;
+using Markdig;
 
 namespace Flexstudio_for_OBS
 {
@@ -20,12 +20,18 @@ namespace Flexstudio_for_OBS
         private CancellationTokenSource cancellationTokenSource;
         private bool clicked = false;
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool SetDllDirectory(string lpPathName);
+
+        // Add a new field to keep track of the first execution
+        private bool isFirstExecution = true;
+
         public DownloadObsVersionForm(List<ReleaseInfo> releases)
         {
             try
             {
                 InitializeComponent();
-                webBrowserReleaseNotes.CoreWebView2InitializationCompleted += WebBrowserReleaseNotes_CoreWebView2InitializationCompleted;
+                //webBrowserReleaseNotes.CoreWebView2InitializationCompleted += WebBrowserReleaseNotes_CoreWebView2InitializationCompleted;
             }
             catch (Exception ex)
             {
@@ -36,26 +42,70 @@ namespace Flexstudio_for_OBS
             cmbVersions.DisplayMember = "DisplayName";
             cmbVersions.DataSource = _releases;
             cmbVersions.SelectedIndex = -1;
-            webBrowserReleaseNotes.NavigationCompleted += WebBrowserReleaseNotes_NavigationCompleted;
+            //webBrowserReleaseNotes.NavigationCompleted += WebBrowserReleaseNotes_NavigationCompleted;
 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-
+            // Send all hyperlink clicks to the default browser
+            webBrowser.Navigating += WebBrowser_Navigating;
         }
 
         private void cmbVersions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFirstExecution)
+            {
+                // Ignore the first execution and set the flag to false
+                isFirstExecution = false;
+                return;
+            }
+
+            string css = "";
+
+            // Add CSS styles to change background and text color
+            if (sett.ing.HasKeyWithValue("themeBackgroundColor") && sett.ing.HasKeyWithValue("themeFontColor"))
+            {
+                css = @"
+                    <style>
+                        body {
+                            background-color: " + sett.ing["themeBackgroundColor"] + ";" +
+                        "color: " + sett.ing["themeFontColor"] + ";" +
+                    "}" +
+                "</style>";
+            }
+
             var selectedIndex = cmbVersions.SelectedIndex;
             if (selectedIndex >= 0)
             {
                 var releaseInfo = _releases[selectedIndex];
-                webBrowserReleaseNotes.Source = new Uri(releaseInfo.ReleasePageUrl);
+
+                // Prepare the markdown content with the release name and release notes
+
+                string githubLink = "[View release notes on GitHub](" + releaseInfo.ReleasePageUrl + ")";
+                string markdownContent = "# Release notes for " + releaseInfo.Name + "\n" + githubLink + "\n\n" + releaseInfo.ReleaseNotes;
+
+                // Configure the Markdig pipeline with your preferred options
+                var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+
+                // Convert markdown to HTML
+                string html = Markdown.ToHtml(markdownContent, pipeline);
+
+
+
+
+                // Insert the CSS styles into the HTML head
+                html = "<!DOCTYPE html><html><head>" + css + "</head><body>" + html + "</body></html>";
+
+                // Display the HTML content in a WebBrowser control or any other control that can render HTML
+                webBrowser.DocumentText = html;
+                //webBrowserReleaseNotes.Source = new Uri(releaseInfo.ReleasePageUrl);
             }
             else
             {
-                webBrowserReleaseNotes.Source = new Uri("about:blank");
+                //webBrowserReleaseNotes.Source = new Uri("about:blank");
+                // Set browser to blank page
+                webBrowser.DocumentText = "<!DOCTYPE html><html><head>" + css + "</head><body></body></html>";
             }
         }
 
+        /*
         private void WebBrowserReleaseNotes_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
         {
             if (e.IsSuccess)
@@ -68,7 +118,7 @@ namespace Flexstudio_for_OBS
                 MessageBox.Show($"WebView2 initialization failed with error code: {e.InitializationException.HResult.ToString("X")}");
             }
         }
-
+        */
 
         private async Task DownloadAndExtractRelease(ReleaseInfo releaseInfo, IProgress<DownloadProgressInfo> downloadProgress, CancellationToken cancellationToken)
         {
@@ -291,6 +341,7 @@ namespace Flexstudio_for_OBS
             });
         }
 
+        /*
         private async void WebBrowserReleaseNotes_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
             if (e.IsSuccess)
@@ -316,6 +367,21 @@ namespace Flexstudio_for_OBS
 
             await webView.ExecuteScriptAsync(script);
         }
+        */
+
+        private void WebBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            var url = e.Url.ToString();
+            if (url != "about:blank")
+            {
+                // Cancel the navigation in the WebBrowser control
+                e.Cancel = true;
+
+                // Open the link in the default browser
+                System.Diagnostics.Process.Start(url);
+            }
+        }
+
 
         protected override bool ProcessDialogKey(Keys keyData)
         {

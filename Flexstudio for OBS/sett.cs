@@ -84,6 +84,10 @@ namespace Flexstudio_for_OBS
             _settings["autoRemoveDefaultDrive"] = "True";
             _settings["autoStartDefaultOBS"] = "False";
             _settings["isDebug"] = "False";
+            _settings["themeBackgroundColor"] = "#0033ff";
+            _settings["themeFontColor"] = "#33dbaa";
+            _settings["themeAccentColor"] = "#33dbaa";
+
         }
     }
 }

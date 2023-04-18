@@ -61,6 +61,10 @@ namespace Flexstudio_for_OBS
             // Adjust application form border
             Padding = new Padding(borderSize);
             //BackColor = Color.FromArgb(98, 102, 244);
+
+            if (sett.ing.HasKeyWithValue("themeAccentColor")) {
+                ChangePanelBackgroundColors(this, ColorTranslator.FromHtml(sett.ing["themeAccentColor"]));
+            }
         }
 
         // Implement dragging form and default behaviour (snapping to desktop corners, shaking, etc.)
@@ -74,6 +78,21 @@ namespace Flexstudio_for_OBS
         private void LoadForm<T>(Button button) where T : Form, new()
         {
             T newForm = new T();
+
+            // set DPI scale whatevers
+            newForm.AutoScaleDimensions = new SizeF(96F, 96F);
+
+            if(sett.ing.HasKeyWithValue("themeBackgroundColor"))
+            {
+                newForm.BackColor = ColorTranslator.FromHtml(sett.ing["themeBackgroundColor"]);
+            }
+
+            if (sett.ing.HasKeyWithValue("themeFontColor"))
+            {
+                //newForm.ForeColor = ColorTranslator.FromHtml(sett.ing["themeFontColor"]);
+                // this affects the font color within datagridview as well, therefor disabling it for the time being
+            }
+
             pnlContent.Controls.Clear();
             adjustIndicator(button);
             newForm.Dock = DockStyle.Fill;
@@ -414,6 +433,18 @@ namespace Flexstudio_for_OBS
         private void btnGithub_Click(object sender, EventArgs e)
         {
             Process.Start("http://github.com/tryallthethings/flexstudio-for-obs");
+        }
+
+        public void ChangePanelBackgroundColors(Control parentControl, Color themeColor)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                if ((control is Panel || control is FontAwesome.Sharp.IconButton) && control.Name != "pnlNavIndicator")
+                {
+                    control.BackColor = themeColor;
+                }
+                ChangePanelBackgroundColors(control, themeColor);
+            }
         }
     }
 
