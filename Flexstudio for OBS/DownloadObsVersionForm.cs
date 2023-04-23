@@ -31,7 +31,6 @@ namespace Flexstudio_for_OBS
             try
             {
                 InitializeComponent();
-                //webBrowserReleaseNotes.CoreWebView2InitializationCompleted += WebBrowserReleaseNotes_CoreWebView2InitializationCompleted;
             }
             catch (Exception ex)
             {
@@ -42,10 +41,17 @@ namespace Flexstudio_for_OBS
             cmbVersions.DisplayMember = "DisplayName";
             cmbVersions.DataSource = _releases;
             cmbVersions.SelectedIndex = -1;
-            //webBrowserReleaseNotes.NavigationCompleted += WebBrowserReleaseNotes_NavigationCompleted;
 
             // Send all hyperlink clicks to the default browser
             webBrowser.Navigating += WebBrowser_Navigating;
+
+            trans.LanguageChanged += OnLanguageChanged;
+
+        }
+
+        private void OnLanguageChanged(object sender, EventArgs e)
+        {
+            trans.UpdateAllControlTexts(this.Controls);
         }
 
         private void cmbVersions_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,21 +111,6 @@ namespace Flexstudio_for_OBS
             }
         }
 
-        /*
-        private void WebBrowserReleaseNotes_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
-        {
-            if (e.IsSuccess)
-            {
-                // WebView2 initialization succeeded
-            }
-            else
-            {
-                // WebView2 initialization failed
-                MessageBox.Show($"WebView2 initialization failed with error code: {e.InitializationException.HResult.ToString("X")}");
-            }
-        }
-        */
-
         private async Task DownloadAndExtractRelease(ReleaseInfo releaseInfo, IProgress<DownloadProgressInfo> downloadProgress, CancellationToken cancellationToken)
         {
             // Find the zip file link
@@ -134,6 +125,27 @@ namespace Flexstudio_for_OBS
             string tempFolderPath = Path.Combine(Application.StartupPath, "temp");
             string downloadFilePath = Path.Combine(tempFolderPath, zipLink.Key);
             string extractionFolderPath = Path.Combine(Application.StartupPath, releaseInfo.BranchTag);
+
+            // Check if the extraction folder already exists
+            if (Directory.Exists(extractionFolderPath))
+            {
+                // Prompt the user for the desired action
+                DialogResult result = MessageBox.Show("The target folder already exists. Do you want to overwrite, rename the folder or cancel the operation?\n\nYes - Overwrite\nNo - Rename\nCancel - Cancel operation", "Folder exists", MessageBoxButtons.YesNoCancel);
+
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        // Overwrite: Delete the existing folder
+                        break;
+                    case DialogResult.No:
+                        // Rename: Prompt the user for the new folder name
+                        extractionFolderPath = Path.Combine(Application.StartupPath, extractionFolderPath + "_copy");
+                        break;
+                    case DialogResult.Cancel:
+                        // Cancel: Return from the method
+                        return;
+                }
+            }
 
             // Ensure temp folder exists
             Directory.CreateDirectory(tempFolderPath);
@@ -234,7 +246,7 @@ namespace Flexstudio_for_OBS
                 cancellationTokenSource.Cancel();
                 clicked = false;
                 btnDownloadSelected.Text = "Download selected version";
-                resetProgressBar();
+                HelperFunctions.resetProgressBar(progressBar);
             }
             else
             {
@@ -262,30 +274,25 @@ namespace Flexstudio_for_OBS
                 {
                     await DownloadAndExtractRelease(selectedRelease, downloadProgress, cancellationTokenSource.Token);
                     MessageBox.Show("Download and extraction completed successfully.");
-                    resetProgressBar();
+                    HelperFunctions.resetProgressBar(progressBar);
                 }
                 catch (OperationCanceledException)
                 {
                     MessageBox.Show("Download and extraction cancelled.");
-                    resetProgressBar();
+                    HelperFunctions.resetProgressBar(progressBar);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}");
-                    resetProgressBar();
+                    HelperFunctions.resetProgressBar(progressBar);
                 }
                 clicked = false;
                 btnDownloadSelected.Text = "Download selected version";
-                resetProgressBar();
+                HelperFunctions.resetProgressBar(progressBar);
             }
         }
 
-        private void resetProgressBar()
-        {
-            progressBar.Hide();
-            progressBar.Value = 0;
-            progressBar.CustomText = "";
-        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -340,34 +347,6 @@ namespace Flexstudio_for_OBS
                 }
             });
         }
-
-        /*
-        private async void WebBrowserReleaseNotes_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
-        {
-            if (e.IsSuccess)
-            {
-                await ScrollToElementWithClass(webBrowserReleaseNotes, "Box-body");
-            }
-            if (e.IsSuccess == false)
-            {
-                MessageBox.Show($"An error occurred during navigation: {e.WebErrorStatus}");
-            }
-        }
-
-        private async Task ScrollToElementWithClass(WebView2 webView, string className)
-        {
-            string script = $@"
-        (function() {{
-            var element = document.getElementsByClassName('{className}')[0];
-            if (element) {{
-                element.scrollIntoView({{ behavior: 'smooth', block: 'start', inline: 'nearest' }});
-            }}
-        }})();
-    ";
-
-            await webView.ExecuteScriptAsync(script);
-        }
-        */
 
         private void WebBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {

@@ -41,21 +41,23 @@ namespace Flexstudio_for_OBS
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.lblTabTitle = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.cbLangSelect = new System.Windows.Forms.ComboBox();
             this.btnHelp = new FontAwesome.Sharp.IconButton();
             this.btnGithub = new FontAwesome.Sharp.IconButton();
             this.lblAppname = new System.Windows.Forms.Label();
             this.btnWindowMinimize = new FontAwesome.Sharp.IconButton();
             this.btnWindowMaximize = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.btnMsg = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlMsg = new System.Windows.Forms.Panel();
+            this.btnMsg = new FontAwesome.Sharp.IconButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlSideMenuHeader.SuspendLayout();
             this.pnlHeading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMsg.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,21 +238,11 @@ namespace Flexstudio_for_OBS
             this.pnlContent.Size = new System.Drawing.Size(861, 549);
             this.pnlContent.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
-            // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.pnlTop.Controls.Add(this.button1);
+            this.pnlTop.Controls.Add(this.cbLangSelect);
             this.pnlTop.Controls.Add(this.btnHelp);
             this.pnlTop.Controls.Add(this.btnGithub);
             this.pnlTop.Controls.Add(this.lblAppname);
@@ -265,6 +257,16 @@ namespace Flexstudio_for_OBS
             this.pnlTop.Size = new System.Drawing.Size(1069, 50);
             this.pnlTop.TabIndex = 0;
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // cbLangSelect
+            // 
+            this.cbLangSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLangSelect.FormattingEnabled = true;
+            this.cbLangSelect.Location = new System.Drawing.Point(647, 10);
+            this.cbLangSelect.Name = "cbLangSelect";
+            this.cbLangSelect.Size = new System.Drawing.Size(154, 24);
+            this.cbLangSelect.TabIndex = 17;
+            this.cbLangSelect.SelectedIndexChanged += new System.EventHandler(this.cbLangSelect_SelectedIndexChanged);
             // 
             // btnHelp
             // 
@@ -373,6 +375,28 @@ namespace Flexstudio_for_OBS
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.closeApplicationBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop_MouseDown);
+            // 
+            // pnlMsg
+            // 
+            this.pnlMsg.Controls.Add(this.btnMsg);
+            this.pnlMsg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMsg.Location = new System.Drawing.Point(208, 85);
+            this.pnlMsg.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMsg.Name = "pnlMsg";
+            this.pnlMsg.Size = new System.Drawing.Size(861, 35);
+            this.pnlMsg.TabIndex = 3;
+            // 
             // btnMsg
             // 
             this.btnMsg.AutoSize = true;
@@ -390,15 +414,15 @@ namespace Flexstudio_for_OBS
             this.btnMsg.TabIndex = 1;
             this.btnMsg.UseVisualStyleBackColor = true;
             // 
-            // pnlMsg
+            // button1
             // 
-            this.pnlMsg.Controls.Add(this.btnMsg);
-            this.pnlMsg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMsg.Location = new System.Drawing.Point(208, 85);
-            this.pnlMsg.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlMsg.Name = "pnlMsg";
-            this.pnlMsg.Size = new System.Drawing.Size(861, 35);
-            this.pnlMsg.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(336, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormMain
             // 
@@ -422,9 +446,9 @@ namespace Flexstudio_for_OBS
             this.pnlSideMenuHeader.PerformLayout();
             this.pnlHeading.ResumeLayout(false);
             this.pnlHeading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMsg.ResumeLayout(false);
             this.pnlMsg.PerformLayout();
             this.ResumeLayout(false);
@@ -454,6 +478,8 @@ namespace Flexstudio_for_OBS
         private FontAwesome.Sharp.IconButton btnWindowMinimize;
         private FontAwesome.Sharp.IconButton btnWindowMaximize;
         private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.ComboBox cbLangSelect;
+        private System.Windows.Forms.Button button1;
     }
 }
 

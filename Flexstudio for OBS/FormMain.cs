@@ -9,6 +9,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Globalization;
+using System.Resources;
+using System.Threading;
 
 namespace Flexstudio_for_OBS
 {
@@ -21,7 +24,7 @@ namespace Flexstudio_for_OBS
         public static FormMain MainFormInstance { get; private set; }
 
         // Timer for user messages
-        private Timer _messageTimeoutTimer;
+        private System.Windows.Forms.Timer _messageTimeoutTimer;
         // Set default message timeout time (10s)
         private Int32 _messageTimeout = 10000;
 
@@ -35,7 +38,7 @@ namespace Flexstudio_for_OBS
             // Set main form instance for user message panel
             MainFormInstance = this;
 
-            //
+            // Define autoscale dimensions for dpi resolution stuff
             AutoScaleDimensions = new SizeF(96F, 96F);
 
             // Subscribe to FormClosing so we can properly handle things when the user closes the app
@@ -55,6 +58,9 @@ namespace Flexstudio_for_OBS
             // Create default folders required
             CreateAndCheckFolders(new List<string>() { "temp", "backups", "media" });
 
+            // Clean up anything from the temp folder
+            HelperFunctions.CleanTempFolder();
+
             // Load Dashboard as startup Form
             LoadForm<FormDashboard>(btnDashboard);
 
@@ -63,8 +69,36 @@ namespace Flexstudio_for_OBS
             //BackColor = Color.FromArgb(98, 102, 244);
 
             if (sett.ing.HasKeyWithValue("themeAccentColor")) {
-                ChangePanelBackgroundColors(this, ColorTranslator.FromHtml(sett.ing["themeAccentColor"]));
+                //ChangePanelBackgroundColors(this, ColorTranslator.FromHtml(sett.ing["themeAccentColor"]));
             }
+
+            // Load all available translations
+            LoadLanguages();
+
+            // Check if the user's system language is supported
+            CultureInfo userCulture = new CultureInfo(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+            CultureInfo defaultCulture = new CultureInfo("en");
+            if (!IsLanguageSupported(userCulture) && !sett.ing.HasKeyWithValue("language"))
+            {
+                userCulture = defaultCulture; // Set to English if not supported
+                if (!sett.ing.HasKeyWithValue("language"))
+                {
+                    sett.ing["language"] = userCulture.ToString();
+                }
+            }
+            else
+            {
+                // Load user selected language from settings
+                userCulture = new CultureInfo(sett.ing["language"]);
+            }
+
+
+            // Set the application language to the user's system language or the default language
+            System.Threading.Thread.CurrentThread.CurrentUICulture = userCulture;
+
+            // Translate GUI
+            trans.UpdateAllControlTexts(this.Controls);
+
         }
 
         // Implement dragging form and default behaviour (snapping to desktop corners, shaking, etc.)
@@ -84,7 +118,7 @@ namespace Flexstudio_for_OBS
 
             if(sett.ing.HasKeyWithValue("themeBackgroundColor"))
             {
-                newForm.BackColor = ColorTranslator.FromHtml(sett.ing["themeBackgroundColor"]);
+                // newForm.BackColor = ColorTranslator.FromHtml(sett.ing["themeBackgroundColor"]);
             }
 
             if (sett.ing.HasKeyWithValue("themeFontColor"))
@@ -379,7 +413,7 @@ namespace Flexstudio_for_OBS
             // Initialize the timer if it's not already created
             if (_messageTimeoutTimer == null)
             {
-                _messageTimeoutTimer = new Timer();
+                _messageTimeoutTimer = new System.Windows.Forms.Timer();
                 _messageTimeoutTimer.Tick += (s, e) =>
                 {
                     UsrMsg.Reset();
@@ -446,6 +480,97 @@ namespace Flexstudio_for_OBS
                 ChangePanelBackgroundColors(control, themeColor);
             }
         }
+
+        private void LoadLanguages()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+
+            // Get all embedded resource names in the current assembly
+            string[] resourceNames = assembly.GetManifestResourceNames();
+
+            foreach (string resourceName in resourceNames)
+            {
+                // Check if the resource name follows the format "Flexstudio_for_OBS.Languages.Lang_xx.resources"
+                if (resourceName.StartsWith("Flexstudio_for_OBS.Languages.Lang_") && resourceName.EndsWith(".resources"))
+                {
+                    // Extract the culture info from the resource name
+                    string cultureName = resourceName.Substring("Flexstudio_for_OBS.Languages.Lang_".Length);
+                    cultureName = cultureName.Substring(0, cultureName.Length - ".resources".Length);
+                    CultureInfo culture;
+
+                    try
+                    {
+                        culture = new CultureInfo(cultureName);
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        Console.WriteLine($"Invalid culture name: {cultureName}");
+                        continue;
+                    }
+
+                    cbLangSelect.Items.Add(new LanguageItem(culture.NativeName, culture));
+                }
+            }
+
+            CultureInfo cult;
+
+            if (sett.ing.HasKeyWithValue("language"))
+            {
+                cult = new CultureInfo(sett.ing["language"]);
+            }
+            else
+            {
+                cult = new CultureInfo(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName);
+            }
+
+            // Set the selected index based on the current language
+            for (int i = 0; i < cbLangSelect.Items.Count; i++)
+            {
+                if (((LanguageItem)cbLangSelect.Items[i]).Culture.TwoLetterISOLanguageName == cult.ToString())
+                {
+                    cbLangSelect.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            // Invalidate the ComboBox to force a redraw of the selected item
+            cbLangSelect.Invalidate();
+        }
+
+        private void cbLangSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected language item
+            var item = (LanguageItem)cbLangSelect.SelectedItem;
+
+            // Set the CurrentUICulture of the current thread
+            Thread.CurrentThread.CurrentUICulture = item.Culture;
+
+            // Set the ResourceManager in the trans class based on the selected language
+            trans.late = new ResourceManager($"Flexstudio_for_OBS.Languages.Lang_{item.Culture.TwoLetterISOLanguageName}", typeof(trans).Assembly);
+            
+            trans.OnLanguageChanged();
+
+            // Save selected language to settings
+            sett.ing["language"] = item.Culture.ToString();
+
+        }
+
+        private bool IsLanguageSupported(CultureInfo userCulture)
+        {
+            foreach (LanguageItem item in cbLangSelect.Items)
+            {
+                if (item.Culture.TwoLetterISOLanguageName == userCulture.TwoLetterISOLanguageName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("current language" + Thread.CurrentThread.CurrentUICulture);
+        }
     }
 
     public interface IMainFormDependent
@@ -479,5 +604,23 @@ namespace Flexstudio_for_OBS
         Info,
         Default
     }
+
+    public class LanguageItem
+    {
+        public string LanguageName { get; set; }
+        public CultureInfo Culture { get; set; }
+
+        public LanguageItem(string languageName, CultureInfo culture)
+        {
+            LanguageName = languageName;
+            Culture = culture;
+        }
+
+        public override string ToString()
+        {
+            return LanguageName;
+        }
+    }
+
 
 }

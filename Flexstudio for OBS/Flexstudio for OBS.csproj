@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -70,6 +71,9 @@
     <StartupObject>Flexstudio_for_OBS.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -79,25 +83,75 @@
     <Reference Include="Markdig, Version=0.31.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Markdig.0.31.0\lib\net462\Markdig.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -109,9 +163,19 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
@@ -120,6 +184,16 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -146,6 +220,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -158,6 +237,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +282,17 @@
       <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
+    <Compile Include="Languages\Lang_en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang_en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Lang_de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang_de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sett.cs" />
@@ -222,6 +317,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Lang_en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang_en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Lang_de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang_de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -282,7 +385,273 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
+    <None Include="media\lang\aq.png" />
+    <None Include="media\lang\ao.png" />
+    <None Include="media\lang\am.png" />
+    <None Include="media\lang\al.png" />
+    <None Include="media\lang\ai.png" />
+    <None Include="media\lang\ag.png" />
+    <None Include="media\lang\af.png" />
+    <None Include="media\lang\ae.png" />
+    <None Include="media\lang\ad.png" />
+    <None Include="media\lang\zw.png" />
+    <None Include="media\lang\zm.png" />
+    <None Include="media\lang\za.png" />
+    <None Include="media\lang\yt.png" />
+    <None Include="media\lang\ye.png" />
+    <None Include="media\lang\xk.png" />
+    <None Include="media\lang\ws.png" />
+    <None Include="media\lang\wf.png" />
+    <None Include="media\lang\vu.png" />
+    <None Include="media\lang\vn.png" />
+    <None Include="media\lang\vi.png" />
+    <None Include="media\lang\vg.png" />
+    <None Include="media\lang\ve.png" />
+    <None Include="media\lang\vc.png" />
+    <None Include="media\lang\va.png" />
+    <None Include="media\lang\uz.png" />
+    <None Include="media\lang\uy.png" />
+    <None Include="media\lang\us.png" />
+    <None Include="media\lang\um.png" />
+    <None Include="media\lang\ug.png" />
+    <None Include="media\lang\ua.png" />
+    <None Include="media\lang\tz.png" />
+    <None Include="media\lang\tw.png" />
+    <None Include="media\lang\tv.png" />
+    <None Include="media\lang\tt.png" />
+    <None Include="media\lang\tr.png" />
+    <None Include="media\lang\to.png" />
+    <None Include="media\lang\tn.png" />
+    <None Include="media\lang\tm.png" />
+    <None Include="media\lang\tl.png" />
+    <None Include="media\lang\tk.png" />
+    <None Include="media\lang\tj.png" />
+    <None Include="media\lang\th.png" />
+    <None Include="media\lang\tg.png" />
+    <None Include="media\lang\tf.png" />
+    <None Include="media\lang\td.png" />
+    <None Include="media\lang\tc.png" />
+    <None Include="media\lang\sz.png" />
+    <None Include="media\lang\sy.png" />
+    <None Include="media\lang\sx.png" />
+    <None Include="media\lang\sv.png" />
+    <None Include="media\lang\st.png" />
+    <None Include="media\lang\ss.png" />
+    <None Include="media\lang\sr.png" />
+    <None Include="media\lang\so.png" />
+    <None Include="media\lang\sn.png" />
+    <None Include="media\lang\sm.png" />
+    <None Include="media\lang\sl.png" />
+    <None Include="media\lang\sk.png" />
+    <None Include="media\lang\sj.png" />
+    <None Include="media\lang\si.png" />
+    <None Include="media\lang\sh.png" />
+    <None Include="media\lang\sg.png" />
+    <None Include="media\lang\se.png" />
+    <None Include="media\lang\sd.png" />
+    <None Include="media\lang\sc.png" />
+    <None Include="media\lang\sb.png" />
+    <None Include="media\lang\sa.png" />
+    <None Include="media\lang\rw.png" />
+    <None Include="media\lang\ru.png" />
+    <None Include="media\lang\rs.png" />
+    <None Include="media\lang\ro.png" />
+    <None Include="media\lang\re.png" />
+    <None Include="media\lang\qa.png" />
+    <None Include="media\lang\py.png" />
+    <None Include="media\lang\pw.png" />
+    <None Include="media\lang\pt.png" />
+    <None Include="media\lang\ps.png" />
+    <None Include="media\lang\pr.png" />
+    <None Include="media\lang\pn.png" />
+    <None Include="media\lang\pm.png" />
+    <None Include="media\lang\pl.png" />
+    <None Include="media\lang\pk.png" />
+    <None Include="media\lang\ph.png" />
+    <None Include="media\lang\pg.png" />
+    <None Include="media\lang\pf.png" />
+    <None Include="media\lang\pe.png" />
+    <None Include="media\lang\pa.png" />
+    <None Include="media\lang\om.png" />
+    <None Include="media\lang\nz.png" />
+    <None Include="media\lang\nu.png" />
+    <None Include="media\lang\nr.png" />
+    <None Include="media\lang\np.png" />
+    <None Include="media\lang\no.png" />
+    <None Include="media\lang\nl.png" />
+    <None Include="media\lang\ni.png" />
+    <None Include="media\lang\ng.png" />
+    <None Include="media\lang\nf.png" />
+    <None Include="media\lang\ne.png" />
+    <None Include="media\lang\nc.png" />
+    <None Include="media\lang\na.png" />
+    <None Include="media\lang\mz.png" />
+    <None Include="media\lang\my.png" />
+    <None Include="media\lang\mx.png" />
+    <None Include="media\lang\mw.png" />
+    <None Include="media\lang\mv.png" />
+    <None Include="media\lang\mu.png" />
+    <None Include="media\lang\mt.png" />
+    <None Include="media\lang\ms.png" />
+    <None Include="media\lang\mr.png" />
+    <None Include="media\lang\mq.png" />
+    <None Include="media\lang\mp.png" />
+    <None Include="media\lang\mo.png" />
+    <None Include="media\lang\mn.png" />
+    <None Include="media\lang\mm.png" />
+    <None Include="media\lang\ml.png" />
+    <None Include="media\lang\mk.png" />
+    <None Include="media\lang\mh.png" />
+    <None Include="media\lang\mg.png" />
+    <None Include="media\lang\mf.png" />
+    <None Include="media\lang\me.png" />
+    <None Include="media\lang\md.png" />
+    <None Include="media\lang\mc.png" />
+    <None Include="media\lang\ma.png" />
+    <None Include="media\lang\ly.png" />
+    <None Include="media\lang\lv.png" />
+    <None Include="media\lang\lu.png" />
+    <None Include="media\lang\lt.png" />
+    <None Include="media\lang\ls.png" />
+    <None Include="media\lang\lr.png" />
+    <None Include="media\lang\lk.png" />
+    <None Include="media\lang\li.png" />
+    <None Include="media\lang\lc.png" />
+    <None Include="media\lang\lb.png" />
+    <None Include="media\lang\la.png" />
+    <None Include="media\lang\kz.png" />
+    <None Include="media\lang\ky.png" />
+    <None Include="media\lang\kw.png" />
+    <None Include="media\lang\kr.png" />
+    <None Include="media\lang\kp.png" />
+    <None Include="media\lang\kn.png" />
+    <None Include="media\lang\km.png" />
+    <None Include="media\lang\ki.png" />
+    <None Include="media\lang\kh.png" />
+    <None Include="media\lang\kg.png" />
+    <None Include="media\lang\ke.png" />
+    <None Include="media\lang\jp.png" />
+    <None Include="media\lang\jo.png" />
+    <None Include="media\lang\jm.png" />
+    <None Include="media\lang\je.png" />
+    <None Include="media\lang\it.png" />
+    <None Include="media\lang\is.png" />
+    <None Include="media\lang\ir.png" />
+    <None Include="media\lang\iq.png" />
+    <None Include="media\lang\io.png" />
+    <None Include="media\lang\in.png" />
+    <None Include="media\lang\im.png" />
+    <None Include="media\lang\il.png" />
+    <None Include="media\lang\ie.png" />
+    <None Include="media\lang\id.png" />
+    <None Include="media\lang\hu.png" />
+    <None Include="media\lang\ht.png" />
+    <None Include="media\lang\hr.png" />
+    <None Include="media\lang\hn.png" />
+    <None Include="media\lang\hm.png" />
+    <None Include="media\lang\hk.png" />
+    <None Include="media\lang\gy.png" />
+    <None Include="media\lang\gw.png" />
+    <None Include="media\lang\gu.png" />
+    <None Include="media\lang\gt.png" />
+    <None Include="media\lang\gs.png" />
+    <None Include="media\lang\gr.png" />
+    <None Include="media\lang\gq.png" />
+    <None Include="media\lang\gp.png" />
+    <None Include="media\lang\gn.png" />
+    <None Include="media\lang\gm.png" />
+    <None Include="media\lang\gl.png" />
+    <None Include="media\lang\gi.png" />
+    <None Include="media\lang\gh.png" />
+    <None Include="media\lang\gg.png" />
+    <None Include="media\lang\gf.png" />
+    <None Include="media\lang\ge.png" />
+    <None Include="media\lang\gd.png" />
+    <None Include="media\lang\gb-wls.png" />
+    <None Include="media\lang\gb-sct.png" />
+    <None Include="media\lang\gb-nir.png" />
+    <None Include="media\lang\gb-eng.png" />
+    <None Include="media\lang\gb.png" />
+    <None Include="media\lang\ga.png" />
+    <None Include="media\lang\fr.png" />
+    <None Include="media\lang\fo.png" />
+    <None Include="media\lang\fm.png" />
+    <None Include="media\lang\fk.png" />
+    <None Include="media\lang\fj.png" />
+    <None Include="media\lang\fi.png" />
+    <None Include="media\lang\et.png" />
+    <None Include="media\lang\es.png" />
+    <None Include="media\lang\er.png" />
+    <None Include="media\lang\eh.png" />
+    <None Include="media\lang\eg.png" />
+    <None Include="media\lang\ee.png" />
+    <None Include="media\lang\ec.png" />
+    <None Include="media\lang\dz.png" />
+    <None Include="media\lang\do.png" />
+    <None Include="media\lang\dm.png" />
+    <None Include="media\lang\dk.png" />
+    <None Include="media\lang\dj.png" />
+    <None Include="media\lang\de.png" />
+    <None Include="media\lang\cz.png" />
+    <None Include="media\lang\cy.png" />
+    <None Include="media\lang\cx.png" />
+    <None Include="media\lang\cw.png" />
+    <None Include="media\lang\cv.png" />
+    <None Include="media\lang\cu.png" />
+    <None Include="media\lang\cr.png" />
+    <None Include="media\lang\co.png" />
+    <None Include="media\lang\cn.png" />
+    <None Include="media\lang\cm.png" />
+    <None Include="media\lang\cl.png" />
+    <None Include="media\lang\ck.png" />
+    <None Include="media\lang\ci.png" />
+    <None Include="media\lang\ch.png" />
+    <None Include="media\lang\cg.png" />
+    <None Include="media\lang\cf.png" />
+    <None Include="media\lang\cd.png" />
+    <None Include="media\lang\cc.png" />
+    <None Include="media\lang\ca.png" />
+    <None Include="media\lang\bz.png" />
+    <None Include="media\lang\by.png" />
+    <None Include="media\lang\bw.png" />
+    <None Include="media\lang\bv.png" />
+    <None Include="media\lang\bt.png" />
+    <None Include="media\lang\bs.png" />
+    <None Include="media\lang\br.png" />
+    <None Include="media\lang\bq.png" />
+    <None Include="media\lang\bo.png" />
+    <None Include="media\lang\bn.png" />
+    <None Include="media\lang\bm.png" />
+    <None Include="media\lang\bl.png" />
+    <None Include="media\lang\bj.png" />
+    <None Include="media\lang\bi.png" />
+    <None Include="media\lang\bh.png" />
+    <None Include="media\lang\bg.png" />
+    <None Include="media\lang\bf.png" />
+    <None Include="media\lang\be.png" />
+    <None Include="media\lang\bd.png" />
+    <None Include="media\lang\bb.png" />
+    <None Include="media\lang\ba.png" />
+    <None Include="media\lang\az.png" />
+    <None Include="media\lang\ax.png" />
+    <None Include="media\lang\aw.png" />
+    <None Include="media\lang\au.png" />
+    <None Include="media\lang\at.png" />
+    <None Include="media\lang\as.png" />
+    <None Include="media\lang\ar.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.6.5.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.5\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
 </Project>

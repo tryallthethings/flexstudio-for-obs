@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,15 +19,31 @@ namespace Flexstudio_for_OBS
         public string menuTitle = "OBS versions";
         public FormMain MainFormReference { get; set; }
 
+        [DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool BringWindowToTop(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        const int SW_SHOWNORMAL = 1;
 
         public FormOBSversions()
         {
             InitializeComponent();
 
-            gridOBSversions.Columns["StartOBS"].DefaultCellStyle.NullValue = "Start"; // Set the start button text
+            gridOBSversions.Columns["StartOBS"].DefaultCellStyle.NullValue = trans.Me("StartOBS"); // Set the start button text
             gridOBSversions.Columns["Default"].DefaultCellStyle.NullValue = null; // Set the start button text
             LoadObsVersions();
+            trans.LanguageChanged += OnLanguageChanged;
+            trans.UpdateAllControlTexts(this.Controls);
+        }
 
+        private void OnLanguageChanged(object sender, EventArgs e)
+        {
+            trans.UpdateAllControlTexts(this.Controls);
         }
 
         private void LoadObsVersions()
@@ -80,11 +97,39 @@ namespace Flexstudio_for_OBS
             {
                 var obsVersion = (ObsVersionInfo)gridOBSversions.Rows[e.RowIndex].Tag;
                 string obsPath = HelperFunctions.pathToDrivePath(obsVersion.ObsExePath);
+
                 // Check if the process is already running
                 if (GlobalState.ObsProcesses.TryGetValue(e.RowIndex, out var existingProcess) && HelperFunctions.IsProcessRunning(existingProcess.Id))
                 {
-                    MessageBox.Show("This OBS version is already running.");
-                    return;
+                    // Try to bring the window to the foreground
+                    bool foregroundResult = SetForegroundWindow(existingProcess.MainWindowHandle);
+
+                    // If SetForegroundWindow failed, try alternative methods
+                    if (!foregroundResult)
+                    {
+                        ShowWindow(existingProcess.MainWindowHandle, SW_SHOWNORMAL);
+                        foregroundResult = BringWindowToTop(existingProcess.MainWindowHandle);
+                    }
+
+                    // If all attempts failed, ask the user to terminate the process and start a new one
+                    if (!foregroundResult)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            existingProcess.Kill();
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        UsrMsg.Show("This OBS version is already running.", MessageType.Info);
+                        return;
+                    }
                 }
 
                 var startInfo = new ProcessStartInfo
@@ -99,7 +144,7 @@ namespace Flexstudio_for_OBS
                 process.EnableRaisingEvents = true;
                 process.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, gridOBSversions);
                 GlobalState.ObsProcesses[e.RowIndex] = process;
-                
+
                 // Save the process ID to a file
                 SavePidToFile(e.RowIndex, process.Id);
 

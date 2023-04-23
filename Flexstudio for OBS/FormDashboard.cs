@@ -94,7 +94,7 @@ namespace Flexstudio_for_OBS
             if (!sett.ing.HasKeyWithValue("defaultDrive"))
             {
                 // no default drive set.
-                UsrMsg.Show("No default drive letter is set. Please check settings", MessageType.Warning);
+                UsrMsg.Show(trans.late.GetString("NoDefaultDriveSet"), MessageType.Warning);
                 LbldefaultDrive.Text = "";
                 return false;
             }

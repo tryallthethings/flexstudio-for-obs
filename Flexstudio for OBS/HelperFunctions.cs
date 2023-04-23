@@ -1,8 +1,13 @@
-﻿using Microsoft.Win32;
+﻿using ICSharpCode.SharpZipLib.Zip;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace Flexstudio_for_OBS
 {
@@ -190,6 +195,144 @@ namespace Flexstudio_for_OBS
             {
                 return false;
             }
+        }
+
+        public static async Task<Tuple<bool, string>> CreateZipWithMultipleFoldersAsync(Dictionary<string, string> folderPathsWithRoots, string outputZipPath, CancellationToken cancellationToken = default, IProgress<DownloadProgressInfo> progress = null)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            return await Task.Run(() =>
+            {
+                try
+                {
+                    int processedEntries = 0;
+                    int totalEntries = folderPathsWithRoots.Sum(folderPathWithRoot => Directory.GetFiles(folderPathWithRoot.Key, "*.*", SearchOption.AllDirectories).Length);
+
+                    using (var zipOutputStream = new ZipOutputStream(File.Create(outputZipPath)))
+                    {
+                        foreach (KeyValuePair<string, string> folderPathWithRoot in folderPathsWithRoots)
+                        {
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            string folderPath = folderPathWithRoot.Key;
+                            string folderRoot = folderPathWithRoot.Value;
+
+                            var result = AddFolderToZip(zipOutputStream, folderPath, folderRoot, cancellationToken, ref processedEntries, totalEntries, progress, sw);
+                            if (!result.Item1)
+                            {
+                                return result;
+                            }
+                        }
+
+                        zipOutputStream.Finish();
+                        zipOutputStream.Close();
+                    }
+                    return Tuple.Create(true, "");
+                }
+                catch (OperationCanceledException)
+                {
+                    return Tuple.Create(false, "Operation canceled by user.");
+                }
+                catch (Exception ex)
+                {
+                    return Tuple.Create(false, ex.Message);
+                }
+            });
+        }
+
+        private static Tuple<bool, string> AddFolderToZip(ZipOutputStream zipStream, string folderPath, string entryPath, CancellationToken cancellationToken, ref int processedEntries, int totalEntries, IProgress<DownloadProgressInfo> progress, Stopwatch sw)
+        {
+            try
+            {
+                string[] files = Directory.GetFiles(folderPath);
+                string[] folders = Directory.GetDirectories(folderPath);
+
+                foreach (string file in files)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    string entryName = entryPath != "" ? Path.Combine(entryPath, file.Substring(folderPath.Length + 1)) : file.Substring(folderPath.Length + 1);
+                    ZipEntry entry = new ZipEntry(entryName);
+                    zipStream.PutNextEntry(entry);
+
+                    using (FileStream fs = File.OpenRead(file))
+                    {
+                        byte[] buffer = new byte[4096];
+                        int sourceBytes;
+
+                        do
+                        {
+                            sourceBytes = fs.Read(buffer, 0, buffer.Length);
+                            zipStream.Write(buffer, 0, sourceBytes);
+                        } while (sourceBytes > 0);
+                    }
+
+                    zipStream.CloseEntry();
+
+                    processedEntries++;
+                    double progressPercentage = (double)processedEntries / totalEntries * 100;
+                    double elapsedTime = sw.Elapsed.TotalSeconds;
+                    double remainingTime = elapsedTime * (totalEntries - processedEntries) / processedEntries;
+
+                    progress?.Report(new DownloadProgressInfo
+                    {
+                        OperationType = "Zipping",
+                        ProgressPercentage = progressPercentage,
+                        ProcessedEntries = processedEntries,
+                        TotalEntries = totalEntries,
+                        TimeRemaining = TimeSpan.FromSeconds(Math.Round(remainingTime))
+                    });
+                }
+
+                foreach (string folder in folders)
+                {
+                    string entryName = entryPath != "" ? Path.Combine(entryPath, folder.Substring(folderPath.Length + 1)) : folder.Substring(folderPath.Length + 1);
+                    AddFolderToZip(zipStream, folder, entryName, cancellationToken, ref processedEntries, totalEntries, progress, sw);
+                }
+                return Tuple.Create(true, "");
+            }
+            catch (Exception ex)
+            {
+                return Tuple.Create(false, ex.Message);
+            }
+        }
+
+        public static void CleanTempFolder()
+        {
+            try
+            {
+                string tempFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "temp");
+
+                if (Directory.Exists(tempFolderPath))
+                {
+                    DirectoryInfo di = new DirectoryInfo(tempFolderPath);
+
+                    // Delete all files in the temp folder
+                    foreach (FileInfo file in di.GetFiles())
+                    {
+                        file.Delete();
+                    }
+
+                    // Delete all subdirectories in the temp folder
+                    foreach (DirectoryInfo dir in di.GetDirectories())
+                    {
+                        dir.Delete(true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that may occur while cleaning up the temp folder
+                MessageBox.Show("An error occurred while cleaning the temp folder: " + ex.Message);
+            }
+        }
+
+        public static void resetProgressBar(TextProgressBar pg)
+        {
+            pg.Hide();
+            pg.Value = 0;
+            pg.CustomText = "";
         }
 
     }
