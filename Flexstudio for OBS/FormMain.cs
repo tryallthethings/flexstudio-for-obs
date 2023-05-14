@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Globalization;
 using System.Resources;
 using System.Threading;
+using static Flexstudio_for_OBS.Logging;
 
 namespace Flexstudio_for_OBS
 {
@@ -46,6 +47,7 @@ namespace Flexstudio_for_OBS
 
             // Get and set application name 
             lblAppname.Text = SetNameAndVersion();
+            this.Text = SetNameAndVersion();
 
             //CheckUpdatesButton_Click(null, null);
             uint maxPathLength = GetMaxPathLength();
@@ -56,21 +58,10 @@ namespace Flexstudio_for_OBS
             }
             
             // Create default folders required
-            CreateAndCheckFolders(new List<string>() { "temp", "backups", "media" });
+            CreateAndCheckFolders(new List<string>() { "temp", "backups", "media", "logs" });
 
             // Clean up anything from the temp folder
             HelperFunctions.CleanTempFolder();
-
-            // Load Dashboard as startup Form
-            LoadForm<FormDashboard>(btnDashboard);
-
-            // Adjust application form border
-            Padding = new Padding(borderSize);
-            //BackColor = Color.FromArgb(98, 102, 244);
-
-            if (sett.ing.HasKeyWithValue("themeAccentColor")) {
-                //ChangePanelBackgroundColors(this, ColorTranslator.FromHtml(sett.ing["themeAccentColor"]));
-            }
 
             // Load all available translations
             LoadLanguages();
@@ -78,6 +69,8 @@ namespace Flexstudio_for_OBS
             // Check if the user's system language is supported
             CultureInfo userCulture = new CultureInfo(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
             CultureInfo defaultCulture = new CultureInfo("en");
+            Console.WriteLine("current language" + Thread.CurrentThread.CurrentUICulture);
+
             if (!IsLanguageSupported(userCulture) && !sett.ing.HasKeyWithValue("language"))
             {
                 userCulture = defaultCulture; // Set to English if not supported
@@ -92,13 +85,27 @@ namespace Flexstudio_for_OBS
                 userCulture = new CultureInfo(sett.ing["language"]);
             }
 
-
-            // Set the application language to the user's system language or the default language
-            System.Threading.Thread.CurrentThread.CurrentUICulture = userCulture;
-
             // Translate GUI
-            trans.UpdateAllControlTexts(this.Controls);
+            trans.UpdateAllControlTexts(Controls);
 
+            // Load Dashboard as startup Form
+            LoadForm<FormDashboard>(btnDashboard);
+
+            // Adjust application form border
+            Padding = new Padding(borderSize);
+            //BackColor = Color.FromArgb(98, 102, 244);
+
+            if (sett.ing.HasKeyWithValue("themeAccentColor")) {
+                //ChangePanelBackgroundColors(this, ColorTranslator.FromHtml(sett.ing["themeAccentColor"]));
+            }
+
+            trans.LanguageChanged += OnLanguageChanged;
+
+        }
+
+        private void OnLanguageChanged(object sender, EventArgs e)
+        {
+            trans.UpdateAllControlTexts(this.Controls);
         }
 
         // Implement dragging form and default behaviour (snapping to desktop corners, shaking, etc.)
@@ -109,14 +116,17 @@ namespace Flexstudio_for_OBS
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         // Function to load new Form and make adjustments to GUI
+        private Dictionary<Type, Form> formCache = new Dictionary<Type, Form>();
+
         private void LoadForm<T>(Button button) where T : Form, new()
         {
-            T newForm = new T();
+            T newForm = new T
+            {
+                // set DPI scale whatevers
+                AutoScaleDimensions = new SizeF(96F, 96F)
+            };
 
-            // set DPI scale whatevers
-            newForm.AutoScaleDimensions = new SizeF(96F, 96F);
-
-            if(sett.ing.HasKeyWithValue("themeBackgroundColor"))
+            if (sett.ing.HasKeyWithValue("themeBackgroundColor"))
             {
                 // newForm.BackColor = ColorTranslator.FromHtml(sett.ing["themeBackgroundColor"]);
             }
@@ -150,11 +160,17 @@ namespace Flexstudio_for_OBS
             newForm.Show();
         }
 
+
+        private async void MainForm_Load(object sender, EventArgs e)
+        {
+            await SelfUpdate.CheckForUpdatesAndDownloadAsync();
+        }
+
         public async void CheckUpdatesButton_Click(object sender, EventArgs e)
         {
             try
             {
-                var releases = await Updates.FetchLastReleasesAsync(20);
+                var releases = await OBSUpdates.FetchLastReleasesAsync(20);
 
                 // Display the fetched release information
                 foreach (var release in releases)
@@ -179,8 +195,8 @@ namespace Flexstudio_for_OBS
         // Set and reset button colors for buttons in menu panel
         private void ButtonColorReset(Button button)
         {
-            Color activeColor = Color.FromArgb(31, 27, 48);
-            Color btnColor = Color.FromArgb(26, 23, 40);
+            Color activeColor = Color.FromArgb(57, 50, 89);
+            Color btnColor = Color.FromArgb(33, 29, 51);
 
             foreach (Control control in pnlMenu.Controls)
             {
@@ -231,29 +247,68 @@ namespace Flexstudio_for_OBS
         // Set the process status icon in FormOBSversions Datagridview
         public void SetProcessStatusIcon(DataGridView dataGridView, int rowIndex, bool isRunning)
         {
-            var cell = dataGridView.Rows[rowIndex].Cells["runningImage"];
-            if (isRunning)
+            if (dataGridView.InvokeRequired)
             {
-                cell.Value = Properties.Resources.greenicon;
+                dataGridView.Invoke(new Action(() => SetProcessStatusIcon(dataGridView, rowIndex, isRunning)));
             }
             else
             {
-                cell.Value = Properties.Resources.redicon;
+                var cell = dataGridView.Rows[rowIndex].Cells["runningImage"];
+                if (isRunning)
+                {
+                    cell.Value = Properties.Resources.greenicon;
+                }
+                else
+                {
+                    cell.Value = Properties.Resources.redicon;
+                }
+
+                dataGridView.InvalidateCell(cell);
+                dataGridView.Update();
+                dataGridView.Refresh();
             }
         }
 
+
         // Handles when a OBS version is closed
-        public void Process_Exited(object sender, DataGridView dataGridView)
+        public void Process_Exited(object sender, DataGridView dataGridView, string folderName)
         {
-            var process = (Process)sender;
-            int rowIndex = GlobalState.ObsProcesses.FirstOrDefault(x => x.Value == process).Key;
-            GlobalState.ObsProcesses.Remove(rowIndex);
+            if (sett.ing.isDebug)
+                Log.Debug("Process exiting for folder: " + folderName);
+            string obsPath = folderName;
 
-            // Invoke the SetProcessStatusIcon method on the UI thread
-            dataGridView.Invoke(new Action(() => SetProcessStatusIcon(dataGridView, rowIndex, false)));
+            lock (GlobalState.ObsProcessesLock)
+            {
+                if (obsPath != null)
+                {
+                    GlobalState.ObsProcesses.Remove(obsPath);
+                }
+            }
 
-            // Delete the PID file when the process exits
-            var obsVersion = (ObsVersionInfo)dataGridView.Rows[rowIndex].Tag;
+            var obsVersion = new ObsVersionInfo();
+
+            if (dataGridView != null)
+            {
+                int rowID = -1;
+
+                DataGridViewRow row = dataGridView.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells["Folder"].Value.ToString().Equals(obsPath))
+                    .First();
+
+                rowID = row.Index;
+                if (rowID != -1)
+                {
+                    // Invoke the SetProcessStatusIcon method on the UI thread
+                    dataGridView.Invoke(new Action(() => SetProcessStatusIcon(dataGridView, rowID, false)));
+                    obsVersion = (ObsVersionInfo)row.Tag;
+                }
+            }
+            else
+            {
+                obsVersion = HelperFunctions.FindObsVersionInPath(obsPath);
+            }
+
             var pidFilePath = Path.Combine(Path.GetDirectoryName(obsVersion.ObsExePath), "obs_pid.txt");
             if (File.Exists(pidFilePath))
             {
@@ -264,26 +319,36 @@ namespace Flexstudio_for_OBS
         // Find out the maximum path length a given path / drive supports
         private uint GetMaxPathLength()
         {
-            var appPath = AppDomain.CurrentDomain.BaseDirectory;
-            var rootPath = Path.GetPathRoot(appPath);
-
-            var volumeNameBuffer = new StringBuilder(261);
-            var fileSystemNameBuffer = new StringBuilder(261);
-
-            if (GetVolumeInformation(
-                    rootPath,
-                    volumeNameBuffer,
-                    (uint)volumeNameBuffer.Capacity,
-                    out uint volumeSerialNumber,
-                    out uint maxComponentLength,
-                    out uint fileSystemFlags,
-                    fileSystemNameBuffer,
-                    (uint)fileSystemNameBuffer.Capacity))
+            try
             {
-                return maxComponentLength;
-            }
+                var appPath = AppDomain.CurrentDomain.BaseDirectory;
+                var rootPath = Path.GetPathRoot(appPath);
 
-            throw new Win32Exception(Marshal.GetLastWin32Error());
+                var volumeNameBuffer = new StringBuilder(261);
+                var fileSystemNameBuffer = new StringBuilder(261);
+
+                if (GetVolumeInformation(
+                        rootPath,
+                        volumeNameBuffer,
+                        (uint)volumeNameBuffer.Capacity,
+                        out uint volumeSerialNumber,
+                        out uint maxComponentLength,
+                        out uint fileSystemFlags,
+                        fileSystemNameBuffer,
+                        (uint)fileSystemNameBuffer.Capacity))
+                {
+                    return maxComponentLength;
+                }
+
+                // If GetVolumeInformation fails, throw an exception
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+            }
+            catch (Win32Exception ex)
+            {
+                // Log the error message and return a default value
+                Log.Error($"Error retrieving max path length: {ex.Message}");
+                return 260; // Return a default value (e.g., the common maximum path length for Windows)
+            }
         }
 
         // Function required by GetMaxPathLenght to identify max. path length
@@ -396,7 +461,9 @@ namespace Flexstudio_for_OBS
                 {
                     if (bool.Parse(sett.ing["autoRemoveDefaultDrive"]))
                     {
-                        HelperFunctions.RemoveSubstDrive(char.Parse(sett.ing["defaultDrive"]));
+                        if (GlobalState.ObsProcesses.Count == 0) {
+                            HelperFunctions.RemoveSubstDrive(char.Parse(sett.ing["defaultDrive"]));
+                        }
                     }
                 }
                 catch
@@ -408,8 +475,9 @@ namespace Flexstudio_for_OBS
         }
 
         // Display user messages in a dedicated panel / buttontext
-        public void UserMessage(string messageText, MessageType messageType)
+        public void UserMessage(string messageText, MessageType messageType, string errormessage, params object[] args)
         {
+            string text;
             // Initialize the timer if it's not already created
             if (_messageTimeoutTimer == null)
             {
@@ -424,25 +492,43 @@ namespace Flexstudio_for_OBS
             Color panelBackColor;
             Color labelTextColor;
 
+
+            text = trans.Me(messageText, args);
+
+            if (!string.IsNullOrEmpty(errormessage))
+            {
+                text += " " + trans.Me("Error") + ": " + errormessage;
+            }
+
             switch (messageType)
             {
                 case MessageType.Error:
                     panelBackColor = Color.FromArgb(255, 192, 192);
                     labelTextColor = Color.FromArgb(192, 0, 0);
+                    if (!string.IsNullOrEmpty(text))
+                        Log.Error(text);
                     break;
                 case MessageType.Warning:
                     panelBackColor = Color.FromArgb(255, 255, 192);
-                    labelTextColor = Color.FromArgb(192, 192, 0);
+                    labelTextColor = Color.FromArgb(64, 64, 64);
+                    if (!string.IsNullOrEmpty(text))
+                        Log.Warn(text);
                     break;
                 case MessageType.Info:
                     panelBackColor = Color.FromArgb(192, 255, 255);
                     labelTextColor = Color.FromArgb(0, 192, 192);
                     _messageTimeoutTimer.Interval = _messageTimeout;
                     _messageTimeoutTimer.Start();
+                    if (!string.IsNullOrEmpty(text))
+                        Log.Debug(text);
                     break;
                 case MessageType.Default:
-                    panelBackColor = Color.FromArgb(26, 23, 40);
-                    labelTextColor = Color.FromArgb(0, 192, 192);
+                    panelBackColor = Color.FromArgb(33, 29, 51);
+                    labelTextColor = Color.LightGray;
+                    _messageTimeoutTimer.Interval = _messageTimeout;
+                    _messageTimeoutTimer.Start();
+                    if (!string.IsNullOrEmpty(text))
+                        Log.Debug(text);
                     break;
                 default:
                     panelBackColor = Color.White;
@@ -452,12 +538,12 @@ namespace Flexstudio_for_OBS
 
             btnMsg.BackColor = panelBackColor;
             btnMsg.ForeColor = labelTextColor;
-            btnMsg.Text = messageText;
+            btnMsg.Text = text;
         }
 
         public static string SetNameAndVersion()
         {
-            string applicationName = Assembly.GetExecutingAssembly().GetName().Name;
+            string applicationName = "Flexstudio for OBS";
             Version applicationVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
             string appNameVersion = applicationName + " v" + applicationVersion.Major + "." + applicationVersion.Minor + "." + applicationVersion.Build;
@@ -466,7 +552,12 @@ namespace Flexstudio_for_OBS
 
         private void btnGithub_Click(object sender, EventArgs e)
         {
-            Process.Start("http://github.com/tryallthethings/flexstudio-for-obs");
+            Process.Start("https://github.com/tryallthethings/flexstudio-for-obs");
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://tryallthethings.github.io/flexstudio-for-obs/");
         }
 
         public void ChangePanelBackgroundColors(Control parentControl, Color themeColor)
@@ -533,6 +624,8 @@ namespace Flexstudio_for_OBS
                 }
             }
 
+            cbLangSelect.SelectedIndexChanged += cbLangSelect_SelectedIndexChanged;
+
             // Invalidate the ComboBox to force a redraw of the selected item
             cbLangSelect.Invalidate();
         }
@@ -549,6 +642,7 @@ namespace Flexstudio_for_OBS
             trans.late = new ResourceManager($"Flexstudio_for_OBS.Languages.Lang_{item.Culture.TwoLetterISOLanguageName}", typeof(trans).Assembly);
             
             trans.OnLanguageChanged();
+            UpdateApplicationCulture();
 
             // Save selected language to settings
             sett.ing["language"] = item.Culture.ToString();
@@ -567,9 +661,11 @@ namespace Flexstudio_for_OBS
             return false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void UpdateApplicationCulture()
         {
-            Console.WriteLine("current language" + Thread.CurrentThread.CurrentUICulture);
+            CultureInfo selectedCulture = ((LanguageItem)cbLangSelect.SelectedItem).Culture;
+            Program.SetApplicationCulture(selectedCulture);
+            sett.ing["language"] = selectedCulture.ToString();
         }
     }
 
@@ -581,19 +677,20 @@ namespace Flexstudio_for_OBS
     // This class tracks the state of OBS process
     public static class GlobalState
     {
-        public static Dictionary<int, Process> ObsProcesses { get; } = new Dictionary<int, Process>();
+        public static Dictionary<string, Process> ObsProcesses { get; } = new Dictionary<string, Process>();
+        public static object ObsProcessesLock = new object();
     }
 
     public static class UsrMsg
     {
-        public static void Show(string messageText, MessageType messageType)
+        public static void Show(string messageText, MessageType messageType, string errordetail = null, params object[] args)
         {
-            FormMain.MainFormInstance.UserMessage(messageText, messageType);
+            FormMain.MainFormInstance.UserMessage(messageText, messageType, errordetail, args);
         }
 
         public static void Reset()
         {
-            FormMain.MainFormInstance.UserMessage("", MessageType.Default);
+            FormMain.MainFormInstance.UserMessage("", MessageType.Default, null);
         }
     }
 

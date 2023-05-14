@@ -19,7 +19,7 @@ namespace Flexstudio_for_OBS.Languages {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Lang_en {
@@ -61,7 +61,7 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new OBS version.
+        ///   Looks up a localized string similar to Download new OBS version.
         /// </summary>
         internal static string addNewOBSbtn {
             get {
@@ -70,20 +70,713 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatically map default drive on startup.
+        ///   Looks up a localized string similar to Backing up.
         /// </summary>
-        internal static string AutoDriveLetterSetting {
+        internal static string Backing_up {
             get {
-                return ResourceManager.GetString("AutoDriveLetterSetting", resourceCulture);
+                return ResourceManager.GetString("Backing up", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No default drive letter is set. Please check settings..
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        internal static string Backup {
+            get {
+                return ResourceManager.GetString("Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup could not be created. Error:.
+        /// </summary>
+        internal static string backupErrorHint {
+            get {
+                return ResourceManager.GetString("backupErrorHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to select at least one item to be included in the Backup!.
+        /// </summary>
+        internal static string backupNeedsOneItemHint {
+            get {
+                return ResourceManager.GetString("backupNeedsOneItemHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will add anything else OBS related (binaries, plugins, etc.) to the backup.
+        /// </summary>
+        internal static string backupOBSbinariesHint {
+            get {
+                return ResourceManager.GetString("backupOBSbinariesHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will add the OBS profile to the backup.
+        /// </summary>
+        internal static string backupOBSprofileHint {
+            get {
+                return ResourceManager.GetString("backupOBSprofileHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This OBS version is still running..
+        /// </summary>
+        internal static string backupOBSstillRunning {
+            get {
+                return ResourceManager.GetString("backupOBSstillRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backups.
+        /// </summary>
+        internal static string Backups {
+            get {
+                return ResourceManager.GetString("Backups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup {0} sucessfully created..
+        /// </summary>
+        internal static string backupSuccessHint {
+            get {
+                return ResourceManager.GetString("backupSuccessHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        internal static string btnBackup {
+            get {
+                return ResourceManager.GetString("btnBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        internal static string btnDashboard {
+            get {
+                return ResourceManager.GetString("btnDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download selected version.
+        /// </summary>
+        internal static string btnDownloadSelected {
+            get {
+                return ResourceManager.GetString("btnDownloadSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map default drive.
+        /// </summary>
+        internal static string btnMapDrive {
+            get {
+                return ResourceManager.GetString("btnMapDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBS versions.
+        /// </summary>
+        internal static string btnOBSversions {
+            get {
+                return ResourceManager.GetString("btnOBSversions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string btnSettings {
+            get {
+                return ResourceManager.GetString("btnSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start OBS.
+        /// </summary>
+        internal static string btnStartOBS {
+            get {
+                return ResourceManager.GetString("btnStartOBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically map default drive on app start.
+        /// </summary>
+        internal static string cbAutoMapDefaultDrive {
+            get {
+                return ResourceManager.GetString("cbAutoMapDefaultDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically remove default drive on exiting app.
+        /// </summary>
+        internal static string cbAutoRemoveDefaultDrive {
+            get {
+                return ResourceManager.GetString("cbAutoRemoveDefaultDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically start default OBS version on app start.
+        /// </summary>
+        internal static string cbAutoStartOBS {
+            get {
+                return ResourceManager.GetString("cbAutoStartOBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check daily for updates.
+        /// </summary>
+        internal static string cbCheckUpdatesDaily {
+            get {
+                return ResourceManager.GetString("cbCheckUpdatesDaily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid setting for parameter &apos;autoMapDefaultDrive&apos; or &apos;autoStartDefaultOBS&apos; detected. Error:.
+        /// </summary>
+        internal static string dashboardInvalidSettingHint {
+            get {
+                return ResourceManager.GetString("dashboardInvalidSettingHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You didn&apos;t select a default OBS version yet. Please do it in the OBS versions menu..
+        /// </summary>
+        internal static string dashboardNoDefaultOBSerror {
+            get {
+                return ResourceManager.GetString("dashboardNoDefaultOBSerror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to not set.
+        /// </summary>
+        internal static string dashboardOBSdefaultVersionNotSetHint {
+            get {
+                return ResourceManager.GetString("dashboardOBSdefaultVersionNotSetHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully removed mapped Drive {0}:.
+        /// </summary>
+        internal static string dashboardRemovedMappedDriveSuccess {
+            get {
+                return ResourceManager.GetString("dashboardRemovedMappedDriveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?.
+        /// </summary>
+        internal static string dashboardUnresponsiveOBSinstanceWarning {
+            get {
+                return ResourceManager.GetString("dashboardUnresponsiveOBSinstanceWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string deleteToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("deleteToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download and Extraction canceled..
+        /// </summary>
+        internal static string Download_and_extraction_cancelled_ {
+            get {
+                return ResourceManager.GetString("Download and extraction cancelled.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download and Extraction finished successfully..
+        /// </summary>
+        internal static string Download_and_extraction_completed_successfully_ {
+            get {
+                return ResourceManager.GetString("Download and extraction completed successfully.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download selected version.
+        /// </summary>
+        internal static string Download_selected_version {
+            get {
+                return ResourceManager.GetString("Download selected version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading.
+        /// </summary>
+        internal static string Downloading {
+            get {
+                return ResourceManager.GetString("Downloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download or Extraction is still running. This will be canceled if you close the window. Continue?.
+        /// </summary>
+        internal static string downloadOBScancelWarning {
+            get {
+                return ResourceManager.GetString("downloadOBScancelWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extracting.
+        /// </summary>
+        internal static string Extracting {
+            get {
+                return ResourceManager.GetString("Extracting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        internal static string Folder {
+            get {
+                return ResourceManager.GetString("Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder already exists.
+        /// </summary>
+        internal static string Folder_exists {
+            get {
+                return ResourceManager.GetString("Folder exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        internal static string FolderName {
+            get {
+                return ResourceManager.GetString("FolderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The target folder already exists. Should it be overwritten or do you want to cancel the action? {newline}{newline}Yes - Overwrite{newline}No - Rename{newline}Cancel - Cancel action.
+        /// </summary>
+        internal static string formClosingWarningDownload {
+            get {
+                return ResourceManager.GetString("formClosingWarningDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have reached the GitHub API rate limit. Please try again later..
+        /// </summary>
+        internal static string githubApiLimitReached {
+            get {
+                return ResourceManager.GetString("githubApiLimitReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If have feature suggestions, found bugs or want to help translate the project, please visit the GitHub page..
+        /// </summary>
+        internal static string lblAppHint {
+            get {
+                return ResourceManager.GetString("lblAppHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set default drive letter:.
+        /// </summary>
+        internal static string lblDefaultDrive {
+            get {
+                return ResourceManager.GetString("lblDefaultDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBS installation on this PC.
+        /// </summary>
+        internal static string localOBSinstall {
+            get {
+                return ResourceManager.GetString("localOBSinstall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map default drive.
+        /// </summary>
+        internal static string Map_default_drive {
+            get {
+                return ResourceManager.GetString("Map default drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No default drive letter set. Please check settings..
         /// </summary>
         internal static string NoDefaultDriveSet {
             get {
                 return ResourceManager.GetString("NoDefaultDriveSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not implemented yet, sorry!.
+        /// </summary>
+        internal static string notImplementedYet {
+            get {
+                return ResourceManager.GetString("notImplementedYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup OBS.
+        /// </summary>
+        internal static string OBS {
+            get {
+                return ResourceManager.GetString("OBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBS versions.
+        /// </summary>
+        internal static string OBS_versions {
+            get {
+                return ResourceManager.GetString("OBS versions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred. Error:.
+        /// </summary>
+        internal static string obsDownloadErrorHint {
+            get {
+                return ResourceManager.GetString("obsDownloadErrorHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At least one OBS version is still running. Please close it before removing the mapped drive.
+        /// </summary>
+        internal static string obsStillRunning {
+            get {
+                return ResourceManager.GetString("obsStillRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBS version.
+        /// </summary>
+        internal static string OBSversion {
+            get {
+                return ResourceManager.GetString("OBSversion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This OBS version is already running..
+        /// </summary>
+        internal static string OBSversionAlreadyRunning {
+            get {
+                return ResourceManager.GetString("OBSversionAlreadyRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the selected version?.
+        /// </summary>
+        internal static string obsVersionConfirmDelete {
+            get {
+                return ResourceManager.GetString("obsVersionConfirmDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not delete the OBS version. Error:.
+        /// </summary>
+        internal static string obsVersionErrorDeleteHint {
+            get {
+                return ResourceManager.GetString("obsVersionErrorDeleteHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please remove the local OBS installation via the control panel..
+        /// </summary>
+        internal static string obsVersionLocalDeleteHint {
+            get {
+                return ResourceManager.GetString("obsVersionLocalDeleteHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error retrieving OBS versions. Check internet connection.
+        /// </summary>
+        internal static string obsVersionNoConnectionError {
+            get {
+                return ResourceManager.GetString("obsVersionNoConnectionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected OBS version is currently running. Please close it before attempting to delete..
+        /// </summary>
+        internal static string obsVersionRunningDeleteHint {
+            get {
+                return ResourceManager.GetString("obsVersionRunningDeleteHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?.
+        /// </summary>
+        internal static string obsVersionRunningForegroundErrorHint {
+            get {
+                return ResourceManager.GetString("obsVersionRunningForegroundErrorHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBS version successfully removed.
+        /// </summary>
+        internal static string obsVersionSuccessDeleteHint {
+            get {
+                return ResourceManager.GetString("obsVersionSuccessDeleteHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder.
+        /// </summary>
+        internal static string openFolderToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("openFolderToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path to OBS version.
+        /// </summary>
+        internal static string Path_to_OBS_version {
+            get {
+                return ResourceManager.GetString("Path to OBS version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a release to download.
+        /// </summary>
+        internal static string Please_select_a_release_to_download_ {
+            get {
+                return ResourceManager.GetString("Please select a release to download.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup profile.
+        /// </summary>
+        internal static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        internal static string refreshBtn {
+            get {
+                return ResourceManager.GetString("refreshBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release notes for.
+        /// </summary>
+        internal static string Release_notes_for {
+            get {
+                return ResourceManager.GetString("Release notes for", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remaining.
+        /// </summary>
+        internal static string Remaining {
+            get {
+                return ResourceManager.GetString("Remaining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Drive.
+        /// </summary>
+        internal static string Remove_drive {
+            get {
+                return ResourceManager.GetString("Remove drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore.
+        /// </summary>
+        internal static string Restore {
+            get {
+                return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set as default.
+        /// </summary>
+        internal static string setAsDefaultToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("setAsDefaultToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string StartOBS {
+            get {
+                return ResourceManager.GetString("StartOBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        internal static string updateToolStripMenuItem {
+            get {
+                return ResourceManager.GetString("updateToolStripMenuItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only OBS releases with a .ZIP file will be shown here.
+        /// </summary>
+        internal static string versionHint {
+            get {
+                return ResourceManager.GetString("versionHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View release notes on GitHub.
+        /// </summary>
+        internal static string View_release_notes_on_GitHub {
+            get {
+                return ResourceManager.GetString("View release notes on GitHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error creating virtual drive.
+        /// </summary>
+        internal static string virtualDriveCreationError {
+            get {
+                return ResourceManager.GetString("virtualDriveCreationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Virtual drive created successfully.
+        /// </summary>
+        internal static string virtualDriveCreationSuccess {
+            get {
+                return ResourceManager.GetString("virtualDriveCreationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error removing virtual drive.
+        /// </summary>
+        internal static string virtualDriveRemoveError {
+            get {
+                return ResourceManager.GetString("virtualDriveRemoveError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Virtual drive removed successfully.
+        /// </summary>
+        internal static string virtualDriveRemoveSuccess {
+            get {
+                return ResourceManager.GetString("virtualDriveRemoveSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip file not found for this release..
+        /// </summary>
+        internal static string Zip_file_not_found_for_this_release_ {
+            get {
+                return ResourceManager.GetString("Zip file not found for this release.", resourceCulture);
             }
         }
     }

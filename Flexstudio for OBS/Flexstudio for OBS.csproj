@@ -8,7 +8,7 @@
     <ProjectGuid>{09D1A16D-1D22-470E-8F0E-0D6A20D2DB7A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Flexstudio_for_OBS</RootNamespace>
-    <AssemblyName>Flexstudio for OBS</AssemblyName>
+    <AssemblyName>Flexstudio_for_OBS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -16,6 +16,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,7 +32,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -91,6 +91,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.1.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -103,6 +106,7 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
       <Private>True</Private>
@@ -293,13 +297,15 @@
       <DependentUpon>Lang_de.resx</DependentUpon>
     </Compile>
     <Compile Include="Localization.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelfUpdate.cs" />
     <Compile Include="sett.cs" />
-    <Compile Include="TextProgressBar.cs">
+    <Compile Include="ClassOverrides.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Updates.cs" />
+    <Compile Include="OBSUpdates.cs" />
     <EmbeddedResource Include="DownloadObsVersionForm.resx">
       <DependentUpon>DownloadObsVersionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +331,7 @@
     <EmbeddedResource Include="Languages\Lang_de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang_de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -385,6 +392,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Updater\Updater\bin\Release\Updater.exe">
+      <Link>Updater.exe</Link>
+    </EmbeddedResource>
     <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
     <None Include="media\lang\aq.png" />

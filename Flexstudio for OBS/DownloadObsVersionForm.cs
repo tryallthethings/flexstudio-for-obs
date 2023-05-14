@@ -28,14 +28,8 @@ namespace Flexstudio_for_OBS
 
         public DownloadObsVersionForm(List<ReleaseInfo> releases)
         {
-            try
-            {
-                InitializeComponent();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during form initialization: " + ex.Message);
-            }
+            InitializeComponent();
+
             _releases = releases;
 
             cmbVersions.DisplayMember = "DisplayName";
@@ -45,12 +39,6 @@ namespace Flexstudio_for_OBS
             // Send all hyperlink clicks to the default browser
             webBrowser.Navigating += WebBrowser_Navigating;
 
-            trans.LanguageChanged += OnLanguageChanged;
-
-        }
-
-        private void OnLanguageChanged(object sender, EventArgs e)
-        {
             trans.UpdateAllControlTexts(this.Controls);
         }
 
@@ -84,8 +72,8 @@ namespace Flexstudio_for_OBS
 
                 // Prepare the markdown content with the release name and release notes
 
-                string githubLink = "[View release notes on GitHub](" + releaseInfo.ReleasePageUrl + ")";
-                string markdownContent = "# Release notes for " + releaseInfo.Name + "\n" + githubLink + "\n\n" + releaseInfo.ReleaseNotes;
+                string githubLink = "[" + trans.Me("View release notes on GitHub") + "](" + releaseInfo.ReleasePageUrl + ")";
+                string markdownContent = "# " + trans.Me("Release notes for") + " " + releaseInfo.Name + "\n" + githubLink + "\n\n" + releaseInfo.ReleaseNotes;
 
                 // Configure the Markdig pipeline with your preferred options
                 var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
@@ -111,14 +99,14 @@ namespace Flexstudio_for_OBS
             }
         }
 
-        private async Task DownloadAndExtractRelease(ReleaseInfo releaseInfo, IProgress<DownloadProgressInfo> downloadProgress, CancellationToken cancellationToken)
+        private async Task<bool> DownloadAndExtractRelease(ReleaseInfo releaseInfo, IProgress<DownloadProgressInfo> downloadProgress, CancellationToken cancellationToken)
         {
             // Find the zip file link
             var zipLink = releaseInfo.DownloadLinks.FirstOrDefault();
             if (zipLink.Key == null || zipLink.Value == null)
             {
-                MessageBox.Show("Zip file not found for this release.");
-                return;
+                MessageBox.Show(trans.Me("Zip file not found for this release."));
+                return false;
             }
 
             // Set up download path and extraction path
@@ -130,7 +118,7 @@ namespace Flexstudio_for_OBS
             if (Directory.Exists(extractionFolderPath))
             {
                 // Prompt the user for the desired action
-                DialogResult result = MessageBox.Show("The target folder already exists. Do you want to overwrite, rename the folder or cancel the operation?\n\nYes - Overwrite\nNo - Rename\nCancel - Cancel operation", "Folder exists", MessageBoxButtons.YesNoCancel);
+                DialogResult result = MessageBox.Show(trans.Me("formClosingWarningDownload"), trans.Me("Folder exists"), MessageBoxButtons.YesNoCancel);
 
                 switch (result)
                 {
@@ -143,7 +131,7 @@ namespace Flexstudio_for_OBS
                         break;
                     case DialogResult.Cancel:
                         // Cancel: Return from the method
-                        return;
+                        return false;
                 }
             }
 
@@ -202,7 +190,7 @@ namespace Flexstudio_for_OBS
 
                                     downloadProgress.Report(new DownloadProgressInfo
                                     {
-                                        OperationType = "Downloading",
+                                        OperationType = trans.Me("Downloading"),
                                         ProgressPercentage = progressPercentage,
                                         DownloadedSizeMB = receivedBytes / (1024.0 * 1024.0),
                                         TotalSizeMB = totalBytes / (1024.0 * 1024.0),
@@ -214,7 +202,6 @@ namespace Flexstudio_for_OBS
                                     lastProgressUpdateTime = DateTime.UtcNow;
                                 }
                             }
-
                         }
                     }
                 }
@@ -229,13 +216,15 @@ namespace Flexstudio_for_OBS
             {
 
                 progressBar.Value = (int)progressInfo.ProgressPercentage;
-                progressBar.CustomText = $"{progressInfo.OperationType} {progressInfo.ProgressPercentage:0.00}% | Remaining: {progressInfo.TimeRemaining.TotalSeconds}s";
+                progressBar.CustomText = $"{progressInfo.OperationType} {progressInfo.ProgressPercentage:0.00}% | {trans.Me("Remaining")}: {progressInfo.TimeRemaining.TotalSeconds}s";
             });
 
             await ExtractZip(downloadFilePath, extractionFolderPath, extractionProgress, cancellationTokenSource.Token);
 
             // Cleanup: Delete the downloaded zip file
             File.Delete(downloadFilePath);
+
+            return true;
         }
 
         private async void btnDownload_Click(object sender, EventArgs e)
@@ -245,7 +234,7 @@ namespace Flexstudio_for_OBS
                 // Create a CancellationTokenSource instance as a class-level variable
                 cancellationTokenSource.Cancel();
                 clicked = false;
-                btnDownloadSelected.Text = "Download selected version";
+                btnDownloadSelected.Text = trans.Me("Download selected version");
                 HelperFunctions.resetProgressBar(progressBar);
             }
             else
@@ -253,12 +242,12 @@ namespace Flexstudio_for_OBS
                 var selectedRelease = (ReleaseInfo)cmbVersions.SelectedItem;
                 if (selectedRelease == null)
                 {
-                    MessageBox.Show("Please select a release to download.");
+                    MessageBox.Show(trans.Me("Please select a release to download."));
                     return;
                 }
 
                 clicked = true;
-                btnDownloadSelected.Text = "Cancel";
+                btnDownloadSelected.Text = trans.Me("Cancel");
                 progressBar.Show();
 
                 // For download progress
@@ -272,27 +261,28 @@ namespace Flexstudio_for_OBS
                 cancellationTokenSource = new CancellationTokenSource();
                 try
                 {
-                    await DownloadAndExtractRelease(selectedRelease, downloadProgress, cancellationTokenSource.Token);
-                    MessageBox.Show("Download and extraction completed successfully.");
+                    bool success = await DownloadAndExtractRelease(selectedRelease, downloadProgress, cancellationTokenSource.Token);
+                    if (success)
+                    {
+                        MessageBox.Show(trans.Me("Download and extraction completed successfully."));
+                    }
                     HelperFunctions.resetProgressBar(progressBar);
                 }
                 catch (OperationCanceledException)
                 {
-                    MessageBox.Show("Download and extraction cancelled.");
+                    MessageBox.Show(trans.Me("Download and extraction cancelled."));
                     HelperFunctions.resetProgressBar(progressBar);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}");
+                    MessageBox.Show(trans.Me("obsDownloadErrorHint") + ex.Message);
                     HelperFunctions.resetProgressBar(progressBar);
                 }
                 clicked = false;
-                btnDownloadSelected.Text = "Download selected version";
+                btnDownloadSelected.Text = trans.Me("Download selected version");
                 HelperFunctions.resetProgressBar(progressBar);
             }
         }
-
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -336,7 +326,7 @@ namespace Flexstudio_for_OBS
                             processedEntries++;
                             extractionProgress.Report(new DownloadProgressInfo
                             {
-                                OperationType = "Extracting",
+                                OperationType = trans.Me("Extracting"),
                                 ProgressPercentage = (double)processedEntries / totalEntries * 100,
                                 ProcessedEntries = processedEntries,
                                 TotalEntries = (int)totalEntries
@@ -371,6 +361,29 @@ namespace Flexstudio_for_OBS
             }
             return base.ProcessDialogKey(keyData);
         }
+
+        private void DownloadObsVersionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (clicked)
+            {
+                DialogResult result = MessageBox.Show(
+                    trans.Me("downloadOBScancelWarning"),
+                    trans.Me("Warning"),
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning,
+                    MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    cancellationTokenSource.Cancel();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
     }
 
     public class DownloadProgressInfo
@@ -383,5 +396,4 @@ namespace Flexstudio_for_OBS
         public int ProcessedEntries { get; set; }
         public int TotalEntries { get; set; }
     }
-
 }

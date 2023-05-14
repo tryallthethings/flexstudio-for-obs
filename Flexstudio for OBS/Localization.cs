@@ -37,6 +37,12 @@ namespace Flexstudio_for_OBS
                 {
                     UpdateDataGridViewHeaders(dgv);
                 }
+
+                // Update ContextMenuStrip items if the control has a ContextMenuStrip
+                if (control.ContextMenuStrip != null)
+                {
+                    UpdateContextMenuText(control.ContextMenuStrip);
+                }
             }
         }
 
@@ -82,6 +88,19 @@ namespace Flexstudio_for_OBS
             }
         }
 
+        public static void UpdateContextMenuText(ContextMenuStrip contextMenu)
+        {
+            foreach (ToolStripItem item in contextMenu.Items)
+            {
+                string itemKey = item.Name;
+                string itemTranslatedText = GetStringWithFallback(itemKey);
+                if (itemTranslatedText != null)
+                {
+                    item.Text = itemTranslatedText;
+                }
+            }
+        }
+
         public static void UpdateDataGridViewHeaders(DataGridView dgv)
         {
             foreach (DataGridViewColumn column in dgv.Columns)
@@ -91,24 +110,37 @@ namespace Flexstudio_for_OBS
                 if (columnHeaderTranslatedText != null)
                 {
                     column.HeaderText = columnHeaderTranslatedText;
+
+                    // Update the DataGridViewButtonColumn's DefaultCellStyle.NullValue
+                    if (column is DataGridViewButtonColumn buttonColumn)
+                    {
+                        buttonColumn.DefaultCellStyle.NullValue = columnHeaderTranslatedText;
+                    }
                 }
             }
         }
 
-        public static string GetStringWithFallback(string key)
+        public static string GetStringWithFallback(string key, params object[] args)
         {
             string translatedText = trans.late.GetString(key, Thread.CurrentThread.CurrentUICulture);
             if (translatedText == null)
             {
-                translatedText = trans.late.GetString(key, CultureInfo.GetCultureInfo("en"));
+                ResourceManager englishResourceManager = new ResourceManager("Flexstudio_for_OBS.Languages.Lang_en", typeof(trans).Assembly);
+                translatedText = englishResourceManager.GetString(key, CultureInfo.GetCultureInfo("en"));
+            }
+
+            if (translatedText != null)
+            {
+                translatedText = translatedText.Replace("{newline}", Environment.NewLine);
+                translatedText = string.Format(translatedText, args);
             }
 
             return translatedText;
         }
 
-        public static string Me(string key)
+        public static string Me(string key, params object[] args)
         {
-            return GetStringWithFallback(key);
+            return GetStringWithFallback(key, args);
         }
     }
 }

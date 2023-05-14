@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 public class TextProgressBar : ProgressBar
@@ -53,4 +55,23 @@ public class TextProgressBar : ProgressBar
         // Remove the base call to avoid painting the background
     }
 
+}
+
+public class RoundedIconButton : IconButton
+{
+    public int BorderRadius { get; set; } = 15;
+
+    protected override void OnPaint(PaintEventArgs e)
+    {
+        base.OnPaint(e);
+
+        GraphicsPath path = new GraphicsPath();
+        path.AddArc(new Rectangle(0, 0, BorderRadius, BorderRadius), 180, 90);
+        path.AddArc(new Rectangle(Width - BorderRadius - 1, 0, BorderRadius, BorderRadius), -90, 90);
+        path.AddArc(new Rectangle(Width - BorderRadius - 1, Height - BorderRadius - 1, BorderRadius, BorderRadius), 0, 90);
+        path.AddArc(new Rectangle(0, Height - BorderRadius - 1, BorderRadius, BorderRadius), 90, 90);
+        path.CloseAllFigures();
+
+        Region = new Region(path);
+    }
 }

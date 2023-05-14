@@ -4,33 +4,52 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using static Flexstudio_for_OBS.Logging;
 
 namespace Flexstudio_for_OBS
 {
-    class Updates
+    class OBSUpdates
     {
         private static HttpClient httpClient;
-        private const string RepoOwner = "obsproject";
-        private const string RepoName = "obs-studio";
         private static bool isDebug = false;
 
         public static async Task<List<ReleaseInfo>> FetchLastReleasesAsync(int count)
         {
             httpClient = new HttpClient();
-            await CheckRateLimitAsync();
             httpClient.DefaultRequestHeaders.Add("User-Agent", "Flexstudio for OBS");
 
-            if (sett.ing.HasKeyWithValue("isDebug"))
-                isDebug = bool.Parse(sett.ing["isDebug"]);
-            if (isDebug && sett.ing.HasKeyWithValue("githubAccessToken"))
+            if (sett.ing.HasKeyWithValue("githubAccessToken"))
+            {
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"token {sett.ing["githubAccessToken"]}");
+            } 
+            else
+            {
+                bool rateLimitValid = await CheckRateLimitAsync();
 
-            var url = $"https://api.github.com/repos/{RepoOwner}/{RepoName}/releases";
-            var response = await httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
+                if (!rateLimitValid)
+                {
+                    // Show an error message to the user
+                    UsrMsg.Show("githubApiLimitReached", MessageType.Error);
+                    return new List<ReleaseInfo>();
+                }
+            }
 
-            var jsonString = await response.Content.ReadAsStringAsync();
-            var releases = JsonConvert.DeserializeObject<List<dynamic>>(jsonString);
+            var url = $"https://api.github.com/repos/obsproject/obs-studio/releases";
+            List<dynamic> releases;
+
+            try
+            {
+                var response = await httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                var jsonString = await response.Content.ReadAsStringAsync();
+                releases = JsonConvert.DeserializeObject<List<dynamic>>(jsonString);
+            }
+            catch (Exception ex)
+            {
+                // Handle the case where there's no connection or the connection is interrupted
+                Log.Error(ex, "Error retrieving OBS releases in FetchLastReleasesAsync");
+                return new List<ReleaseInfo>();
+            }
 
             var result = new List<ReleaseInfo>();
             int i = 0;
@@ -58,13 +77,11 @@ namespace Flexstudio_for_OBS
                         DownloadLinks = downloadLinks,
                         isBeta = isBeta,
                         ReleaseNotes = releases[i].body
-
                     });
                 }
 
                 i++;
             }
-
             return result;
         }
 
@@ -74,22 +91,31 @@ namespace Flexstudio_for_OBS
             return Regex.IsMatch(fileName, pattern, RegexOptions.IgnoreCase);
         }
 
-
-        public static async Task CheckRateLimitAsync()
+        public static async Task<bool> CheckRateLimitAsync()
         {
-            httpClient.DefaultRequestHeaders.Add("User-Agent", "Flexstudio for OBS");
-            var url = "https://api.github.com/rate_limit";
-            var response = await httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-
-            var jsonString = await response.Content.ReadAsStringAsync();
-            dynamic rateLimit = JsonConvert.DeserializeObject(jsonString);
-
-            int remaining = rateLimit.resources.core.remaining;
-
-            if (remaining < 1)
+            try
             {
-                throw new InvalidOperationException("You have reached the GitHub API rate limit. Please try again later.");
+                httpClient.DefaultRequestHeaders.Add("User-Agent", "Flexstudio for OBS");
+                var url = "https://api.github.com/rate_limit";
+                var response = await httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                var jsonString = await response.Content.ReadAsStringAsync();
+                dynamic rateLimit = JsonConvert.DeserializeObject(jsonString);
+
+                int remaining = rateLimit.resources.core.remaining;
+
+                if (remaining < 1)
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here, for example, log the error or show a message to the user
+                Log.Error(ex, "An error occurred while checking the GitHub API rate limit.");
+                return false;
             }
         }
     }

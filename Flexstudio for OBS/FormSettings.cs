@@ -6,22 +6,31 @@ using System.Windows.Forms;
 
 namespace Flexstudio_for_OBS
 {
-    public partial class FormSettings : Form
+    public partial class FormSettings : Form, IMainFormDependent
     {
-        public string menuTitle = "Settings";
+        public string menuTitle = trans.Me("Settings");
         private Dictionary<Control, EventHandler> _subscribedControls = new Dictionary<Control, EventHandler>();
+        public FormMain MainFormReference { get; set; }
 
         public FormSettings()
         {
             InitializeComponent();
             SubscribeComponents(this, false); // Unsubscribe Events
-            List<char> driveAvail = getAvailableDriveLetters(FormMain.isMapped);
+            List<char> driveAvail = getAvailableDriveLetters(sett.ing.DriveIsMapped);
             cbbDriveLetter.DataSource = driveAvail;
             cbbDriveLetter.SelectedIndex = -1;
             LoadSettingsToControl(this);
+
+            pnlSettings.RowStyles.Clear();
             
-            cbbDriveLetter.Enabled = !FormMain.isMapped;
+            for (int i = 0; i < pnlSettings.RowCount; i++)
+            {
+                pnlSettings.RowStyles.Add(new RowStyle(SizeType.Absolute, 40));
+            }
+
+            cbbDriveLetter.Enabled = !sett.ing.DriveIsMapped;
             SubscribeComponents(this, true); // Subscribe Events
+            trans.UpdateAllControlTexts(this.Controls);
         }
 
         public static List<char> getAvailableDriveLetters(bool isMapped)

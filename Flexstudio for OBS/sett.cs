@@ -35,6 +35,7 @@ namespace Flexstudio_for_OBS
         {
             _settings = new Dictionary<string, string>();
             Load();
+            SetDefaultValues();
         }
 
         protected void OnPropertyChanged(string key)
@@ -80,13 +81,53 @@ namespace Flexstudio_for_OBS
 
         private void SetDefaultValues()
         {
-            _settings["autoMapDefaultDrive"] = "False";
-            _settings["autoRemoveDefaultDrive"] = "True";
-            _settings["autoStartDefaultOBS"] = "False";
-            _settings["isDebug"] = "False";
-            _settings["themeBackgroundColor"] = "#0033ff";
-            _settings["themeFontColor"] = "#33dbaa";
-            _settings["themeAccentColor"] = "#33dbaa";
+            var defaultValues = new Dictionary<string, string>
+            {
+                ["autoMapDefaultDrive"] = "False",
+                ["autoRemoveDefaultDrive"] = "True",
+                ["autoStartDefaultOBS"] = "False",
+                ["isDebug"] = "False",
+                ["themeBackgroundColor"] = "#121220",
+                ["themeFontColor"] = "#E2E2E2",
+                ["themeAccentColor"] = "#211D33",
+                ["themeMenuHighlightColor"] = "#E56387",
+                ["checkUpdatesDaily"] = "True",
+                ["lastUpdateCheck"] = "1900-01-01",
+                ["githubAccessToken"] = "",
+                ["driveIsMapped"] = "False"
+            };
+
+            foreach (var defaultValue in defaultValues)
+            {
+                if (!_settings.ContainsKey(defaultValue.Key))
+                {
+                    _settings[defaultValue.Key] = defaultValue.Value;
+                }
+            }
+
+            Save();
+        }
+
+
+        public bool DriveIsMapped
+        {
+            get => ConvertToBool(this["driveIsMapped"]);
+            set => this["driveIsMapped"] = value.ToString();
+        }
+
+        public bool isDebug
+        {
+            get => ConvertToBool(this["isDebug"]);
+            set => this["isDebug"] = value.ToString();
+        }
+
+        private bool ConvertToBool(string value)
+        {
+            if (bool.TryParse(value, out bool result))
+            {
+                return result;
+            }
+            return false;
         }
     }
 }

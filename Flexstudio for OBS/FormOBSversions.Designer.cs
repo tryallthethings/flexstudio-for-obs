@@ -31,19 +31,19 @@ namespace Flexstudio_for_OBS
         {
             this.components = new System.ComponentModel.Container();
             this.gridOBSversions = new System.Windows.Forms.DataGridView();
-            this.contextGridOBSversions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlButtons = new System.Windows.Forms.Panel();
-            this.refreshBtn = new FontAwesome.Sharp.IconButton();
-            this.addNewOBSbtn = new FontAwesome.Sharp.IconButton();
             this.runningImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Default = new System.Windows.Forms.DataGridViewImageColumn();
             this.Folder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OBSversion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartOBS = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.contextGridOBSversions = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.addNewOBSbtn = new RoundedIconButton();
+            this.refreshBtn = new RoundedIconButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridOBSversions)).BeginInit();
             this.contextGridOBSversions.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -55,9 +55,6 @@ namespace Flexstudio_for_OBS
             this.gridOBSversions.AllowUserToDeleteRows = false;
             this.gridOBSversions.AllowUserToResizeColumns = false;
             this.gridOBSversions.AllowUserToResizeRows = false;
-            this.gridOBSversions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridOBSversions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridOBSversions.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.gridOBSversions.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -69,6 +66,7 @@ namespace Flexstudio_for_OBS
             this.OBSversion,
             this.StartOBS});
             this.gridOBSversions.ContextMenuStrip = this.contextGridOBSversions;
+            this.gridOBSversions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridOBSversions.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridOBSversions.Location = new System.Drawing.Point(0, 0);
             this.gridOBSversions.Margin = new System.Windows.Forms.Padding(2);
@@ -77,10 +75,57 @@ namespace Flexstudio_for_OBS
             this.gridOBSversions.RowHeadersVisible = false;
             this.gridOBSversions.RowHeadersWidth = 62;
             this.gridOBSversions.RowTemplate.Height = 28;
-            this.gridOBSversions.Size = new System.Drawing.Size(580, 400);
+            this.gridOBSversions.Size = new System.Drawing.Size(580, 458);
             this.gridOBSversions.TabIndex = 0;
             this.gridOBSversions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOBSversions_CellContentClick);
             this.gridOBSversions.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridOBSversions_CellMouseDown);
+            // 
+            // runningImage
+            // 
+            this.runningImage.FillWeight = 20F;
+            this.runningImage.HeaderText = "";
+            this.runningImage.MinimumWidth = 15;
+            this.runningImage.Name = "runningImage";
+            this.runningImage.ReadOnly = true;
+            // 
+            // Default
+            // 
+            this.Default.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Default.FillWeight = 30F;
+            this.Default.HeaderText = "Default";
+            this.Default.MinimumWidth = 8;
+            this.Default.Name = "Default";
+            this.Default.ReadOnly = true;
+            this.Default.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Default.Width = 55;
+            // 
+            // Folder
+            // 
+            this.Folder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Folder.FillWeight = 122.5465F;
+            this.Folder.HeaderText = "Folder";
+            this.Folder.MinimumWidth = 8;
+            this.Folder.Name = "Folder";
+            this.Folder.ReadOnly = true;
+            // 
+            // OBSversion
+            // 
+            this.OBSversion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.OBSversion.FillWeight = 122.5465F;
+            this.OBSversion.HeaderText = "OBS version";
+            this.OBSversion.MinimumWidth = 8;
+            this.OBSversion.Name = "OBSversion";
+            this.OBSversion.ReadOnly = true;
+            // 
+            // StartOBS
+            // 
+            this.StartOBS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.StartOBS.FillWeight = 60F;
+            this.StartOBS.HeaderText = "";
+            this.StartOBS.MinimumWidth = 60;
+            this.StartOBS.Name = "StartOBS";
+            this.StartOBS.ReadOnly = true;
+            this.StartOBS.Width = 60;
             // 
             // contextGridOBSversions
             // 
@@ -123,45 +168,22 @@ namespace Flexstudio_for_OBS
             // 
             // pnlButtons
             // 
-            this.pnlButtons.Controls.Add(this.refreshBtn);
             this.pnlButtons.Controls.Add(this.addNewOBSbtn);
+            this.pnlButtons.Controls.Add(this.refreshBtn);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 406);
-            this.pnlButtons.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 407);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(580, 52);
-            this.pnlButtons.TabIndex = 6;
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshBtn.AutoSize = true;
-            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.refreshBtn.FlatAppearance.BorderSize = 0;
-            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshBtn.Font = new System.Drawing.Font("Roboto", 10F);
-            this.refreshBtn.ForeColor = System.Drawing.Color.LightGray;
-            this.refreshBtn.IconChar = FontAwesome.Sharp.IconChar.Rotate;
-            this.refreshBtn.IconColor = System.Drawing.Color.White;
-            this.refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.refreshBtn.IconSize = 35;
-            this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refreshBtn.Location = new System.Drawing.Point(237, 10);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(112, 41);
-            this.refreshBtn.TabIndex = 6;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            this.pnlButtons.Size = new System.Drawing.Size(580, 51);
+            this.pnlButtons.TabIndex = 7;
             // 
             // addNewOBSbtn
             // 
-            this.addNewOBSbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addNewOBSbtn.AutoSize = true;
             this.addNewOBSbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addNewOBSbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.addNewOBSbtn.BorderRadius = 15;
             this.addNewOBSbtn.FlatAppearance.BorderSize = 0;
             this.addNewOBSbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewOBSbtn.Font = new System.Drawing.Font("Roboto", 10F);
@@ -171,7 +193,7 @@ namespace Flexstudio_for_OBS
             this.addNewOBSbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.addNewOBSbtn.IconSize = 35;
             this.addNewOBSbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addNewOBSbtn.Location = new System.Drawing.Point(364, 10);
+            this.addNewOBSbtn.Location = new System.Drawing.Point(362, 2);
             this.addNewOBSbtn.Margin = new System.Windows.Forms.Padding(2);
             this.addNewOBSbtn.Name = "addNewOBSbtn";
             this.addNewOBSbtn.Size = new System.Drawing.Size(216, 41);
@@ -179,49 +201,34 @@ namespace Flexstudio_for_OBS
             this.addNewOBSbtn.Text = "Add new OBS version";
             this.addNewOBSbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addNewOBSbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.addNewOBSbtn.UseVisualStyleBackColor = true;
+            this.addNewOBSbtn.UseVisualStyleBackColor = false;
             this.addNewOBSbtn.Click += new System.EventHandler(this.addNewOBSbtn_Click);
             // 
-            // runningImage
+            // refreshBtn
             // 
-            this.runningImage.FillWeight = 20F;
-            this.runningImage.HeaderText = "";
-            this.runningImage.MinimumWidth = 8;
-            this.runningImage.Name = "runningImage";
-            this.runningImage.ReadOnly = true;
-            // 
-            // Default
-            // 
-            this.Default.FillWeight = 30F;
-            this.Default.HeaderText = "Default";
-            this.Default.MinimumWidth = 8;
-            this.Default.Name = "Default";
-            this.Default.ReadOnly = true;
-            this.Default.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Folder
-            // 
-            this.Folder.FillWeight = 122.5465F;
-            this.Folder.HeaderText = "Folder";
-            this.Folder.MinimumWidth = 8;
-            this.Folder.Name = "Folder";
-            this.Folder.ReadOnly = true;
-            // 
-            // OBSversion
-            // 
-            this.OBSversion.FillWeight = 122.5465F;
-            this.OBSversion.HeaderText = "OBS version";
-            this.OBSversion.MinimumWidth = 8;
-            this.OBSversion.Name = "OBSversion";
-            this.OBSversion.ReadOnly = true;
-            // 
-            // StartOBS
-            // 
-            this.StartOBS.FillWeight = 60F;
-            this.StartOBS.HeaderText = "";
-            this.StartOBS.MinimumWidth = 8;
-            this.StartOBS.Name = "StartOBS";
-            this.StartOBS.ReadOnly = true;
+            this.refreshBtn.AutoSize = true;
+            this.refreshBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(84)))));
+            this.refreshBtn.BorderRadius = 15;
+            this.refreshBtn.FlatAppearance.BorderSize = 0;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Roboto", 10F);
+            this.refreshBtn.ForeColor = System.Drawing.Color.LightGray;
+            this.refreshBtn.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.refreshBtn.IconColor = System.Drawing.Color.White;
+            this.refreshBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.refreshBtn.IconSize = 35;
+            this.refreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refreshBtn.Location = new System.Drawing.Point(246, 2);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(112, 41);
+            this.refreshBtn.TabIndex = 6;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refreshBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // FormOBSversions
             // 
@@ -229,8 +236,8 @@ namespace Flexstudio_for_OBS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(580, 458);
-            this.Controls.Add(this.gridOBSversions);
             this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.gridOBSversions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormOBSversions";
@@ -251,9 +258,9 @@ namespace Flexstudio_for_OBS
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setAsDefaultToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlButtons;
-        private FontAwesome.Sharp.IconButton refreshBtn;
-        private FontAwesome.Sharp.IconButton addNewOBSbtn;
+        private RoundedIconButton refreshBtn;
+        private RoundedIconButton addNewOBSbtn;
+        private System.Windows.Forms.FlowLayoutPanel pnlButtons;
         private System.Windows.Forms.DataGridViewImageColumn runningImage;
         private System.Windows.Forms.DataGridViewImageColumn Default;
         private System.Windows.Forms.DataGridViewTextBoxColumn Folder;

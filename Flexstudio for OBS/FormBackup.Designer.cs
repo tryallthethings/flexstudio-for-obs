@@ -40,6 +40,7 @@ namespace Flexstudio_for_OBS
             this.ttCellPath = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.progressBarZip = new TextProgressBar();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridBackup)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,25 +62,28 @@ namespace Flexstudio_for_OBS
             this.Restore});
             this.gridBackup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridBackup.Location = new System.Drawing.Point(0, 0);
-            this.gridBackup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridBackup.Name = "gridBackup";
             this.gridBackup.RowHeadersVisible = false;
             this.gridBackup.RowHeadersWidth = 51;
-            this.gridBackup.Size = new System.Drawing.Size(914, 545);
+            this.gridBackup.Size = new System.Drawing.Size(731, 436);
             this.gridBackup.TabIndex = 0;
             this.gridBackup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBackup_CellContentClick);
+            this.gridBackup.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridBackup_CellMouseLeave);
+            this.gridBackup.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridBackup_CellMouseUp);
             // 
             // FolderName
             // 
             this.FolderName.HeaderText = "Folder";
             this.FolderName.MinimumWidth = 6;
             this.FolderName.Name = "FolderName";
+            this.FolderName.ReadOnly = true;
             // 
             // OBSversion
             // 
             this.OBSversion.HeaderText = "OBS Version";
             this.OBSversion.MinimumWidth = 6;
             this.OBSversion.Name = "OBSversion";
+            this.OBSversion.ReadOnly = true;
             // 
             // Profile
             // 
@@ -111,10 +115,9 @@ namespace Flexstudio_for_OBS
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
             this.panel1.Controls.Add(this.progressBarZip);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 503);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 402);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 42);
+            this.panel1.Size = new System.Drawing.Size(731, 34);
             this.panel1.TabIndex = 11;
             // 
             // progressBarZip
@@ -123,17 +126,16 @@ namespace Flexstudio_for_OBS
             this.progressBarZip.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBarZip.FillColor = System.Drawing.Color.RoyalBlue;
             this.progressBarZip.Location = new System.Drawing.Point(0, 0);
-            this.progressBarZip.Margin = new System.Windows.Forms.Padding(4);
             this.progressBarZip.Name = "progressBarZip";
-            this.progressBarZip.Size = new System.Drawing.Size(914, 42);
+            this.progressBarZip.Size = new System.Drawing.Size(731, 34);
             this.progressBarZip.TabIndex = 1;
             this.progressBarZip.Visible = false;
             // 
             // FormBackup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(914, 545);
+            this.ClientSize = new System.Drawing.Size(731, 436);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridBackup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -150,13 +152,14 @@ namespace Flexstudio_for_OBS
 
         private System.Windows.Forms.DataGridView gridBackup;
         private System.Windows.Forms.ToolTip ttCellPath;
+        private TextProgressBar progressBarZip;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FolderName;
         private System.Windows.Forms.DataGridViewTextBoxColumn OBSversion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Profile;
         private System.Windows.Forms.DataGridViewCheckBoxColumn OBS;
         private System.Windows.Forms.DataGridViewButtonColumn Backup;
         private System.Windows.Forms.DataGridViewButtonColumn Restore;
-        private TextProgressBar progressBarZip;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -10,13 +10,14 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Flexstudio_for_OBS
 {
     public partial class FormOBSversions : Form, IMainFormDependent
     {
-        public string menuTitle = "OBS versions";
+        public string menuTitle = trans.Me("OBS versions");
         public FormMain MainFormReference { get; set; }
 
         [DllImport("user32.dll")]
@@ -37,13 +38,17 @@ namespace Flexstudio_for_OBS
             gridOBSversions.Columns["StartOBS"].DefaultCellStyle.NullValue = trans.Me("StartOBS"); // Set the start button text
             gridOBSversions.Columns["Default"].DefaultCellStyle.NullValue = null; // Set the start button text
             LoadObsVersions();
-            trans.LanguageChanged += OnLanguageChanged;
-            trans.UpdateAllControlTexts(this.Controls);
-        }
 
-        private void OnLanguageChanged(object sender, EventArgs e)
-        {
             trans.UpdateAllControlTexts(this.Controls);
+
+            refreshBtn.TextChanged += HelperFunctions.Button_TextChanged;
+            addNewOBSbtn.TextChanged += HelperFunctions.Button_TextChanged;
+            Shown += (sender, args) => {
+                for (int rowIndex = 0; rowIndex < gridOBSversions.Rows.Count; rowIndex++)
+                {
+                    LoadRunningProcessesForRow(rowIndex);
+                }
+            };
         }
 
         private void LoadObsVersions()
@@ -68,14 +73,13 @@ namespace Flexstudio_for_OBS
                     gridOBSversions.Rows[rowIndex].Cells["runningImage"].Value = Properties.Resources.redicon;
 
                     // Check if a new process is running
-                    LoadRunningProcessesForRow(rowIndex);
+                    //LoadRunningProcessesForRow(rowIndex);
 
                     // Set checkmark for default OBS version if set
                     if (sett.ing.HasKeyWithValue("DefaultOBSpath"))
                     {
                         setDefaultIcon();
                     }
-                    
                 }
             }
 
@@ -86,7 +90,7 @@ namespace Flexstudio_for_OBS
                 if (!obsVersions.Any(version => version.FolderName == ((ObsVersionInfo)row.Tag).FolderName))
                 {
                     gridOBSversions.Rows.RemoveAt(i);
-                    GlobalState.ObsProcesses.Remove(i);
+                    GlobalState.ObsProcesses.Remove(((ObsVersionInfo)row.Tag).FolderName);
                 }
             }
         }
@@ -96,10 +100,10 @@ namespace Flexstudio_for_OBS
             if (e.ColumnIndex == 4 && e.RowIndex >= 0) // Start button column
             {
                 var obsVersion = (ObsVersionInfo)gridOBSversions.Rows[e.RowIndex].Tag;
-                string obsPath = HelperFunctions.pathToDrivePath(obsVersion.ObsExePath);
+                string obsPath = HelperFunctions.pathToDrivePath(obsVersion);
 
                 // Check if the process is already running
-                if (GlobalState.ObsProcesses.TryGetValue(e.RowIndex, out var existingProcess) && HelperFunctions.IsProcessRunning(existingProcess.Id))
+                if (GlobalState.ObsProcesses.TryGetValue(obsVersion.FolderName, out var existingProcess) && HelperFunctions.IsProcessRunning(existingProcess.Id))
                 {
                     // Try to bring the window to the foreground
                     bool foregroundResult = SetForegroundWindow(existingProcess.MainWindowHandle);
@@ -114,7 +118,7 @@ namespace Flexstudio_for_OBS
                     // If all attempts failed, ask the user to terminate the process and start a new one
                     if (!foregroundResult)
                     {
-                        DialogResult dialogResult = MessageBox.Show("This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult dialogResult = MessageBox.Show(trans.Me("obsVersionRunningForegroundErrorHint"), trans.Me("Warning"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -127,7 +131,7 @@ namespace Flexstudio_for_OBS
                     }
                     else
                     {
-                        UsrMsg.Show("This OBS version is already running.", MessageType.Info);
+                        UsrMsg.Show("OBSversionAlreadyRunning", MessageType.Info);
                         return;
                     }
                 }
@@ -137,13 +141,16 @@ namespace Flexstudio_for_OBS
                     FileName = obsPath,
                     WorkingDirectory = Path.GetDirectoryName(obsPath),
                     UseShellExecute = false,
-                    Arguments = "--portable"
+                    Arguments = !obsVersion.isLocal ? "--portable" : string.Empty
                 };
 
                 var process = Process.Start(startInfo);
                 process.EnableRaisingEvents = true;
-                process.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, gridOBSversions);
-                GlobalState.ObsProcesses[e.RowIndex] = process;
+                process.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, gridOBSversions, obsVersion.FolderName);
+                lock (GlobalState.ObsProcessesLock)
+                {
+                    GlobalState.ObsProcesses[obsVersion.FolderName] = process;
+                }
 
                 // Save the process ID to a file
                 SavePidToFile(e.RowIndex, process.Id);
@@ -177,11 +184,21 @@ namespace Flexstudio_for_OBS
             if (gridOBSversions.SelectedRows.Count > 0)
             {
                 var obsVersion = (ObsVersionInfo)gridOBSversions.SelectedRows[0].Tag;
-
-                // Check if the selected OBS version is running
-                if (GlobalState.ObsProcesses.TryGetValue(gridOBSversions.SelectedRows[0].Index, out var runningProcess) && HelperFunctions.IsProcessRunning(runningProcess.Id))
+                if (obsVersion.isLocal)
                 {
-                    MessageBox.Show("The selected OBS version is currently running. Please close it before attempting to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UsrMsg.Show("obsVersionLocalDeleteHint", MessageType.Error);
+                    return;
+                }
+                
+                // Check if the selected OBS version is running
+                if (GlobalState.ObsProcesses.TryGetValue(obsVersion.FolderName, out var runningProcess) && HelperFunctions.IsProcessRunning(runningProcess.Id))
+                {
+                    UsrMsg.Show("obsVersionRunningDeleteHint", MessageType.Error);
+                    return;
+                }
+
+                // Ask user for confirmation to delete OBS version
+                if (MessageBox.Show(trans.Me("obsVersionConfirmDelete"), trans.Me("Warning"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) {
                     return;
                 }
 
@@ -189,16 +206,21 @@ namespace Flexstudio_for_OBS
                 {
                     Directory.Delete(obsVersion.RootPath, true);
                     gridOBSversions.Rows.Remove(gridOBSversions.SelectedRows[0]);
+                    UsrMsg.Show("obsVersionSuccessDeleteHint", MessageType.Info);
+                    if(obsVersion.isDefault)
+                    {
+                        sett.ing["DefaultOBSpath"] = "";
+                        sett.ing["DefaultOBSversion"] = "";
+                    }
                 }
                 catch (IOException ex)
                 {
-                    MessageBox.Show($"Could not delete the OBS version: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UsrMsg.Show("obsVersionErrorDeleteHint", MessageType.Error, ex.ToString());
                 }
             }
         }
 
-
-        private Image GetResizedImage(Image original, int width, int height)
+        private System.Drawing.Image GetResizedImage(System.Drawing.Image original, int width, int height)
         {
             var resized = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(resized))
@@ -212,9 +234,14 @@ namespace Flexstudio_for_OBS
         {
             foreach (DataGridViewRow row in gridOBSversions.Rows)
             {
-                if (GlobalState.ObsProcesses.TryGetValue(row.Index, out var process))
+                var obsVersion = (ObsVersionInfo)row.Tag;
+                if (GlobalState.ObsProcesses.TryGetValue(obsVersion.FolderName, out var process))
                 {
                     MainFormReference.SetProcessStatusIcon(gridOBSversions, row.Index, process != null && !process.HasExited);
+                }
+                else
+                {
+                    MainFormReference.SetProcessStatusIcon(gridOBSversions, row.Index, false);
                 }
             }
         }
@@ -239,17 +266,21 @@ namespace Flexstudio_for_OBS
         {
             try
             {
-                var releases = await Updates.FetchLastReleasesAsync(20);
-                var downloadObsVersionForm = new DownloadObsVersionForm(releases);
-                downloadObsVersionForm.ShowDialog();
-                LoadObsVersions();
-
-                // Show the release notes in a built-in browser or a popup window
-                // You can use the ReleasePageUrl property to navigate to the release page on GitHub
+                var releases = await OBSUpdates.FetchLastReleasesAsync(20);
+                if (releases.Count == 0)
+                {
+                    UsrMsg.Show("obsVersionNoConnectionError", MessageType.Error);
+                }
+                else
+                {
+                    var downloadObsVersionForm = new DownloadObsVersionForm(releases);
+                    downloadObsVersionForm.ShowDialog();
+                    LoadObsVersions();
+                }
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, trans.Me("Error"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -261,12 +292,13 @@ namespace Flexstudio_for_OBS
         private void SavePidToFile(int rowIndex, int processId)
         {
             var obsVersion = (ObsVersionInfo)gridOBSversions.Rows[rowIndex].Tag;
-            var pidFilePath = Path.Combine(Path.GetDirectoryName(obsVersion.ObsExePath), "obs_pid.txt");
+            if (!obsVersion.isLocal)
+            {
+                var pidFilePath = Path.Combine(Path.GetDirectoryName(obsVersion.ObsExePath), "obs_pid.txt");
 
-            File.WriteAllText(pidFilePath, processId.ToString());
+                File.WriteAllText(pidFilePath, processId.ToString());
+            }
         }
-
-
 
         private void LoadRunningProcessesForRow(int rowIndex)
         {
@@ -285,8 +317,15 @@ namespace Flexstudio_for_OBS
                         {
                             var process = Process.GetProcessById(processId);
                             process.EnableRaisingEvents = true;
-                            process.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, gridOBSversions);
-                            GlobalState.ObsProcesses[row.Index] = process;
+
+                            lock (GlobalState.ObsProcessesLock)
+                            {
+                                if (!GlobalState.ObsProcesses.ContainsKey(obsVersion.FolderName))
+                                {
+                                    process.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, gridOBSversions, obsVersion.FolderName);
+                                    GlobalState.ObsProcesses[obsVersion.FolderName] = process;
+                                }
+                            }
                         }
                         catch (ArgumentException)
                         {
@@ -296,6 +335,7 @@ namespace Flexstudio_for_OBS
                     else
                     {
                         // If the process is not running, remove the obs_pid.txt file
+                        MainFormReference.SetProcessStatusIcon(gridOBSversions, rowIndex, false);
                         File.Delete(pidFilePath);
                     }
                 }
@@ -320,6 +360,7 @@ namespace Flexstudio_for_OBS
 
             sett.ing["DefaultOBSpath"] = obsVersion.ObsExePath;
             sett.ing["DefaultOBSversion"] = obsVersion.ObsVersion;
+            LoadObsVersions();
         }
 
         private void setDefaultIcon()
@@ -342,6 +383,7 @@ namespace Flexstudio_for_OBS
             Bitmap iconBitmap = FormsIconHelper.ToBitmap(iconChar, iconFont, iconSize);
             return iconBitmap;
         }
+
     }
 
     public class ObsVersionInfo
@@ -350,9 +392,9 @@ namespace Flexstudio_for_OBS
         public string FolderName { get; set; }
         public string ObsVersion { get; set; }
         public string ObsExePath { get; set; }
+        public string ObsConfigPath { get; set; }
         public bool isDefault { get; set; }
+        public bool isLocal { get; set; } = false;
     }
-
-
 }
 
