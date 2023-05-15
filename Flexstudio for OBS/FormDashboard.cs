@@ -35,6 +35,39 @@ namespace Flexstudio_for_OBS
             if (sett.ing.HasKeyWithValue("defaultDrive"))
                 sett.ing.DriveIsMapped = HelperFunctions.CheckSubstDrive(char.Parse(sett.ing["defaultDrive"]));
 
+            if (sett.ing.HasKeyWithValue("DefaultOBSversion"))
+            {
+                if (Directory.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sett.ing["DefaultOBSversion"])))
+                {
+                    lblDefaultOBS.Text = sett.ing["DefaultOBSversion"];
+
+                    // Default OBS version set. Let's check, if it's already running
+                    var obsVersion = HelperFunctions.FindObsVersionInPath(sett.ing["DefaultOBSpath"]);
+                    Process proc = HelperFunctions.OBSrunningForFolder(obsVersion);
+                    if (proc != null)
+                    {
+                        lock (GlobalState.ObsProcessesLock)
+                        {
+                            if (!GlobalState.ObsProcesses.ContainsKey(obsVersion.FolderName))
+                            {
+                                proc.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, null, obsVersion.FolderName);
+                                GlobalState.ObsProcesses[obsVersion.FolderName] = proc;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    UsrMsg.Show("defaultOBSversionRemoved", MessageType.Error);
+                    sett.ing["DefaultOBSversion"] = "";
+                    lblDefaultOBS.Text = trans.Me("dashboardOBSdefaultVersionNotSetHint");
+                }
+            }
+            else
+            {
+                lblDefaultOBS.Text = trans.Me("dashboardOBSdefaultVersionNotSetHint");
+            }
+
             if (!sett.ing.DriveIsMapped)
             {
                 CanMapDrive();
@@ -72,38 +105,7 @@ namespace Flexstudio_for_OBS
                 btnStartOBS.Enabled = true;
             }
 
-            if (sett.ing.HasKeyWithValue("DefaultOBSversion"))
-            {
-                if (Directory.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sett.ing["DefaultOBSversion"])))
-                {
-                    lblDefaultOBS.Text = sett.ing["DefaultOBSversion"];
 
-                    // Default OBS version set. Let's check, if it's already running
-                    var obsVersion = HelperFunctions.FindObsVersionInPath(sett.ing["DefaultOBSpath"]);
-                    Process proc = HelperFunctions.OBSrunningForFolder(obsVersion);
-                    if (proc != null)
-                    {
-                        lock (GlobalState.ObsProcessesLock)
-                        {
-                            if (!GlobalState.ObsProcesses.ContainsKey(obsVersion.FolderName))
-                            {
-                                proc.Exited += (senderObj, eArgs) => MainFormReference.Process_Exited(senderObj, null, obsVersion.FolderName);
-                                GlobalState.ObsProcesses[obsVersion.FolderName] = proc;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    UsrMsg.Show("defaultOBSversionRemoved", MessageType.Error);
-                    sett.ing["DefaultOBSversion"] = "";
-                    lblDefaultOBS.Text = trans.Me("dashboardOBSdefaultVersionNotSetHint");
-                }
-            }
-            else
-            {
-                lblDefaultOBS.Text = trans.Me("dashboardOBSdefaultVersionNotSetHint");
-            }
 
         }
 
