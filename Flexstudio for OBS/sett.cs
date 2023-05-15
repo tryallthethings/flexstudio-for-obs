@@ -94,7 +94,8 @@ namespace Flexstudio_for_OBS
                 ["checkUpdatesDaily"] = "True",
                 ["lastUpdateCheck"] = "1900-01-01",
                 ["githubAccessToken"] = "",
-                ["driveIsMapped"] = "False"
+                ["driveIsMapped"] = "False",
+                ["isFirstStart"] = "True"
             };
 
             foreach (var defaultValue in defaultValues)
@@ -119,6 +120,12 @@ namespace Flexstudio_for_OBS
         {
             get => ConvertToBool(this["isDebug"]);
             set => this["isDebug"] = value.ToString();
+        }
+
+        public bool isFirstStart
+        {
+            get => ConvertToBool(this["isFirstStart"]);
+            set => this["isFirstStart"] = value.ToString();
         }
 
         private bool ConvertToBool(string value)

@@ -474,7 +474,7 @@ namespace Flexstudio_for_OBS
                     MessageBox.Show("Could not remove the virtual drive. Either the settings value is wrong or there was an issue using subst.", "Error removing virtual drive", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
+            sett.ing.isFirstStart = true;
         }
 
         // Display user messages in a dedicated panel / buttontext

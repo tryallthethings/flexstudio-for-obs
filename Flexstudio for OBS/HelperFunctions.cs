@@ -222,36 +222,40 @@ namespace Flexstudio_for_OBS
             ObsVersionInfo localObs = new ObsVersionInfo();
 
             // Add installed OBS version to list
-            var LocalOBSExeFile = HelperFunctions.GetOBSStudioInstallationPath();
-            string localOBSpath = Directory.GetParent(Directory.GetParent(Directory.GetParent(LocalOBSExeFile).ToString()).ToString()).ToString();
-            
-            if (Directory.Exists(localOBSpath))
+            string LocalOBSExeFile = HelperFunctions.GetOBSStudioInstallationPath();
+            if (LocalOBSExeFile != null)
             {
-                // OBS folder exists in the location found in the Registry
+                string localOBSpath = Directory.GetParent(Directory.GetParent(Directory.GetParent(LocalOBSExeFile).ToString()).ToString()).ToString();
 
-                if (File.Exists(LocalOBSExeFile))
+                if (Directory.Exists(localOBSpath))
                 {
-                    var localOBSversionInfo = FileVersionInfo.GetVersionInfo(LocalOBSExeFile);
-                    // OBS executable found
-                    string localOBSconfigPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "obs-studio" );
-                    if (File.Exists(Path.Combine(localOBSconfigPath, "global.ini")))
+                    // OBS folder exists in the location found in the Registry
+
+                    if (File.Exists(LocalOBSExeFile))
                     {
-                        // OBS config file found in %APPDATA%
-                        localObs = new ObsVersionInfo {
-                            RootPath = localOBSpath,
-                            FolderName = trans.Me("localOBSinstall"),
-                            ObsVersion = localOBSversionInfo.ProductVersion,
-                            ObsConfigPath = localOBSconfigPath,
-                            ObsExePath = LocalOBSExeFile,
-                            isDefault = sett.ing["DefaultOBSpath"] == LocalOBSExeFile ? true : false,
-                            isLocal = true
-                        };
+                        var localOBSversionInfo = FileVersionInfo.GetVersionInfo(LocalOBSExeFile);
+                        // OBS executable found
+                        string localOBSconfigPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "obs-studio");
+                        if (File.Exists(Path.Combine(localOBSconfigPath, "global.ini")))
+                        {
+                            // OBS config file found in %APPDATA%
+                            localObs = new ObsVersionInfo
+                            {
+                                RootPath = localOBSpath,
+                                FolderName = trans.Me("localOBSinstall"),
+                                ObsVersion = localOBSversionInfo.ProductVersion,
+                                ObsConfigPath = localOBSconfigPath,
+                                ObsExePath = LocalOBSExeFile,
+                                isDefault = sett.ing["DefaultOBSpath"] == LocalOBSExeFile ? true : false,
+                                isLocal = true
+                            };
+                        }
                     }
                 }
             }
 
             var obsVersions = new List<ObsVersionInfo>();
-            if (localObs != null)
+            if (!localObs.IsEmpty())
             {
                 obsVersions.Add(localObs);
             }
@@ -286,7 +290,9 @@ namespace Flexstudio_for_OBS
             string ObsSubfolder = "bin\\64bit";
             ObsVersionInfo obsVersion = null;
             var LocalOBSExeFile = HelperFunctions.GetOBSStudioInstallationPath();
-            string localOBSpath = Directory.GetParent(Directory.GetParent(Directory.GetParent(LocalOBSExeFile).ToString()).ToString()).ToString();
+            string localOBSpath;
+            if (LocalOBSExeFile != null)
+                localOBSpath = Directory.GetParent(Directory.GetParent(Directory.GetParent(LocalOBSExeFile).ToString()).ToString()).ToString();
             bool isLocal = false;
             if (path == "obs-studio")
             {

@@ -61,6 +61,9 @@ namespace Flexstudio_for_OBS
                         body {
                             background-color: " + sett.ing["themeBackgroundColor"] + ";" +
                         "color: " + sett.ing["themeFontColor"] + ";" +
+                    "} " +
+                    "a { " +
+                        "color: " + sett.ing["themeFontColor"] + ";" +
                     "}" +
                 "</style>";
             }
@@ -73,7 +76,14 @@ namespace Flexstudio_for_OBS
                 // Prepare the markdown content with the release name and release notes
 
                 string githubLink = "[" + trans.Me("View release notes on GitHub") + "](" + releaseInfo.ReleasePageUrl + ")";
-                string markdownContent = "# " + trans.Me("Release notes for") + " " + releaseInfo.Name + "\n" + githubLink + "\n\n" + releaseInfo.ReleaseNotes;
+                string markdownContent = "# " + trans.Me("Release notes for") + " " + releaseInfo.Name
+                    + "\n"
+                    + "## " + trans.Me("Released on") + " " + releaseInfo.ReleaseDate.ToString("g")
+                    + "\n"
+                    + githubLink
+                    + "\n\n"
+                    + releaseInfo.ReleaseNotes;
+
 
                 // Configure the Markdig pipeline with your preferred options
                 var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();

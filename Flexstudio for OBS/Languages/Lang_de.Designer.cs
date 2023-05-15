@@ -340,6 +340,15 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Die als Standard gesetzte OBS version wurde gelöscht..
+        /// </summary>
+        internal static string defaultOBSversionRemoved {
+            get {
+                return ResourceManager.GetString("defaultOBSversionRemoved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lösche.
         /// </summary>
         internal static string deleteToolStripMenuItem {
@@ -723,6 +732,15 @@ namespace Flexstudio_for_OBS.Languages {
         internal static string Release_notes_for {
             get {
                 return ResourceManager.GetString("Release notes for", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Veröffentlicht am.
+        /// </summary>
+        internal static string Released_on {
+            get {
+                return ResourceManager.GetString("Released on", resourceCulture);
             }
         }
         

@@ -210,6 +210,9 @@
   <data name="Default" xml:space="preserve">
     <value>Standard</value>
   </data>
+  <data name="defaultOBSversionRemoved" xml:space="preserve">
+    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+  </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
     <value>Lösche</value>
   </data>
@@ -338,6 +341,9 @@
   </data>
   <data name="Release notes for" xml:space="preserve">
     <value>Versionshinweise für</value>
+  </data>
+  <data name="Released on" xml:space="preserve">
+    <value>Veröffentlicht am</value>
   </data>
   <data name="Remaining" xml:space="preserve">
     <value>Verbleibend</value>

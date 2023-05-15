@@ -184,7 +184,7 @@
     <value>Automatically map default drive on app start</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Automatically remove default drive on exiting app</value>
+    <value>Automatically remove default drive when application is closed</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
     <value>Automatically start default OBS version on app start</value>
@@ -209,6 +209,9 @@
   </data>
   <data name="Default" xml:space="preserve">
     <value>Default</value>
+  </data>
+  <data name="defaultOBSversionRemoved" xml:space="preserve">
+    <value>The default OBS version was deleted</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
     <value>Delete</value>
@@ -338,6 +341,9 @@
   </data>
   <data name="Release notes for" xml:space="preserve">
     <value>Release notes for</value>
+  </data>
+  <data name="Released on" xml:space="preserve">
+    <value>Released on</value>
   </data>
   <data name="Remaining" xml:space="preserve">
     <value>Remaining</value>

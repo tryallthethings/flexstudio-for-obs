@@ -259,7 +259,7 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatically remove default drive on exiting app.
+        ///   Looks up a localized string similar to Automatically remove default drive when application is closed.
         /// </summary>
         internal static string cbAutoRemoveDefaultDrive {
             get {
@@ -336,6 +336,15 @@ namespace Flexstudio_for_OBS.Languages {
         internal static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The default OBS version was deleted.
+        /// </summary>
+        internal static string defaultOBSversionRemoved {
+            get {
+                return ResourceManager.GetString("defaultOBSversionRemoved", resourceCulture);
             }
         }
         
@@ -723,6 +732,15 @@ namespace Flexstudio_for_OBS.Languages {
         internal static string Release_notes_for {
             get {
                 return ResourceManager.GetString("Release notes for", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Released on.
+        /// </summary>
+        internal static string Released_on {
+            get {
+                return ResourceManager.GetString("Released on", resourceCulture);
             }
         }
         

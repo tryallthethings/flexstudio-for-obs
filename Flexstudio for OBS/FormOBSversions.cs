@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -395,6 +396,12 @@ namespace Flexstudio_for_OBS
         public string ObsConfigPath { get; set; }
         public bool isDefault { get; set; }
         public bool isLocal { get; set; } = false;
+
+        public bool IsEmpty()
+        {
+            // Return true if all properties are null or their default values
+            return RootPath == null && FolderName == null && ObsVersion == null && ObsExePath == null && ObsConfigPath == null;
+        }
     }
 }
 

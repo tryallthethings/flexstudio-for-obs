@@ -74,7 +74,8 @@ namespace Flexstudio_for_OBS
                         ReleasePageUrl = releases[i].html_url,
                         DownloadLinks = downloadLinks,
                         isBeta = isBeta,
-                        ReleaseNotes = releases[i].body
+                        ReleaseNotes = releases[i].body,
+                        ReleaseDate = releases[i].published_at
                     });
                 }
 
@@ -85,7 +86,7 @@ namespace Flexstudio_for_OBS
 
         private static bool IsValidFileName(string fileName)
         {
-            string pattern = @"^OBS-Studio-\d+\.\d+(\.\d+)?(-(beta|rc)\d+)?-Full-x64\.zip$";
+            string pattern = @"^OBS-Studio-\d+\.\d+(\.\d+)?(-(beta|rc)\d+)?(-Full(-x64)?)?\.zip$";
             return Regex.IsMatch(fileName, pattern, RegexOptions.IgnoreCase);
         }
 
@@ -126,6 +127,7 @@ namespace Flexstudio_for_OBS
         public bool isBeta { get; set; }
         public Dictionary<string, string> DownloadLinks { get; set; }
         public string ReleaseNotes { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         public string DisplayName
         {
