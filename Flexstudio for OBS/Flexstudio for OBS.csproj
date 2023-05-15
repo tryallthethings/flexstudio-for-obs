@@ -27,8 +27,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <SupportUrl>https://github.com/tryallthethings/flexstudio-for-obs</SupportUrl>
+    <ProductName>Flexstudio for OBS</ProductName>
+    <PublisherName>TryAllTheThings</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -62,7 +65,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -232,6 +235,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -279,11 +283,23 @@
     <Compile Include="FormOBSversions.Designer.cs">
       <DependentUpon>FormOBSversions.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSettings.Designer.cs">
       <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormShowLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowLicense.Designer.cs">
+      <DependentUpon>FormShowLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="Languages\Lang_en.Designer.cs">
@@ -321,8 +337,14 @@
     <EmbeddedResource Include="FormOBSversions.resx">
       <DependentUpon>FormOBSversions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShowLicense.resx">
+      <DependentUpon>FormShowLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Lang_en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -339,6 +361,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Flexstudio for OBS_TemporaryKey.pfx" />
+    <EmbeddedResource Include="fonts\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="fonts\Roboto-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -359,27 +383,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="media\cow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\baseline_close_black_48dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\baseline_luggage_black_48dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\baseline_dashboard_black_48dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\greenicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\redicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="media\add.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -392,265 +395,274 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\license_google_fonts_roboto.txt" />
+    <None Include="media\country_images\resized\country_zw.png" />
+    <None Include="media\country_images\resized\country_zm.png" />
+    <None Include="media\country_images\resized\country_za.png" />
+    <None Include="media\country_images\resized\country_yt.png" />
+    <None Include="media\country_images\resized\country_ye.png" />
+    <None Include="media\country_images\resized\country_xk.png" />
+    <None Include="media\country_images\resized\country_ws.png" />
+    <None Include="media\country_images\resized\country_wf.png" />
+    <None Include="media\country_images\resized\country_vu.png" />
+    <None Include="media\country_images\resized\country_vn.png" />
+    <None Include="media\country_images\resized\country_vi.png" />
+    <None Include="media\country_images\resized\country_vg.png" />
+    <None Include="media\country_images\resized\country_ve.png" />
+    <None Include="media\country_images\resized\country_vc.png" />
+    <None Include="media\country_images\resized\country_va.png" />
+    <None Include="media\country_images\resized\country_uz.png" />
+    <None Include="media\country_images\resized\country_uy.png" />
+    <None Include="media\country_images\resized\country_us.png" />
+    <None Include="media\country_images\resized\country_um.png" />
+    <None Include="media\country_images\resized\country_ug.png" />
+    <None Include="media\country_images\resized\country_ua.png" />
+    <None Include="media\country_images\resized\country_tz.png" />
+    <None Include="media\country_images\resized\country_tw.png" />
+    <None Include="media\country_images\resized\country_tv.png" />
+    <None Include="media\country_images\resized\country_tt.png" />
+    <None Include="media\country_images\resized\country_tr.png" />
+    <None Include="media\country_images\resized\country_to.png" />
+    <None Include="media\country_images\resized\country_tn.png" />
+    <None Include="media\country_images\resized\country_tm.png" />
+    <None Include="media\country_images\resized\country_tl.png" />
+    <None Include="media\country_images\resized\country_tk.png" />
+    <None Include="media\country_images\resized\country_tj.png" />
+    <None Include="media\country_images\resized\country_th.png" />
+    <None Include="media\country_images\resized\country_tg.png" />
+    <None Include="media\country_images\resized\country_tf.png" />
+    <None Include="media\country_images\resized\country_td.png" />
+    <None Include="media\country_images\resized\country_tc.png" />
+    <None Include="media\country_images\resized\country_sz.png" />
+    <None Include="media\country_images\resized\country_sy.png" />
+    <None Include="media\country_images\resized\country_sx.png" />
+    <None Include="media\country_images\resized\country_sv.png" />
+    <None Include="media\country_images\resized\country_st.png" />
+    <None Include="media\country_images\resized\country_ss.png" />
+    <None Include="media\country_images\resized\country_sr.png" />
+    <None Include="media\country_images\resized\country_so.png" />
+    <None Include="media\country_images\resized\country_sn.png" />
+    <None Include="media\country_images\resized\country_sm.png" />
+    <None Include="media\country_images\resized\country_sl.png" />
+    <None Include="media\country_images\resized\country_sk.png" />
+    <None Include="media\country_images\resized\country_sj.png" />
+    <None Include="media\country_images\resized\country_si.png" />
+    <None Include="media\country_images\resized\country_sh.png" />
+    <None Include="media\country_images\resized\country_sg.png" />
+    <None Include="media\country_images\resized\country_se.png" />
+    <None Include="media\country_images\resized\country_sd.png" />
+    <None Include="media\country_images\resized\country_sc.png" />
+    <None Include="media\country_images\resized\country_sb.png" />
+    <None Include="media\country_images\resized\country_sa.png" />
+    <None Include="media\country_images\resized\country_rw.png" />
+    <None Include="media\country_images\resized\country_ru.png" />
+    <None Include="media\country_images\resized\country_rs.png" />
+    <None Include="media\country_images\resized\country_ro.png" />
+    <None Include="media\country_images\resized\country_re.png" />
+    <None Include="media\country_images\resized\country_qa.png" />
+    <None Include="media\country_images\resized\country_py.png" />
+    <None Include="media\country_images\resized\country_pw.png" />
+    <None Include="media\country_images\resized\country_pt.png" />
+    <None Include="media\country_images\resized\country_ps.png" />
+    <None Include="media\country_images\resized\country_pr.png" />
+    <None Include="media\country_images\resized\country_pn.png" />
+    <None Include="media\country_images\resized\country_pm.png" />
+    <None Include="media\country_images\resized\country_pl.png" />
+    <None Include="media\country_images\resized\country_pk.png" />
+    <None Include="media\country_images\resized\country_ph.png" />
+    <None Include="media\country_images\resized\country_pg.png" />
+    <None Include="media\country_images\resized\country_pf.png" />
+    <None Include="media\country_images\resized\country_pe.png" />
+    <None Include="media\country_images\resized\country_pa.png" />
+    <None Include="media\country_images\resized\country_om.png" />
+    <None Include="media\country_images\resized\country_nz.png" />
+    <None Include="media\country_images\resized\country_nu.png" />
+    <None Include="media\country_images\resized\country_nr.png" />
+    <None Include="media\country_images\resized\country_np.png" />
+    <None Include="media\country_images\resized\country_no.png" />
+    <None Include="media\country_images\resized\country_nl.png" />
+    <None Include="media\country_images\resized\country_ni.png" />
+    <None Include="media\country_images\resized\country_ng.png" />
+    <None Include="media\country_images\resized\country_nf.png" />
+    <None Include="media\country_images\resized\country_ne.png" />
+    <None Include="media\country_images\resized\country_nc.png" />
+    <None Include="media\country_images\resized\country_na.png" />
+    <None Include="media\country_images\resized\country_mz.png" />
+    <None Include="media\country_images\resized\country_my.png" />
+    <None Include="media\country_images\resized\country_mx.png" />
+    <None Include="media\country_images\resized\country_mw.png" />
+    <None Include="media\country_images\resized\country_mv.png" />
+    <None Include="media\country_images\resized\country_mu.png" />
+    <None Include="media\country_images\resized\country_mt.png" />
+    <None Include="media\country_images\resized\country_ms.png" />
+    <None Include="media\country_images\resized\country_mr.png" />
+    <None Include="media\country_images\resized\country_mq.png" />
+    <None Include="media\country_images\resized\country_mp.png" />
+    <None Include="media\country_images\resized\country_mo.png" />
+    <None Include="media\country_images\resized\country_mn.png" />
+    <None Include="media\country_images\resized\country_mm.png" />
+    <None Include="media\country_images\resized\country_ml.png" />
+    <None Include="media\country_images\resized\country_mk.png" />
+    <None Include="media\country_images\resized\country_mh.png" />
+    <None Include="media\country_images\resized\country_mg.png" />
+    <None Include="media\country_images\resized\country_mf.png" />
+    <None Include="media\country_images\resized\country_me.png" />
+    <None Include="media\country_images\resized\country_md.png" />
+    <None Include="media\country_images\resized\country_mc.png" />
+    <None Include="media\country_images\resized\country_ma.png" />
+    <None Include="media\country_images\resized\country_ly.png" />
+    <None Include="media\country_images\resized\country_lv.png" />
+    <None Include="media\country_images\resized\country_lu.png" />
+    <None Include="media\country_images\resized\country_lt.png" />
+    <None Include="media\country_images\resized\country_ls.png" />
+    <None Include="media\country_images\resized\country_lr.png" />
+    <None Include="media\country_images\resized\country_lk.png" />
+    <None Include="media\country_images\resized\country_li.png" />
+    <None Include="media\country_images\resized\country_lc.png" />
+    <None Include="media\country_images\resized\country_lb.png" />
+    <None Include="media\country_images\resized\country_la.png" />
+    <None Include="media\country_images\resized\country_kz.png" />
+    <None Include="media\country_images\resized\country_ky.png" />
+    <None Include="media\country_images\resized\country_kw.png" />
+    <None Include="media\country_images\resized\country_kr.png" />
+    <None Include="media\country_images\resized\country_kp.png" />
+    <None Include="media\country_images\resized\country_kn.png" />
+    <None Include="media\country_images\resized\country_km.png" />
+    <None Include="media\country_images\resized\country_ki.png" />
+    <None Include="media\country_images\resized\country_kh.png" />
+    <None Include="media\country_images\resized\country_kg.png" />
+    <None Include="media\country_images\resized\country_ke.png" />
+    <None Include="media\country_images\resized\country_jp.png" />
+    <None Include="media\country_images\resized\country_jo.png" />
+    <None Include="media\country_images\resized\country_jm.png" />
+    <None Include="media\country_images\resized\country_je.png" />
+    <None Include="media\country_images\resized\country_it.png" />
+    <None Include="media\country_images\resized\country_is.png" />
+    <None Include="media\country_images\resized\country_ir.png" />
+    <None Include="media\country_images\resized\country_iq.png" />
+    <None Include="media\country_images\resized\country_io.png" />
+    <None Include="media\country_images\resized\country_in.png" />
+    <None Include="media\country_images\resized\country_im.png" />
+    <None Include="media\country_images\resized\country_il.png" />
+    <None Include="media\country_images\resized\country_ie.png" />
+    <None Include="media\country_images\resized\country_id.png" />
+    <None Include="media\country_images\resized\country_hu.png" />
+    <None Include="media\country_images\resized\country_ht.png" />
+    <None Include="media\country_images\resized\country_hr.png" />
+    <None Include="media\country_images\resized\country_hn.png" />
+    <None Include="media\country_images\resized\country_hm.png" />
+    <None Include="media\country_images\resized\country_hk.png" />
+    <None Include="media\country_images\resized\country_gy.png" />
+    <None Include="media\country_images\resized\country_gw.png" />
+    <None Include="media\country_images\resized\country_gu.png" />
+    <None Include="media\country_images\resized\country_gt.png" />
+    <None Include="media\country_images\resized\country_gs.png" />
+    <None Include="media\country_images\resized\country_gr.png" />
+    <None Include="media\country_images\resized\country_gq.png" />
+    <None Include="media\country_images\resized\country_gp.png" />
+    <None Include="media\country_images\resized\country_gn.png" />
+    <None Include="media\country_images\resized\country_gm.png" />
+    <None Include="media\country_images\resized\country_gl.png" />
+    <None Include="media\country_images\resized\country_gi.png" />
+    <None Include="media\country_images\resized\country_gh.png" />
+    <None Include="media\country_images\resized\country_gg.png" />
+    <None Include="media\country_images\resized\country_gf.png" />
+    <None Include="media\country_images\resized\country_ge.png" />
+    <None Include="media\country_images\resized\country_gd.png" />
+    <None Include="media\country_images\resized\country_gb-wls.png" />
+    <None Include="media\country_images\resized\country_gb-sct.png" />
+    <None Include="media\country_images\resized\country_gb-nir.png" />
+    <None Include="media\country_images\resized\country_gb-eng.png" />
+    <None Include="media\country_images\resized\country_gb.png" />
+    <None Include="media\country_images\resized\country_ga.png" />
+    <None Include="media\country_images\resized\country_fr.png" />
+    <None Include="media\country_images\resized\country_fo.png" />
+    <None Include="media\country_images\resized\country_fm.png" />
+    <None Include="media\country_images\resized\country_fk.png" />
+    <None Include="media\country_images\resized\country_fj.png" />
+    <None Include="media\country_images\resized\country_fi.png" />
+    <None Include="media\country_images\resized\country_et.png" />
+    <None Include="media\country_images\resized\country_es.png" />
+    <None Include="media\country_images\resized\country_er.png" />
+    <None Include="media\country_images\resized\country_eh.png" />
+    <None Include="media\country_images\resized\country_eg.png" />
+    <None Include="media\country_images\resized\country_ee.png" />
+    <None Include="media\country_images\resized\country_ec.png" />
+    <None Include="media\country_images\resized\country_dz.png" />
+    <None Include="media\country_images\resized\country_do.png" />
+    <None Include="media\country_images\resized\country_dm.png" />
+    <None Include="media\country_images\resized\country_dk.png" />
+    <None Include="media\country_images\resized\country_dj.png" />
+    <None Include="media\country_images\resized\country_de.png" />
+    <None Include="media\country_images\resized\country_cz.png" />
+    <None Include="media\country_images\resized\country_cy.png" />
+    <None Include="media\country_images\resized\country_cx.png" />
+    <None Include="media\country_images\resized\country_cw.png" />
+    <None Include="media\country_images\resized\country_cv.png" />
+    <None Include="media\country_images\resized\country_cu.png" />
+    <None Include="media\country_images\resized\country_cr.png" />
+    <None Include="media\country_images\resized\country_co.png" />
+    <None Include="media\country_images\resized\country_cn.png" />
+    <None Include="media\country_images\resized\country_cm.png" />
+    <None Include="media\country_images\resized\country_cl.png" />
+    <None Include="media\country_images\resized\country_ck.png" />
+    <None Include="media\country_images\resized\country_ci.png" />
+    <None Include="media\country_images\resized\country_ch.png" />
+    <None Include="media\country_images\resized\country_cg.png" />
+    <None Include="media\country_images\resized\country_cf.png" />
+    <None Include="media\country_images\resized\country_cd.png" />
+    <None Include="media\country_images\resized\country_cc.png" />
+    <None Include="media\country_images\resized\country_ca.png" />
+    <None Include="media\country_images\resized\country_bz.png" />
+    <None Include="media\country_images\resized\country_by.png" />
+    <None Include="media\country_images\resized\country_bw.png" />
+    <None Include="media\country_images\resized\country_bv.png" />
+    <None Include="media\country_images\resized\country_bt.png" />
+    <None Include="media\country_images\resized\country_bs.png" />
+    <None Include="media\country_images\resized\country_br.png" />
+    <None Include="media\country_images\resized\country_bq.png" />
+    <None Include="media\country_images\resized\country_bo.png" />
+    <None Include="media\country_images\resized\country_bn.png" />
+    <None Include="media\country_images\resized\country_bm.png" />
+    <None Include="media\country_images\resized\country_bl.png" />
+    <None Include="media\country_images\resized\country_bj.png" />
+    <None Include="media\country_images\resized\country_bi.png" />
+    <None Include="media\country_images\resized\country_bh.png" />
+    <None Include="media\country_images\resized\country_bg.png" />
+    <None Include="media\country_images\resized\country_bf.png" />
+    <None Include="media\country_images\resized\country_be.png" />
+    <None Include="media\country_images\resized\country_bd.png" />
+    <None Include="media\country_images\resized\country_bb.png" />
+    <None Include="media\country_images\resized\country_ba.png" />
+    <None Include="media\country_images\resized\country_az.png" />
+    <None Include="media\country_images\resized\country_ax.png" />
+    <None Include="media\country_images\resized\country_aw.png" />
+    <None Include="media\country_images\resized\country_au.png" />
+    <None Include="media\country_images\resized\country_at.png" />
+    <None Include="media\country_images\resized\country_as.png" />
+    <None Include="media\country_images\resized\country_ar.png" />
+    <None Include="media\country_images\resized\country_aq.png" />
+    <None Include="media\country_images\resized\country_ao.png" />
+    <None Include="media\country_images\resized\country_am.png" />
+    <None Include="media\country_images\resized\country_al.png" />
+    <None Include="media\country_images\resized\country_ai.png" />
+    <None Include="media\country_images\resized\country_ag.png" />
+    <None Include="media\country_images\resized\country_af.png" />
+    <None Include="media\country_images\resized\country_ae.png" />
+    <None Include="media\country_images\resized\country_ad.png" />
+    <None Include="Resources\license_dotnetcore.txt" />
+    <None Include="Resources\license_nlog.txt" />
+    <None Include="Resources\license_sharplibzip.txt" />
+    <None Include="Resources\license_newtonsoft.json.txt" />
+    <None Include="Resources\license_fody.txt" />
+    <None Include="Resources\license_markdig.txt" />
+    <None Include="Resources\license_costura.fody.txt" />
+    <None Include="Resources\license_fontawesome.sharp.txt" />
     <EmbeddedResource Include="..\..\Updater\Updater\bin\Release\Updater.exe">
       <Link>Updater.exe</Link>
     </EmbeddedResource>
     <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
-    <None Include="media\lang\aq.png" />
-    <None Include="media\lang\ao.png" />
-    <None Include="media\lang\am.png" />
-    <None Include="media\lang\al.png" />
-    <None Include="media\lang\ai.png" />
-    <None Include="media\lang\ag.png" />
-    <None Include="media\lang\af.png" />
-    <None Include="media\lang\ae.png" />
-    <None Include="media\lang\ad.png" />
-    <None Include="media\lang\zw.png" />
-    <None Include="media\lang\zm.png" />
-    <None Include="media\lang\za.png" />
-    <None Include="media\lang\yt.png" />
-    <None Include="media\lang\ye.png" />
-    <None Include="media\lang\xk.png" />
-    <None Include="media\lang\ws.png" />
-    <None Include="media\lang\wf.png" />
-    <None Include="media\lang\vu.png" />
-    <None Include="media\lang\vn.png" />
-    <None Include="media\lang\vi.png" />
-    <None Include="media\lang\vg.png" />
-    <None Include="media\lang\ve.png" />
-    <None Include="media\lang\vc.png" />
-    <None Include="media\lang\va.png" />
-    <None Include="media\lang\uz.png" />
-    <None Include="media\lang\uy.png" />
-    <None Include="media\lang\us.png" />
-    <None Include="media\lang\um.png" />
-    <None Include="media\lang\ug.png" />
-    <None Include="media\lang\ua.png" />
-    <None Include="media\lang\tz.png" />
-    <None Include="media\lang\tw.png" />
-    <None Include="media\lang\tv.png" />
-    <None Include="media\lang\tt.png" />
-    <None Include="media\lang\tr.png" />
-    <None Include="media\lang\to.png" />
-    <None Include="media\lang\tn.png" />
-    <None Include="media\lang\tm.png" />
-    <None Include="media\lang\tl.png" />
-    <None Include="media\lang\tk.png" />
-    <None Include="media\lang\tj.png" />
-    <None Include="media\lang\th.png" />
-    <None Include="media\lang\tg.png" />
-    <None Include="media\lang\tf.png" />
-    <None Include="media\lang\td.png" />
-    <None Include="media\lang\tc.png" />
-    <None Include="media\lang\sz.png" />
-    <None Include="media\lang\sy.png" />
-    <None Include="media\lang\sx.png" />
-    <None Include="media\lang\sv.png" />
-    <None Include="media\lang\st.png" />
-    <None Include="media\lang\ss.png" />
-    <None Include="media\lang\sr.png" />
-    <None Include="media\lang\so.png" />
-    <None Include="media\lang\sn.png" />
-    <None Include="media\lang\sm.png" />
-    <None Include="media\lang\sl.png" />
-    <None Include="media\lang\sk.png" />
-    <None Include="media\lang\sj.png" />
-    <None Include="media\lang\si.png" />
-    <None Include="media\lang\sh.png" />
-    <None Include="media\lang\sg.png" />
-    <None Include="media\lang\se.png" />
-    <None Include="media\lang\sd.png" />
-    <None Include="media\lang\sc.png" />
-    <None Include="media\lang\sb.png" />
-    <None Include="media\lang\sa.png" />
-    <None Include="media\lang\rw.png" />
-    <None Include="media\lang\ru.png" />
-    <None Include="media\lang\rs.png" />
-    <None Include="media\lang\ro.png" />
-    <None Include="media\lang\re.png" />
-    <None Include="media\lang\qa.png" />
-    <None Include="media\lang\py.png" />
-    <None Include="media\lang\pw.png" />
-    <None Include="media\lang\pt.png" />
-    <None Include="media\lang\ps.png" />
-    <None Include="media\lang\pr.png" />
-    <None Include="media\lang\pn.png" />
-    <None Include="media\lang\pm.png" />
-    <None Include="media\lang\pl.png" />
-    <None Include="media\lang\pk.png" />
-    <None Include="media\lang\ph.png" />
-    <None Include="media\lang\pg.png" />
-    <None Include="media\lang\pf.png" />
-    <None Include="media\lang\pe.png" />
-    <None Include="media\lang\pa.png" />
-    <None Include="media\lang\om.png" />
-    <None Include="media\lang\nz.png" />
-    <None Include="media\lang\nu.png" />
-    <None Include="media\lang\nr.png" />
-    <None Include="media\lang\np.png" />
-    <None Include="media\lang\no.png" />
-    <None Include="media\lang\nl.png" />
-    <None Include="media\lang\ni.png" />
-    <None Include="media\lang\ng.png" />
-    <None Include="media\lang\nf.png" />
-    <None Include="media\lang\ne.png" />
-    <None Include="media\lang\nc.png" />
-    <None Include="media\lang\na.png" />
-    <None Include="media\lang\mz.png" />
-    <None Include="media\lang\my.png" />
-    <None Include="media\lang\mx.png" />
-    <None Include="media\lang\mw.png" />
-    <None Include="media\lang\mv.png" />
-    <None Include="media\lang\mu.png" />
-    <None Include="media\lang\mt.png" />
-    <None Include="media\lang\ms.png" />
-    <None Include="media\lang\mr.png" />
-    <None Include="media\lang\mq.png" />
-    <None Include="media\lang\mp.png" />
-    <None Include="media\lang\mo.png" />
-    <None Include="media\lang\mn.png" />
-    <None Include="media\lang\mm.png" />
-    <None Include="media\lang\ml.png" />
-    <None Include="media\lang\mk.png" />
-    <None Include="media\lang\mh.png" />
-    <None Include="media\lang\mg.png" />
-    <None Include="media\lang\mf.png" />
-    <None Include="media\lang\me.png" />
-    <None Include="media\lang\md.png" />
-    <None Include="media\lang\mc.png" />
-    <None Include="media\lang\ma.png" />
-    <None Include="media\lang\ly.png" />
-    <None Include="media\lang\lv.png" />
-    <None Include="media\lang\lu.png" />
-    <None Include="media\lang\lt.png" />
-    <None Include="media\lang\ls.png" />
-    <None Include="media\lang\lr.png" />
-    <None Include="media\lang\lk.png" />
-    <None Include="media\lang\li.png" />
-    <None Include="media\lang\lc.png" />
-    <None Include="media\lang\lb.png" />
-    <None Include="media\lang\la.png" />
-    <None Include="media\lang\kz.png" />
-    <None Include="media\lang\ky.png" />
-    <None Include="media\lang\kw.png" />
-    <None Include="media\lang\kr.png" />
-    <None Include="media\lang\kp.png" />
-    <None Include="media\lang\kn.png" />
-    <None Include="media\lang\km.png" />
-    <None Include="media\lang\ki.png" />
-    <None Include="media\lang\kh.png" />
-    <None Include="media\lang\kg.png" />
-    <None Include="media\lang\ke.png" />
-    <None Include="media\lang\jp.png" />
-    <None Include="media\lang\jo.png" />
-    <None Include="media\lang\jm.png" />
-    <None Include="media\lang\je.png" />
-    <None Include="media\lang\it.png" />
-    <None Include="media\lang\is.png" />
-    <None Include="media\lang\ir.png" />
-    <None Include="media\lang\iq.png" />
-    <None Include="media\lang\io.png" />
-    <None Include="media\lang\in.png" />
-    <None Include="media\lang\im.png" />
-    <None Include="media\lang\il.png" />
-    <None Include="media\lang\ie.png" />
-    <None Include="media\lang\id.png" />
-    <None Include="media\lang\hu.png" />
-    <None Include="media\lang\ht.png" />
-    <None Include="media\lang\hr.png" />
-    <None Include="media\lang\hn.png" />
-    <None Include="media\lang\hm.png" />
-    <None Include="media\lang\hk.png" />
-    <None Include="media\lang\gy.png" />
-    <None Include="media\lang\gw.png" />
-    <None Include="media\lang\gu.png" />
-    <None Include="media\lang\gt.png" />
-    <None Include="media\lang\gs.png" />
-    <None Include="media\lang\gr.png" />
-    <None Include="media\lang\gq.png" />
-    <None Include="media\lang\gp.png" />
-    <None Include="media\lang\gn.png" />
-    <None Include="media\lang\gm.png" />
-    <None Include="media\lang\gl.png" />
-    <None Include="media\lang\gi.png" />
-    <None Include="media\lang\gh.png" />
-    <None Include="media\lang\gg.png" />
-    <None Include="media\lang\gf.png" />
-    <None Include="media\lang\ge.png" />
-    <None Include="media\lang\gd.png" />
-    <None Include="media\lang\gb-wls.png" />
-    <None Include="media\lang\gb-sct.png" />
-    <None Include="media\lang\gb-nir.png" />
-    <None Include="media\lang\gb-eng.png" />
-    <None Include="media\lang\gb.png" />
-    <None Include="media\lang\ga.png" />
-    <None Include="media\lang\fr.png" />
-    <None Include="media\lang\fo.png" />
-    <None Include="media\lang\fm.png" />
-    <None Include="media\lang\fk.png" />
-    <None Include="media\lang\fj.png" />
-    <None Include="media\lang\fi.png" />
-    <None Include="media\lang\et.png" />
-    <None Include="media\lang\es.png" />
-    <None Include="media\lang\er.png" />
-    <None Include="media\lang\eh.png" />
-    <None Include="media\lang\eg.png" />
-    <None Include="media\lang\ee.png" />
-    <None Include="media\lang\ec.png" />
-    <None Include="media\lang\dz.png" />
-    <None Include="media\lang\do.png" />
-    <None Include="media\lang\dm.png" />
-    <None Include="media\lang\dk.png" />
-    <None Include="media\lang\dj.png" />
-    <None Include="media\lang\de.png" />
-    <None Include="media\lang\cz.png" />
-    <None Include="media\lang\cy.png" />
-    <None Include="media\lang\cx.png" />
-    <None Include="media\lang\cw.png" />
-    <None Include="media\lang\cv.png" />
-    <None Include="media\lang\cu.png" />
-    <None Include="media\lang\cr.png" />
-    <None Include="media\lang\co.png" />
-    <None Include="media\lang\cn.png" />
-    <None Include="media\lang\cm.png" />
-    <None Include="media\lang\cl.png" />
-    <None Include="media\lang\ck.png" />
-    <None Include="media\lang\ci.png" />
-    <None Include="media\lang\ch.png" />
-    <None Include="media\lang\cg.png" />
-    <None Include="media\lang\cf.png" />
-    <None Include="media\lang\cd.png" />
-    <None Include="media\lang\cc.png" />
-    <None Include="media\lang\ca.png" />
-    <None Include="media\lang\bz.png" />
-    <None Include="media\lang\by.png" />
-    <None Include="media\lang\bw.png" />
-    <None Include="media\lang\bv.png" />
-    <None Include="media\lang\bt.png" />
-    <None Include="media\lang\bs.png" />
-    <None Include="media\lang\br.png" />
-    <None Include="media\lang\bq.png" />
-    <None Include="media\lang\bo.png" />
-    <None Include="media\lang\bn.png" />
-    <None Include="media\lang\bm.png" />
-    <None Include="media\lang\bl.png" />
-    <None Include="media\lang\bj.png" />
-    <None Include="media\lang\bi.png" />
-    <None Include="media\lang\bh.png" />
-    <None Include="media\lang\bg.png" />
-    <None Include="media\lang\bf.png" />
-    <None Include="media\lang\be.png" />
-    <None Include="media\lang\bd.png" />
-    <None Include="media\lang\bb.png" />
-    <None Include="media\lang\ba.png" />
-    <None Include="media\lang\az.png" />
-    <None Include="media\lang\ax.png" />
-    <None Include="media\lang\aw.png" />
-    <None Include="media\lang\au.png" />
-    <None Include="media\lang\at.png" />
-    <None Include="media\lang\as.png" />
-    <None Include="media\lang\ar.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

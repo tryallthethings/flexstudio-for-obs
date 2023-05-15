@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Resources;
 using System.Threading;
@@ -86,6 +87,16 @@ namespace Flexstudio_for_OBS
                     control.Text = translatedText;
                 }
             }
+
+            // Get the current font size and style
+            float currentSize = control.Font.Size;
+            FontStyle currentStyle = control.Font.Style;
+
+            // Get the custom font with the original size and style
+            Font customFont = FontHelper.GetCustomFont(currentSize, currentStyle);
+
+            // Apply the custom font
+            control.Font = customFont;
         }
 
         public static void UpdateContextMenuText(ContextMenuStrip contextMenu)

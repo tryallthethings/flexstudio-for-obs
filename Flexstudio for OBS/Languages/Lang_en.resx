@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="addNewOBSbtn" xml:space="preserve">
     <value>Download new OBS version</value>
   </data>
@@ -147,8 +150,14 @@
   <data name="backupSuccessHint" xml:space="preserve">
     <value>Backup {0} sucessfully created.</value>
   </data>
+  <data name="btnAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="btnBackup" xml:space="preserve">
     <value>Backup</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
     <value>Dashboard</value>
@@ -245,6 +254,21 @@
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
     <value>Set default drive letter:</value>
+  </data>
+  <data name="lblLibraries" xml:space="preserve">
+    <value>Libraries used</value>
+  </data>
+  <data name="lblLicense" xml:space="preserve">
+    <value>License for</value>
+  </data>
+  <data name="lblTranslators" xml:space="preserve">
+    <value>Translators</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Show license</value>
+  </data>
+  <data name="License information" xml:space="preserve">
+    <value>License information</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
     <value>OBS installation on this PC</value>

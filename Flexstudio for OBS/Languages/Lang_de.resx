@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="addNewOBSbtn" xml:space="preserve">
     <value>Neue OBS Version herunterladen</value>
   </data>
@@ -147,8 +150,14 @@
   <data name="backupSuccessHint" xml:space="preserve">
     <value>Datensicherung {0} erfolgreich erstellt</value>
   </data>
+  <data name="btnAbout" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="btnBackup" xml:space="preserve">
     <value>Datensicherung</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Schliessen</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
     <value>Dashboard</value>
@@ -245,6 +254,21 @@
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
     <value>Wähle Standard Laufwerksbuchstabe:</value>
+  </data>
+  <data name="lblLibraries" xml:space="preserve">
+    <value>Benutzte Bibliotheken</value>
+  </data>
+  <data name="lblLicense" xml:space="preserve">
+    <value>Lizenz für</value>
+  </data>
+  <data name="lblTranslators" xml:space="preserve">
+    <value>Übersetzer</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Lizenz anzeigen</value>
+  </data>
+  <data name="License information" xml:space="preserve">
+    <value>Lizenzinformation</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
     <value>OBS Installation auf diesem PC</value>

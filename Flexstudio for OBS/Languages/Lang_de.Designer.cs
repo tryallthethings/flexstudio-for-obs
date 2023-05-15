@@ -61,6 +61,15 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Über.
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Neue OBS Version herunterladen.
         /// </summary>
         internal static string addNewOBSbtn {
@@ -151,11 +160,29 @@ namespace Flexstudio_for_OBS.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Über.
+        /// </summary>
+        internal static string btnAbout {
+            get {
+                return ResourceManager.GetString("btnAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Datensicherung.
         /// </summary>
         internal static string btnBackup {
             get {
                 return ResourceManager.GetString("btnBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schliessen.
+        /// </summary>
+        internal static string btnClose {
+            get {
+                return ResourceManager.GetString("btnClose", resourceCulture);
             }
         }
         
@@ -444,6 +471,51 @@ namespace Flexstudio_for_OBS.Languages {
         internal static string lblDefaultDrive {
             get {
                 return ResourceManager.GetString("lblDefaultDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benutzte Bibliotheken.
+        /// </summary>
+        internal static string lblLibraries {
+            get {
+                return ResourceManager.GetString("lblLibraries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lizenz für.
+        /// </summary>
+        internal static string lblLicense {
+            get {
+                return ResourceManager.GetString("lblLicense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Übersetzer.
+        /// </summary>
+        internal static string lblTranslators {
+            get {
+                return ResourceManager.GetString("lblTranslators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lizenz anzeigen.
+        /// </summary>
+        internal static string License {
+            get {
+                return ResourceManager.GetString("License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lizenzinformation.
+        /// </summary>
+        internal static string License_information {
+            get {
+                return ResourceManager.GetString("License information", resourceCulture);
             }
         }
         

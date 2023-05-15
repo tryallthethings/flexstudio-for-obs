@@ -11,8 +11,6 @@ namespace Flexstudio_for_OBS
     class OBSUpdates
     {
         private static HttpClient httpClient;
-        private static bool isDebug = false;
-
         public static async Task<List<ReleaseInfo>> FetchLastReleasesAsync(int count)
         {
             httpClient = new HttpClient();

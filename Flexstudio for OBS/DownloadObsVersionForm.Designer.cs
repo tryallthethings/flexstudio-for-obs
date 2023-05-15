@@ -130,6 +130,8 @@ namespace Flexstudio_for_OBS
             this.Controls.Add(this.cmbVersions);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DownloadObsVersionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Flexstudio for OBS - Download an OBS version";

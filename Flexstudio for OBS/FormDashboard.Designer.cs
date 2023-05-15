@@ -47,10 +47,10 @@ namespace Flexstudio_for_OBS
             this.lblDefaultDriveDashboard.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDefaultDriveDashboard.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblDefaultDriveDashboard.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDefaultDriveDashboard.Location = new System.Drawing.Point(267, 0);
+            this.lblDefaultDriveDashboard.Location = new System.Drawing.Point(215, 0);
             this.lblDefaultDriveDashboard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDefaultDriveDashboard.Name = "lblDefaultDriveDashboard";
-            this.lblDefaultDriveDashboard.Size = new System.Drawing.Size(49, 49);
+            this.lblDefaultDriveDashboard.Size = new System.Drawing.Size(39, 39);
             this.lblDefaultDriveDashboard.TabIndex = 4;
             this.lblDefaultDriveDashboard.Text = "XXX";
             this.lblDefaultDriveDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -61,10 +61,10 @@ namespace Flexstudio_for_OBS
             this.lblDefaultOBS.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDefaultOBS.Font = new System.Drawing.Font("Roboto", 12F);
             this.lblDefaultOBS.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDefaultOBS.Location = new System.Drawing.Point(267, 49);
+            this.lblDefaultOBS.Location = new System.Drawing.Point(215, 39);
             this.lblDefaultOBS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDefaultOBS.Name = "lblDefaultOBS";
-            this.lblDefaultOBS.Size = new System.Drawing.Size(49, 49);
+            this.lblDefaultOBS.Size = new System.Drawing.Size(39, 39);
             this.lblDefaultOBS.TabIndex = 5;
             this.lblDefaultOBS.Text = "XXX";
             this.lblDefaultOBS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -78,13 +78,12 @@ namespace Flexstudio_for_OBS
             this.tableLayoutPanel1.Controls.Add(this.lblDefaultOBS, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblDefaultDriveDashboard, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnMapDrive, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 15);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(586, 98);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(469, 78);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // btnStartOBS
@@ -97,14 +96,14 @@ namespace Flexstudio_for_OBS
             this.btnStartOBS.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartOBS.ForeColor = System.Drawing.Color.LightGray;
             this.btnStartOBS.IconChar = FontAwesome.Sharp.IconChar.Play;
-            this.btnStartOBS.IconColor = System.Drawing.Color.White;
+            this.btnStartOBS.IconColor = System.Drawing.Color.LightGray;
             this.btnStartOBS.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStartOBS.IconSize = 35;
             this.btnStartOBS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStartOBS.Location = new System.Drawing.Point(2, 51);
+            this.btnStartOBS.Location = new System.Drawing.Point(2, 41);
             this.btnStartOBS.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartOBS.Name = "btnStartOBS";
-            this.btnStartOBS.Size = new System.Drawing.Size(261, 44);
+            this.btnStartOBS.Size = new System.Drawing.Size(209, 35);
             this.btnStartOBS.TabIndex = 3;
             this.btnStartOBS.Text = "Start Default OBS version";
             this.btnStartOBS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,14 +122,14 @@ namespace Flexstudio_for_OBS
             this.btnMapDrive.Font = new System.Drawing.Font("Roboto", 10F);
             this.btnMapDrive.ForeColor = System.Drawing.Color.LightGray;
             this.btnMapDrive.IconChar = FontAwesome.Sharp.IconChar.HardDrive;
-            this.btnMapDrive.IconColor = System.Drawing.Color.White;
+            this.btnMapDrive.IconColor = System.Drawing.Color.LightGray;
             this.btnMapDrive.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMapDrive.IconSize = 35;
             this.btnMapDrive.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMapDrive.Location = new System.Drawing.Point(2, 2);
             this.btnMapDrive.Margin = new System.Windows.Forms.Padding(2);
             this.btnMapDrive.Name = "btnMapDrive";
-            this.btnMapDrive.Size = new System.Drawing.Size(261, 44);
+            this.btnMapDrive.Size = new System.Drawing.Size(209, 35);
             this.btnMapDrive.TabIndex = 2;
             this.btnMapDrive.Text = "Map Default Drive";
             this.btnMapDrive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,10 +143,9 @@ namespace Flexstudio_for_OBS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBottom.Controls.Add(this.gitHubLink);
             this.pnlBottom.Controls.Add(this.lblAppHint);
-            this.pnlBottom.Location = new System.Drawing.Point(15, 466);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlBottom.Location = new System.Drawing.Point(12, 373);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(888, 68);
+            this.pnlBottom.Size = new System.Drawing.Size(710, 54);
             this.pnlBottom.TabIndex = 7;
             // 
             // gitHubLink
@@ -157,10 +155,10 @@ namespace Flexstudio_for_OBS
             this.gitHubLink.Font = new System.Drawing.Font("Roboto", 10F);
             this.gitHubLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
             this.gitHubLink.LinkColor = System.Drawing.Color.LightGray;
-            this.gitHubLink.Location = new System.Drawing.Point(0, 48);
-            this.gitHubLink.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.gitHubLink.Location = new System.Drawing.Point(0, 37);
+            this.gitHubLink.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.gitHubLink.Name = "gitHubLink";
-            this.gitHubLink.Size = new System.Drawing.Size(409, 20);
+            this.gitHubLink.Size = new System.Drawing.Size(337, 17);
             this.gitHubLink.TabIndex = 1;
             this.gitHubLink.TabStop = true;
             this.gitHubLink.Text = "https://github.com/tryallthethings/flexstudio-for-obs";
@@ -173,19 +171,18 @@ namespace Flexstudio_for_OBS
             this.lblAppHint.Font = new System.Drawing.Font("Roboto", 10F);
             this.lblAppHint.ForeColor = System.Drawing.Color.LightGray;
             this.lblAppHint.Location = new System.Drawing.Point(0, 0);
-            this.lblAppHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAppHint.Name = "lblAppHint";
-            this.lblAppHint.Size = new System.Drawing.Size(888, 69);
+            this.lblAppHint.Size = new System.Drawing.Size(710, 55);
             this.lblAppHint.TabIndex = 0;
             this.lblAppHint.Text = "If have feature suggestions, found bugs or want to help translate the project, pl" +
     "ease visit the GitHub page.";
             // 
             // FormDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(918, 549);
+            this.ClientSize = new System.Drawing.Size(734, 439);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

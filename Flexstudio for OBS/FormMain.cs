@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Resources;
 using System.Threading;
 using static Flexstudio_for_OBS.Logging;
+using System.Drawing.Text;
 
 namespace Flexstudio_for_OBS
 {
@@ -29,13 +30,12 @@ namespace Flexstudio_for_OBS
         // Set default message timeout time (10s)
         private Int32 _messageTimeout = 10000;
 
-        // keep track if the drive is mapped
-        public static bool isMapped = false;
+        public static PrivateFontCollection pfc;
 
         public FormMain()
         {
             InitializeComponent();
-
+            InitializeFontCollection();
             // Set main form instance for user message panel
             MainFormInstance = this;
 
@@ -114,9 +114,6 @@ namespace Flexstudio_for_OBS
 
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        // Function to load new Form and make adjustments to GUI
-        private Dictionary<Type, Form> formCache = new Dictionary<Type, Form>();
 
         private void LoadForm<T>(Button button) where T : Form, new()
         {
@@ -235,12 +232,18 @@ namespace Flexstudio_for_OBS
             LoadForm<FormSettings>((Button)sender);
         }
 
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            LoadForm<FormAbout>((Button)sender);
+        }
+
         // Move visual indicator to button position
         private void adjustIndicator (Button btn)
         {
             pnlNavIndicator.Height = btn.Height;
             pnlNavIndicator.Top = btn.Top;
             pnlNavIndicator.Left = btn.Left;
+            pnlNavIndicator.BringToFront();
             ButtonColorReset(btn);
         }
 
@@ -455,7 +458,7 @@ namespace Flexstudio_for_OBS
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Remove subst drive if enabled
-            if (sett.ing.HasKeyWithValue("autoRemoveDefaultDrive") && sett.ing.HasKeyWithValue("defaultDrive") && isMapped)
+            if (sett.ing.HasKeyWithValue("autoRemoveDefaultDrive") && sett.ing.HasKeyWithValue("defaultDrive") && sett.ing.DriveIsMapped)
             {
                 try
                 {
@@ -667,6 +670,46 @@ namespace Flexstudio_for_OBS
             Program.SetApplicationCulture(selectedCulture);
             sett.ing["language"] = selectedCulture.ToString();
         }
+
+        private void InitializeFontCollection()
+        {
+            // Initialize the font collection
+            pfc = new PrivateFontCollection();
+
+            List<string> customFonts = new List<string>
+            {
+                "Flexstudio_for_OBS.fonts.Roboto-Regular.ttf",
+                "Flexstudio_for_OBS.fonts.Roboto-Bold.ttf",
+            };
+
+            foreach (string font in customFonts)
+            {
+                // Get the font from the resources
+                var fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(font);
+
+                // Check if the stream is null
+                if (fontStream != null)
+                {
+                    // Create a byte array to hold the font data
+                    byte[] fontData = new byte[fontStream.Length];
+
+                    // Read the font data from the resource
+                    fontStream.Read(fontData, 0, (int)fontStream.Length);
+
+                    // Allocate memory for the font data
+                    IntPtr fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
+
+                    // Copy the font data to the allocated memory
+                    Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+
+                    // Add the font to the font collection
+                    pfc.AddMemoryFont(fontPtr, fontData.Length);
+
+                    // Free the memory that was allocated for the font
+                    Marshal.FreeCoTaskMem(fontPtr);
+                }
+            }
+        }
     }
 
     public interface IMainFormDependent
@@ -719,5 +762,19 @@ namespace Flexstudio_for_OBS
         }
     }
 
-
+    public static class FontHelper
+    {
+        public static Font GetCustomFont(float size, FontStyle style)
+        {
+            try
+            {
+                return new Font(FormMain.pfc.Families[0], size, style, GraphicsUnit.Point, ((byte)(0)));
+            }
+            catch
+            {
+                Log.Error("Could not load font");
+                return new Font("Arial", size, style, GraphicsUnit.Point, ((byte)(0)));
+            }
+        }
+    }
 }
