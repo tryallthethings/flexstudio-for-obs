@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Informatie</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Download new OBS version</value>
+    <value>Nieuwe OBS versie downloaden</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Backing up</value>
+    <value>Back-up maken</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Backup</value>
+    <value>Back-up</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Backup could not be created. Error:</value>
+    <value>Back-up kon niet worden gemaakt. Fout:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>You need to select at least one item to be included in the Backup!</value>
+    <value>U moet ten minste één item selecteren om toe te voegen aan de back-up!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>This will add anything else OBS related (binaries, plugins, etc.) to the backup</value>
+    <value>Dit zal alle andere OBS gerelateerde (binaries, plugins, enz.) aan de back-up toevoegen</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>This will add the OBS profile to the backup</value>
+    <value>Dit zal het OBS-profiel aan de back-up toevoegen</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>This OBS version is still running.</value>
+    <value>Deze OBS versie is nog steeds actief.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Backups</value>
+    <value>Back-ups</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Backup {0} sucessfully created.</value>
+    <value>Backup {0} succesvol gemaakt.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>About</value>
+    <value>Informatie</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Backup</value>
+    <value>Back-up</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Close</value>
+    <value>Afsluiten</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
     <value>Dashboard</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Download selected version</value>
+    <value>Geselecteerde versie downloaden</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Map default drive</value>
+    <value>Kaart standaard schijf</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS versions</value>
+    <value>OBS versies</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Instellingen</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Start OBS</value>
+    <value>OBS starten</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>annuleren</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Automatically map default drive on app start</value>
+    <value>Automatisch een standaard schijf toewijzen bij starten app</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Automatically remove default drive when application is closed</value>
+    <value>Automatisch verwijderen van de standaard schijf wanneer de toepassing is gesloten</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Automatically start default OBS version on app start</value>
+    <value>Automatisch de standaard OBS versie starten bij starten app</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Check daily for updates</value>
+    <value>Controleer dagelijks op updates</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Invalid setting for parameter 'autoMapDefaultDrive' or 'autoStartDefaultOBS' detected. Error:</value>
+    <value>Ongeldige instelling voor parameter 'autoMapDefaultDrive' of 'autoStartDefaultOBS' gedetecteerd. Fout:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>You didn't select a default OBS version yet. Please do it in the OBS versions menu.</value>
+    <value>Je hebt nog geen standaard OBS versie geselecteerd. Doe dit in het OBS versie-menu.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>not set</value>
+    <value>niet ingesteld</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Successfully removed mapped Drive {0}:</value>
+    <value>Succesvol toegewezen Drive {0} verwijderd:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
+    <value>Deze OBS versie is al actief, maar kan niet naar de voorgrond worden gebracht. Wilt u deze beëindigen en een nieuwe instantie starten?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Standaard</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>The default OBS version was deleted</value>
+    <value>De standaard OBS versie is verwijderd</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Delete</value>
+    <value>Verwijderen</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Download and Extraction canceled.</value>
+    <value>Downloaden en uitpakken geannuleerd.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Download and Extraction finished successfully.</value>
+    <value>Downloaden en uitpakken is succesvol voltooid.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Download selected version</value>
+    <value>Geselecteerde versie downloaden</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Downloaden</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Download or Extraction is still running. This will be canceled if you close the window. Continue?</value>
+    <value>Download of Extraction is nog steeds actief. Dit zal worden geannuleerd als u het venster sluit. Doorgaan?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Foutmelding</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Extracting</value>
+    <value>Uitpakken</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>Map</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Folder already exists</value>
+    <value>Map bestaat al</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Folder</value>
+    <value>Map</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>The target folder already exists. Should it be overwritten or do you want to cancel the action? {newline}{newline}Yes - Overwrite{newline}No - Rename{newline}Cancel - Cancel action</value>
+    <value>De doelmap bestaat al. Moet het worden overschreven of wilt u de actie annuleren? {newline}{newline}Ja - Overschrijf{newline}Nee - Hernoem{newline}Annuleren - actie annuleren</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>You have reached the GitHub API rate limit. Please try again later.</value>
+    <value>Je hebt de GitHub API limiet bereikt. Probeer het later opnieuw.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>If have feature suggestions, found bugs or want to help translate the project, please visit the GitHub page.</value>
+    <value>Als u suggesties heeft voor een functie, bugs hebt gevonden of wilt helpen met het vertalen van het project, ga dan naar de GitHub pagina.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Set default drive letter:</value>
+    <value>Stel standaard stationsletter in:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Libraries used</value>
+    <value>Gebruikte bibliotheken</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>License for</value>
+    <value>Licentie voor</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Translators</value>
+    <value>Vertalers</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Show license</value>
+    <value>Toon licentie</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>License information</value>
+    <value>Licentie informatie</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS installation on this PC</value>
+    <value>OBS installatie op deze PC</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Map default drive</value>
+    <value>Kaart standaard schijf</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>No default drive letter set. Please check settings.</value>
+    <value>Geen standaard stationsletter ingesteld. Controleer de instellingen.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Not implemented yet, sorry!</value>
+    <value>Nog niet geïmplementeerd, sorry!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>Backup OBS</value>
+    <value>Back-up OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS versions</value>
+    <value>OBS versies</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>An error occurred. Error:</value>
+    <value>Er is een fout opgetreden. Fout:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>At least one OBS version is still running. Please close it before removing the mapped drive</value>
+    <value>Ten minste één OBS versie is nog steeds actief. Sluit deze voordat u de mapped drive verwijdert</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS version</value>
+    <value>OBS versie</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>This OBS version is already running.</value>
+    <value>Deze OBS versie is al actief.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete the selected version?</value>
+    <value>Weet u zeker dat u de geselecteerde versie wilt verwijderen?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Could not delete the OBS version. Error:</value>
+    <value>OBS versie kon niet verwijderd worden. Fout:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Please remove the local OBS installation via the control panel.</value>
+    <value>Verwijder de lokale OBS-installatie via het controlepaneel.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Error retrieving OBS versions. Check internet connection</value>
+    <value>Fout bij ophalen OBS-versies. Controleer de internetverbinding</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>The selected OBS version is currently running. Please close it before attempting to delete.</value>
+    <value>De geselecteerde OBS versie is momenteel actief. Sluit deze voordat u probeert te verwijderen.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
+    <value>Deze OBS versie is al actief, maar kan niet naar de voorgrond worden gebracht. Wilt u deze beëindigen en een nieuwe instantie starten?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS version successfully removed</value>
+    <value>OBS versie succesvol verwijderd</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Open folder</value>
+    <value>Map openen</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Path to OBS version</value>
+    <value>Pad naar OBS versie</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Please select a release to download</value>
+    <value>Selecteer een release om te downloaden</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Backup profile</value>
+    <value>Back-up profiel</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Refresh</value>
+    <value>Vernieuwen</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Release notes for</value>
+    <value>Release notities voor</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Released on</value>
+    <value>Uitgebracht op</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Remaining</value>
+    <value>Resterend</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Remove Drive</value>
+    <value>Drive verwijderen</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Restore</value>
+    <value>Herstellen</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Set as default</value>
+    <value>Instellen als standaard</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Start</value>
+    <value>Beginnen</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>Vernieuwen</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Only OBS releases with a .ZIP file will be shown here</value>
+    <value>Alleen OBS releases met een .ZIP bestand worden hier getoond</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>View release notes on GitHub</value>
+    <value>Bekijk release notities op GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Error creating virtual drive</value>
+    <value>Fout bij maken virtuele schijf</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtual drive created successfully</value>
+    <value>Virtuele schijf succesvol aangemaakt</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Error removing virtual drive</value>
+    <value>Fout bij verwijderen virtuele schijf</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtual drive removed successfully</value>
+    <value>Virtuele schijf succesvol verwijderd</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Waarschuwing</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Zip file not found for this release.</value>
+    <value>Zip bestand niet gevonden voor deze release.</value>
   </data>
 </root>
