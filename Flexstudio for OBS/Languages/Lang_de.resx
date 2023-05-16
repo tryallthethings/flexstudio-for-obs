@@ -130,7 +130,7 @@
     <value>Sichern</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler::</value>
+    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
     <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
@@ -148,7 +148,7 @@
     <value>Datensicherungen</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt</value>
+    <value>Datensicherung {0} erfolgreich erstellt.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
     <value>Über</value>
@@ -205,7 +205,7 @@
     <value>Laufwerk {0}: erfolgreich entfernt.</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
+    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>Standard</value>
@@ -280,7 +280,7 @@
     <value>Verbinde Standardlaufwerk</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen</value>
+    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
     <value>Noch nicht implementiert, sorry!</value>
