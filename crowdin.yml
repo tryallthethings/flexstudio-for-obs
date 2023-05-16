@@ -1,0 +1,3 @@
+files:
+  - source: /Flexstudio for OBS/Languages/Lang_en.resx
+    translation: /Flexstudio for OBS/Languages/Lang_%two_letters_code%.resx
