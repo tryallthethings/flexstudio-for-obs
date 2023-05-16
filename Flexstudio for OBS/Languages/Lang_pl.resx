@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Über</value>
+    <value>O programie</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Neue OBS Version herunterladen</value>
+    <value>Pobierz nową wersję OBS</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Sichere</value>
+    <value>Tworzenie kopii zapasowej</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Sichern</value>
+    <value>Kopia zapasowa</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
+    <value>Nie można utworzyć kopii zapasowej. Błąd:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
+    <value>Musisz wybrać co najmniej jeden element do umieszczenia w kopii zapasowej!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>Fügt die restlichen Daten (Programmdaten, Plugins, etc.) zur Datensicherung hinzu</value>
+    <value>Spowoduje to dodanie czegokolwiek innego związanego z OBS (binarki, wtyczki itp.) do kopii zapasowej</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>Fügt das OBS Profil zur Datensicherung hinzu</value>
+    <value>To doda profil OBS do kopii zapasowej</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft noch.</value>
+    <value>Ta wersja OBS jest nadal uruchomiona.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Datensicherungen</value>
+    <value>Kopie zapasowe</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt.</value>
+    <value>Kopia zapasowa {0} pomyślnie utworzona.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>O programie</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Datensicherung</value>
+    <value>Kopia zapasowa</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Schliessen</value>
+    <value>Zamknij</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>Pulpit</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Pobierz wybraną wersję</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Domyślny dysk mapy</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>Wersje OBS</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Ustawienia</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Starte OBS</value>
+    <value>Uruchom OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Anuluj</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk beim Start der App</value>
+    <value>Automatycznie mapuj domyślny dysk przy starcie aplikacji</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Entferne Standardlaufwerk beim Schliessen der App</value>
+    <value>Automatycznie usuń domyślny dysk po zamknięciu aplikacji</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Starte Standard OBS-Version beim Start der App</value>
+    <value>Automatycznie uruchom domyślną wersję OBS przy starcie aplikacji</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Prüfe einmal täglich auf Updates</value>
+    <value>Sprawdzaj aktualizacje codziennie</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Ungültiger Wert für die Einstellung 'autoMapDefaultDrive' oder 'autoStartDefaultOBS' erkannt. Fehler:</value>
+    <value>Wykryto nieprawidłowe ustawienie parametru 'autoMapDefaultDrive' lub 'autoStartDefaultOBS'. Błąd:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>Es wurde keine Standard OBS Version eingestellt. Bitte mache dies im Menüpunkt OBS Versionen.</value>
+    <value>Nie wybrałeś jeszcze domyślnej wersji OBS. Zrób to w menu wersji OBS.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>nicht eingestellt</value>
+    <value>nie ustawiono</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Laufwerk {0}: erfolgreich entfernt.</value>
+    <value>Pomyślnie usunięto mapowany Dysk {0}:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
+    <value>Ta wersja OBS jest już uruchomiona, ale nie może być wprowadzona na pierwszy plan. Czy chcesz ją zakończyć i rozpocząć nową instancję?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standard</value>
+    <value>Domyślny</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+    <value>Domyślna wersja OBS została usunięta</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Lösche</value>
+    <value>Usuń</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Herunterladen und Entpacken abgebrochen.</value>
+    <value>Pobieranie i ekstrakcja anulowane.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Herunterladen und entpacken erfolgreich abgeschlossen.</value>
+    <value>Pobieranie i ekstrakcja zakończone pomyślnie.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Pobierz wybraną wersję</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Herunterladen</value>
+    <value>Pobieranie</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Herunterladen oder Entpacken läuft noch. Dies wird abgebrochen, wenn das Fenster geschlossen wird. Fortfahren?</value>
+    <value>Pobieranie lub Ekstrakcja jest nadal uruchomiona. Zostanie to anulowane po zamknięciu okna. Kontynuować?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>Błąd</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Entpacken</value>
+    <value>Rozpakowywanie</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Folder</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Verzeichnis existiert bereits</value>
+    <value>Folder już istnieje</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Folder</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>Das Zielverzeichnis existiert bereits. Soll es überschrieben werden oder die Aktion abgebrochen werden?{newline}{newline}Ja - Überschreiben{newline}Nein - Umbenennen{newline}Abbrechen - Aktion abbrechen</value>
+    <value>Katalog docelowy już istnieje. Czy powinien być nadpisany czy chcesz anulować akcję? {newline}{newline}Tak - Nadpisz{newline}Nie - Zmień nazwę{newline}Anuluj działanie</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>Das GitHub API Limit wurde erreicht. Bitte später nochmal versuchen.</value>
+    <value>Osiągnąłeś limit API GitHub. Spróbuj ponownie później.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>Funktionswünsche, Bug gefunden oder du möchtest bei der Übersetzung des Projekts helfen? Besuche die GitHub Projektseite.</value>
+    <value>Jeśli masz sugestie funkcji, błędy lub chcesz pomóc w tłumaczeniu projektu, odwiedź stronę GitHub.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Wähle Standard Laufwerksbuchstabe:</value>
+    <value>Ustaw domyślną literę dysku:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Benutzte Bibliotheken</value>
+    <value>Użyte biblioteki</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>Lizenz für</value>
+    <value>Licencja dla</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Übersetzer</value>
+    <value>Tłumacze</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Lizenz anzeigen</value>
+    <value>Pokaż licencję</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>Lizenzinformation</value>
+    <value>Informacje o licencji</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS Installation auf diesem PC</value>
+    <value>Instalacja OBS na tym komputerze</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Domyślny dysk mapy</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
+    <value>Nie ustawiono domyślnej litery dysku. Proszę sprawdzić ustawienia.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Noch nicht implementiert, sorry!</value>
+    <value>Jeszcze nie zaimplementowane, przepraszamy!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>OBS sichern</value>
+    <value>Kopia zapasowa OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>Wersje OBS</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>Es ist ein Fehler aufgetreten. Fehler:</value>
+    <value>Wystąpił błąd. Błąd:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>Mindestens eine OBS Version ist noch aktiv. Bitte beende diese vorm Entfernen des Laufwerks.</value>
+    <value>Co najmniej jedna wersja OBS jest nadal uruchomiona. Zamknij ją przed usunięciem zamapowanego dysku</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS Version</value>
+    <value>Wersja OBS</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits.</value>
+    <value>Ta wersja OBS jest już uruchomiona.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Sicher, dass die ausgewählte Version gelöscht werden soll?</value>
+    <value>Czy na pewno chcesz usunąć wybraną wersję?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Die OBS Version konnte nicht gelöscht werden. Fehler::</value>
+    <value>Nie można usunąć wersji OBS. Błąd:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Bitte entferne die lokale OBS Installation über die Systemsteuerung.</value>
+    <value>Usuń lokalną instalację OBS za pośrednictwem panelu sterowania.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Fehler beim Abrufen der OBS Versionen von GitHub. Prüfe Internetverbindung.</value>
+    <value>Błąd podczas pobierania wersji OBS. Sprawdź połączenie internetowe</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>Die ausgewählte OBS Version ist noch aktiv. Bitte schliesse diese bevor du versuchst sie zu löschen.</value>
+    <value>Wybrana wersja OBS jest aktualnie uruchomiona. Zamknij ją przed próbą usunięcia.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits aber reagiert nicht. Soll sie beendet werden und erneut gestarten werden?</value>
+    <value>Ta wersja OBS jest już uruchomiona, ale nie może być wprowadzona na pierwszy plan. Czy chcesz ją zakończyć i rozpocząć nową instancję?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS Version erfolgreich entfernt</value>
+    <value>Wersja OBS została pomyślnie usunięta</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Öffne Verzeichnis</value>
+    <value>Otwórz folder</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Pfad zur OBS-Version</value>
+    <value>Ścieżka do wersji OBS</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Bitte wähle eine Version aus.</value>
+    <value>Wybierz wydanie do pobrania</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profil sichern</value>
+    <value>Profil kopii zapasowej</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>Odśwież</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Versionshinweise für</value>
+    <value>Informacje o wydaniu dla</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Veröffentlicht am</value>
+    <value>Wydane dnia</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Verbleibend</value>
+    <value>Pozostało</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Entferne Laufwerk</value>
+    <value>Usuń Dysk</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>Przywróć</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Als Standard setzen</value>
+    <value>Ustaw jako domyślne</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Starten</value>
+    <value>Rozpocznij</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>Aktualizuj</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Nur OBS Versionen mit .ZIP-Datei werden hier angezeigt</value>
+    <value>Tutaj będą wyświetlane tylko wersje OBS z plikiem .ZIP</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>Zeige Versionshinweise auf GitHub</value>
+    <value>Zobacz notatki o wydaniu na GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Problem beim Erstellen des virtuellen Laufwerks</value>
+    <value>Błąd podczas tworzenia dysku wirtualnego</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich erstellt</value>
+    <value>Pomyślnie utworzono napęd wirtualny</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Problem beim Entfernen des virtuellen Laufwerks</value>
+    <value>Błąd podczas usuwania dysku wirtualnego</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich entfernt</value>
+    <value>Pomyślnie usunięto napęd wirtualny</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>Ostrzeżenie</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Es wurde keine ZIP-Datei für diese Version gefunden.</value>
+    <value>Nie znaleziono pliku zip dla tej wersji.</value>
   </data>
 </root>

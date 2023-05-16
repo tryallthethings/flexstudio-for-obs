@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Über</value>
+    <value>О программе</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Neue OBS Version herunterladen</value>
+    <value>Загрузить новую версию OBS</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Sichere</value>
+    <value>Резервное копирование</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Sichern</value>
+    <value>Резервное копирование</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
+    <value>Резервная копия не может быть создана. Ошибка:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
+    <value>Необходимо выбрать по крайней мере один элемент для включения в резервную копию!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>Fügt die restlichen Daten (Programmdaten, Plugins, etc.) zur Datensicherung hinzu</value>
+    <value>Это добавит что-либо связанное с OBS (бинарные файлы, плагины и т.д.) в резервную копию</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>Fügt das OBS Profil zur Datensicherung hinzu</value>
+    <value>Это добавит профиль OBS в резервную копию</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft noch.</value>
+    <value>Эта версия OBS все еще запущена.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Datensicherungen</value>
+    <value>Резервные копии</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt.</value>
+    <value>{0} успешно создано.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>О программе</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Datensicherung</value>
+    <value>Резервное копирование</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Schliessen</value>
+    <value>Закрыть</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>Панель</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Скачать выбранную версию</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Диск по умолчанию</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>Версии OBS</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Настройки</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Starte OBS</value>
+    <value>Запустить OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Отмена</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk beim Start der App</value>
+    <value>Автоматически соотносить диск по умолчанию при запуске приложения</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Entferne Standardlaufwerk beim Schliessen der App</value>
+    <value>Автоматически удалять диск по умолчанию при закрытии приложения</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Starte Standard OBS-Version beim Start der App</value>
+    <value>Автоматически запускать версию OBS по умолчанию при запуске приложения</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Prüfe einmal täglich auf Updates</value>
+    <value>Проверять наличие обновлений ежедневно</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Ungültiger Wert für die Einstellung 'autoMapDefaultDrive' oder 'autoStartDefaultOBS' erkannt. Fehler:</value>
+    <value>Неверная настройка параметра 'autoMapDefaultDrive' или 'autoStartDefaultOBS' обнаружена. Ошибка:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>Es wurde keine Standard OBS Version eingestellt. Bitte mache dies im Menüpunkt OBS Versionen.</value>
+    <value>Вы еще не выбрали версию OBS по умолчанию. Пожалуйста, сделайте это в меню версий OBS.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>nicht eingestellt</value>
+    <value>не задано</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Laufwerk {0}: erfolgreich entfernt.</value>
+    <value>Диск сопоставления {0} успешно удалён :</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
+    <value>Эта версия OBS уже запущена, но не может быть перенесена в фоновый режим. Вы хотите завершить ее и запустить новый экземпляр?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standard</value>
+    <value>По умолчанию</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+    <value>Версия OBS по умолчанию удалена</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Lösche</value>
+    <value>Удалить</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Herunterladen und Entpacken abgebrochen.</value>
+    <value>Загрузка и извлечение отменены.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Herunterladen und entpacken erfolgreich abgeschlossen.</value>
+    <value>Загрузка и извлечение успешно завершены.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Скачать выбранную версию</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Herunterladen</value>
+    <value>Скачивание</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Herunterladen oder Entpacken läuft noch. Dies wird abgebrochen, wenn das Fenster geschlossen wird. Fortfahren?</value>
+    <value>Загрузка или извлечение все еще выполняется. Это будет отменено, если вы закроете окно. Продолжить?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>Ошибка</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Entpacken</value>
+    <value>Извлечение</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Папка</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Verzeichnis existiert bereits</value>
+    <value>Папка уже существует</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Папка</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>Das Zielverzeichnis existiert bereits. Soll es überschrieben werden oder die Aktion abgebrochen werden?{newline}{newline}Ja - Überschreiben{newline}Nein - Umbenennen{newline}Abbrechen - Aktion abbrechen</value>
+    <value>Целевая папка уже существует. Должен ли он быть перезаписан или вы хотите отменить действие? {newline}{newline}Да - перезаписать{newline}Нет - переименовать{newline}Отмена - Отменить действие</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>Das GitHub API Limit wurde erreicht. Bitte später nochmal versuchen.</value>
+    <value>Вы достигли лимита GitHub API. Пожалуйста, повторите попытку позже.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>Funktionswünsche, Bug gefunden oder du möchtest bei der Übersetzung des Projekts helfen? Besuche die GitHub Projektseite.</value>
+    <value>Если есть предложения по функциям, найдите ошибки или хотите помочь с переводом проекта, пожалуйста, посетите страницу GitHub .</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Wähle Standard Laufwerksbuchstabe:</value>
+    <value>Задать букву диска по умолчанию:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Benutzte Bibliotheken</value>
+    <value>Библиотеки использовано</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>Lizenz für</value>
+    <value>Лицензия для</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Übersetzer</value>
+    <value>Переводители</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Lizenz anzeigen</value>
+    <value>Показать лицензию</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>Lizenzinformation</value>
+    <value>Информация о лицензии</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS Installation auf diesem PC</value>
+    <value>Установка OBS на этот ПК</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Диск по умолчанию</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
+    <value>Буква диска по умолчанию не установлена. Пожалуйста, проверьте настройки.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Noch nicht implementiert, sorry!</value>
+    <value>Приносим извинения!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>OBS sichern</value>
+    <value>Резервное копирование OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>Версии OBS</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>Es ist ein Fehler aufgetreten. Fehler:</value>
+    <value>Произошла ошибка. Ошибка:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>Mindestens eine OBS Version ist noch aktiv. Bitte beende diese vorm Entfernen des Laufwerks.</value>
+    <value>По крайней мере одна версия OBS по-прежнему запущена. Пожалуйста, закройте её, прежде чем удалять диск, сопоставленный</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS Version</value>
+    <value>Версия OBS</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits.</value>
+    <value>Эта версия OBS уже запущена.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Sicher, dass die ausgewählte Version gelöscht werden soll?</value>
+    <value>Вы уверены, что хотите удалить выбранную версию?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Die OBS Version konnte nicht gelöscht werden. Fehler::</value>
+    <value>Не удалось удалить версию OBS. Ошибка:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Bitte entferne die lokale OBS Installation über die Systemsteuerung.</value>
+    <value>Пожалуйста, удалите локальную установку OBS через панель управления.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Fehler beim Abrufen der OBS Versionen von GitHub. Prüfe Internetverbindung.</value>
+    <value>Ошибка при получении версий OBS. Проверьте подключение к Интернету</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>Die ausgewählte OBS Version ist noch aktiv. Bitte schliesse diese bevor du versuchst sie zu löschen.</value>
+    <value>Выбранная версия OBS в настоящее время запущена. Пожалуйста, закройте её, прежде чем пытаться удалить.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits aber reagiert nicht. Soll sie beendet werden und erneut gestarten werden?</value>
+    <value>Эта версия OBS уже запущена, но не может быть перенесена в фоновый режим. Вы хотите завершить ее и запустить новый экземпляр?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS Version erfolgreich entfernt</value>
+    <value>Версия OBS успешно удалена</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Öffne Verzeichnis</value>
+    <value>Открыть папку</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Pfad zur OBS-Version</value>
+    <value>Путь к версии OBS</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Bitte wähle eine Version aus.</value>
+    <value>Пожалуйста, выберите релиз для загрузки</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profil sichern</value>
+    <value>Резервный профиль</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>Обновить</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Versionshinweise für</value>
+    <value>Примечания к релизу для</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Veröffentlicht am</value>
+    <value>Выпущено</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Verbleibend</value>
+    <value>Осталось</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Entferne Laufwerk</value>
+    <value>Удалить диск</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>Восстановить</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Als Standard setzen</value>
+    <value>Установить по умолчанию</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Starten</value>
+    <value>Начать</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>Обновить</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Nur OBS Versionen mit .ZIP-Datei werden hier angezeigt</value>
+    <value>Здесь будут показаны только релизы OBS с .ZIP файлом</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>Zeige Versionshinweise auf GitHub</value>
+    <value>Просмотреть заметки о выпуске на GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Problem beim Erstellen des virtuellen Laufwerks</value>
+    <value>Ошибка при создании виртуального диска</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich erstellt</value>
+    <value>Виртуальный диск успешно создан</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Problem beim Entfernen des virtuellen Laufwerks</value>
+    <value>Ошибка удаления виртуального диска</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich entfernt</value>
+    <value>Виртуальный диск успешно удален</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>Предупреждение</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Es wurde keine ZIP-Datei für diese Version gefunden.</value>
+    <value>Zip файл не найден для этого выпуска.</value>
   </data>
 </root>
