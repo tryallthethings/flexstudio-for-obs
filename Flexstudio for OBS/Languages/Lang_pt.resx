@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>SOBRE</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Download new OBS version</value>
+    <value>Baixar nova versão do OBS</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Backing up</value>
+    <value>Fazendo backup</value>
   </data>
   <data name="Backup" xml:space="preserve">
     <value>Backup</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Backup could not be created. Error:</value>
+    <value>Não foi possível criar o backup:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>You need to select at least one item to be included in the Backup!</value>
+    <value>Você precisa selecionar pelo menos um item para ser incluído no Backup!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>This will add anything else OBS related (binaries, plugins, etc.) to the backup</value>
+    <value>Isto irá adicionar qualquer coisa relacionada ao OBS (binários, plugins, etc.) ao backup</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>This will add the OBS profile to the backup</value>
+    <value>Isso irá adicionar o perfil do OBS ao backup</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>This OBS version is still running.</value>
+    <value>Esta versão do OBS ainda está em execução.</value>
   </data>
   <data name="Backups" xml:space="preserve">
     <value>Backups</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Backup {0} sucessfully created.</value>
+    <value>Backup {0} criado com sucesso.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>About</value>
+    <value>SOBRE</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
     <value>Backup</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Close</value>
+    <value>FECHAR</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>Painel</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Download selected version</value>
+    <value>Baixar a versão selecionada</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Map default drive</value>
+    <value>Mapa de unidade padrão</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS versions</value>
+    <value>Versões do OBS</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Confirgurações</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Start OBS</value>
+    <value>Iniciar o OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>cancelar</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Automatically map default drive on app start</value>
+    <value>Automaticamente mapear unidade padrão ao iniciar o aplicativo</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Automatically remove default drive when application is closed</value>
+    <value>Remover automaticamente a unidade padrão quando a aplicação for fechada</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Automatically start default OBS version on app start</value>
+    <value>Iniciar automaticamente a versão padrão do OBS ao iniciar o aplicativo</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Check daily for updates</value>
+    <value>Verificar diariamente por atualizações</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Invalid setting for parameter 'autoMapDefaultDrive' or 'autoStartDefaultOBS' detected. Error:</value>
+    <value>Configuração inválida para parâmetro 'autoMapDefaultDrive' ou 'autoStartDefaultOBS' detectada. Erro:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>You didn't select a default OBS version yet. Please do it in the OBS versions menu.</value>
+    <value>Você ainda não selecionou uma versão padrão do OBS. Por favor faça isso no menu de versões do OBS.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>not set</value>
+    <value>não definido</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Successfully removed mapped Drive {0}:</value>
+    <value>Unidade mapeada com sucesso {0} removida:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
+    <value>Esta versão do OBS já está em execução mas não pode ser trazida para o primeiro plano. Você quer encerrá-la e iniciar uma nova instância?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Padrão</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>The default OBS version was deleted</value>
+    <value>A versão padrão do OBS foi excluída</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Delete</value>
+    <value>excluir</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Download and Extraction canceled.</value>
+    <value>Download e extração cancelados.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Download and Extraction finished successfully.</value>
+    <value>Download e Extraction foram concluídos com sucesso.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Download selected version</value>
+    <value>Baixar a versão selecionada</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Baixando</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Download or Extraction is still running. This will be canceled if you close the window. Continue?</value>
+    <value>O download ou a extração ainda estão em execução. Isso será cancelado se você fechar a janela. Continuar?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>ERRO</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Extracting</value>
+    <value>Extraindo</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>pasta</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Folder already exists</value>
+    <value>Pasta já existe</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Folder</value>
+    <value>pasta</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>The target folder already exists. Should it be overwritten or do you want to cancel the action? {newline}{newline}Yes - Overwrite{newline}No - Rename{newline}Cancel - Cancel action</value>
+    <value>A pasta de destino já existe Deve ser sobrescrito ou você quer cancelar a ação? {newline}{newline}Sim - Sobrescrever{newline}Não - Renomear{newline}Cancelar - Cancelar ação</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>You have reached the GitHub API rate limit. Please try again later.</value>
+    <value>Você atingiu o limite de taxa de câmbio do GitHub. Por favor, tente novamente mais tarde.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>If have feature suggestions, found bugs or want to help translate the project, please visit the GitHub page.</value>
+    <value>Se tiver sugestões de recursos, encontrar bugs ou quer ajudar a traduzir o projeto, por favor visite a página do GitHub.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Set default drive letter:</value>
+    <value>Definir letra de unidade padrão:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Libraries used</value>
+    <value>Bibliotecas usadas</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>License for</value>
+    <value>Licença para</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Translators</value>
+    <value>Tradutores</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Show license</value>
+    <value>Mostrar licença</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>License information</value>
+    <value>Informações da licença</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS installation on this PC</value>
+    <value>Instalação do OBS neste PC</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Map default drive</value>
+    <value>Mapa de unidade padrão</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>No default drive letter set. Please check settings.</value>
+    <value>Nenhuma letra de drive padrão. Por favor, verifique as configurações.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Not implemented yet, sorry!</value>
+    <value>Ainda não implementado, desculpe!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>Backup OBS</value>
+    <value>Backup do OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS versions</value>
+    <value>Versões do OBS</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>An error occurred. Error:</value>
+    <value>Ocorreu um erro. Erro:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>At least one OBS version is still running. Please close it before removing the mapped drive</value>
+    <value>Pelo menos uma versão do OBS ainda está em execução. Por favor, feche-a antes de remover a unidade mapeada</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS version</value>
+    <value>Versão do OBS</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>This OBS version is already running.</value>
+    <value>Esta versão do OBS já está em execução.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete the selected version?</value>
+    <value>Você tem certeza que deseja excluir a versão selecionada?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Could not delete the OBS version. Error:</value>
+    <value>Não foi possível excluir a versão do OBS: Erro:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Please remove the local OBS installation via the control panel.</value>
+    <value>Por favor, remova a instalação local do OBS através do painel de controle.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Error retrieving OBS versions. Check internet connection</value>
+    <value>Erro ao recuperar versões do OBS. Verifique a conexão com a internet</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>The selected OBS version is currently running. Please close it before attempting to delete.</value>
+    <value>A versão do OBS selecionada está em execução. Por favor feche-a antes de tentar excluir.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
+    <value>Esta versão do OBS já está em execução mas não pode ser trazida para o primeiro plano. Você quer encerrá-la e iniciar uma nova instância?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS version successfully removed</value>
+    <value>Versão do OBS removida com sucesso</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Open folder</value>
+    <value>Abrir pasta</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Path to OBS version</value>
+    <value>Caminho para a versão do OBS</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Please select a release to download</value>
+    <value>Por favor, selecione um lançamento para baixar</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Backup profile</value>
+    <value>Backup do perfil</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Refresh</value>
+    <value>atualizar</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Release notes for</value>
+    <value>Notas de lançamento para</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Released on</value>
+    <value>Lançado em</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Remaining</value>
+    <value>Restante</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Remove Drive</value>
+    <value>Remover unidade</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Restore</value>
+    <value>RESTAURAR</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Set as default</value>
+    <value>Definir como padrão</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Start</value>
+    <value>Iniciar</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>Atualização</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Only OBS releases with a .ZIP file will be shown here</value>
+    <value>Apenas as versões do OBS com um arquivo .ZIP serão mostradas aqui</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>View release notes on GitHub</value>
+    <value>Ver notas de lançamento no GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Error creating virtual drive</value>
+    <value>Erro ao criar unidade virtual</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtual drive created successfully</value>
+    <value>Unidade virtual criada com sucesso</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Error removing virtual drive</value>
+    <value>Erro ao remover unidade virtual</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtual drive removed successfully</value>
+    <value>Virtual drive removido com sucesso</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>ATENÇÃO</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Zip file not found for this release.</value>
+    <value>Arquivo Zip não encontrado para esta versão.</value>
   </data>
 </root>
