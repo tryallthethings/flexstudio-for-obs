@@ -53,3 +53,6 @@ Please find detailed instructions and documentation [here](https://tryallthethin
 ## 📃 License
 
 Flexstudio for OBS is licensed under the terms of the GPLv3. You can review the details in the [LICENSE](LICENSE) file.
+
+## Developed by
+Stefan Bautz
