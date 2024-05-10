@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>关于</value>
+    <value>About</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>下载新的 OBS 版本</value>
+    <value>Download new OBS version</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>备份中</value>
+    <value>Backing up</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>备份</value>
+    <value>Backup</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>无法创建备份。错误：</value>
+    <value>Backup could not be created. Error:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>您需要选择至少一个要包含在备份中的项目 ！</value>
+    <value>You need to select at least one item to be included in the Backup!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>这将会将任何其他相关的 OBS (插件等) 添加到备份</value>
+    <value>This will add anything else OBS related (binaries, plugins, etc.) to the backup</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>这将把OBS配置文件添加到备份</value>
+    <value>This will add the OBS profile to the backup</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>此 OBS 版本仍在运行。</value>
+    <value>This OBS version is still running.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>备份</value>
+    <value>Backups</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>备份 {0} 已成功创建。</value>
+    <value>Backup {0} sucessfully created.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>关于</value>
+    <value>About</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>备份</value>
+    <value>Backup</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>关闭</value>
+    <value>Close</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>仪表板</value>
+    <value>Dashboard</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>下载选中的版本</value>
+    <value>Download selected version</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>映射默认驱动器</value>
+    <value>Map default drive</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS 版本</value>
+    <value>OBS versions</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>设置</value>
+    <value>Settings</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>启动 OBS</value>
+    <value>Start OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>取消</value>
+    <value>Cancel</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>启动应用时自动映射默认驱动器</value>
+    <value>Automatically map default drive on app start</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>应用程序关闭时自动移除默认驱动器</value>
+    <value>Automatically remove default drive when application is closed</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>在应用程序启动时自动启动默认的 OBS 版本</value>
+    <value>Automatically start default OBS version on app start</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>每日检查更新</value>
+    <value>Check daily for updates</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>检测到参数 'autoMapDefaultDrive' 或 'autoStartDefaultOBS' 的设置无效。错误：</value>
+    <value>Invalid setting for parameter 'autoMapDefaultDrive' or 'autoStartDefaultOBS' detected. Error:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>您尚未选择默认的 OBS 版本。请在 OBS 版本菜单中执行它。</value>
+    <value>You didn't select a default OBS version yet. Please do it in the OBS versions menu.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>未设置</value>
+    <value>not set</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>成功删除映射驱动器 {0}：</value>
+    <value>Successfully removed mapped Drive {0}:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>此 OBS 版本已在运行，但不能带到前台。您想要终止它并启动一个新实例吗？</value>
+    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>默认设置</value>
+    <value>Default</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>默认的 OBS 版本已删除</value>
+    <value>The default OBS version was deleted</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>删除</value>
+    <value>Delete</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>下载和解压已取消。</value>
+    <value>Download and Extraction canceled.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>下载和解压已成功完成。</value>
+    <value>Download and Extraction finished successfully.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>下载选中的版本</value>
+    <value>Download selected version</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>正在下载</value>
+    <value>Downloading</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>下载或解压仍在运行。如果您关闭窗口，将取消此操作。是否继续？</value>
+    <value>Download or Extraction is still running. This will be canceled if you close the window. Continue?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>错误</value>
+    <value>Error</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>提取中</value>
+    <value>Extracting</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>文件夹</value>
+    <value>Folder</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>文件夹已存在</value>
+    <value>Folder already exists</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>文件夹</value>
+    <value>Folder</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>目标文件夹已存在。 是要覆盖还是要取消操作？ {newline}{newline}是 - 覆盖{newline}否 - 重命名{newline}取消操作</value>
+    <value>The target folder already exists. Should it be overwritten or do you want to cancel the action? {newline}{newline}Yes - Overwrite{newline}No - Rename{newline}Cancel - Cancel action</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>您已达到GitHub API费率上限。请稍后再试。</value>
+    <value>You have reached the GitHub API rate limit. Please try again later.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>如果有功能建议，发现bug或想要帮助翻译项目，请访问 GitHub 页面。</value>
+    <value>If have feature suggestions, found bugs or want to help translate the project, please visit the GitHub page.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>设置默认驱动器字母：</value>
+    <value>Set default drive letter:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>使用的库</value>
+    <value>Libraries used</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>许可协议</value>
+    <value>License for</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>翻译者</value>
+    <value>Translators</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>显示许可证</value>
+    <value>Show license</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>许可证信息</value>
+    <value>License information</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>此PC上的 OBS 安装</value>
+    <value>OBS installation on this PC</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>映射默认驱动器</value>
+    <value>Map default drive</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>没有默认的驱动器字母设置。请检查设置。</value>
+    <value>No default drive letter set. Please check settings.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>抱歉，尚未实现！</value>
+    <value>Not implemented yet, sorry!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>备份 OBS</value>
+    <value>Backup OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS 版本</value>
+    <value>OBS versions</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>发生错误：</value>
+    <value>An error occurred. Error:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>至少一个OBS版本仍在运行。请在移除映射驱动器之前关闭它。</value>
+    <value>At least one OBS version is still running. Please close it before removing the mapped drive</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS 版本</value>
+    <value>OBS version</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>此 OBS 版本已在运行。</value>
+    <value>This OBS version is already running.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>您确定要删除选定的版本吗？</value>
+    <value>Are you sure you want to delete the selected version?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>无法删除 OBS 版本。错误：</value>
+    <value>Could not delete the OBS version. Error:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>请通过控制面板删除本地的 OBS 安装。</value>
+    <value>Please remove the local OBS installation via the control panel.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>获取 OBS 版本时出错。请检查互联网连接</value>
+    <value>Error retrieving OBS versions. Check internet connection</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>所选的 OBS 版本目前正在运行。请在尝试删除之前关闭它。</value>
+    <value>The selected OBS version is currently running. Please close it before attempting to delete.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>此 OBS 版本已在运行，但不能带到前台。您想要终止它并启动一个新实例吗？</value>
+    <value>This OBS version is already running but cannot be brought to the foreground. Do you want to terminate it and start a new instance?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS 版本成功删除</value>
+    <value>OBS version successfully removed</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>打开文件夹</value>
+    <value>Open folder</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>OBS版本路径</value>
+    <value>Path to OBS version</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>请选择要下载的版本</value>
+    <value>Please select a release to download</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>备份资料</value>
+    <value>Backup profile</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>刷新</value>
+    <value>Refresh</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>发布笔记</value>
+    <value>Release notes for</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>发布于</value>
+    <value>Released on</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>剩余时间</value>
+    <value>Remaining</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>移除驱动器</value>
+    <value>Remove Drive</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>恢复</value>
+    <value>Restore</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>设置为默认</value>
+    <value>Set as default</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>开始</value>
+    <value>Start</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>更新</value>
+    <value>Update</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>这里只显示带有.ZIP文件的 OBS 版本</value>
+    <value>Only OBS releases with a .ZIP file will be shown here</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>在 GitHub 上查看发布笔记</value>
+    <value>View release notes on GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>创建虚拟驱动器出错</value>
+    <value>Error creating virtual drive</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>虚拟驱动器创建成功</value>
+    <value>Virtual drive created successfully</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>删除虚拟驱动器时出错</value>
+    <value>Error removing virtual drive</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>已成功删除虚拟驱动器</value>
+    <value>Virtual drive removed successfully</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>警告</value>
+    <value>Warning</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>未找到此版本的 Zip 文件。</value>
+    <value>Zip file not found for this release.</value>
   </data>
 </root>
