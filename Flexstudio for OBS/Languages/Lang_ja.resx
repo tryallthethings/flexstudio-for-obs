@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Über</value>
+    <value>About</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Neue OBS Version herunterladen</value>
+    <value>新しいOBSバージョンをダウンロード</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Sichere</value>
+    <value>バックアップ中</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Sichern</value>
+    <value>バックアップ</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
+    <value>バックアップを作成できませんでした。エラー:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
+    <value>バックアップに含めるアイテムを少なくとも1つ選択する必要があります！</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>Fügt die restlichen Daten (Programmdaten, Plugins, etc.) zur Datensicherung hinzu</value>
+    <value>これにより、他のOBS関連（バイナリ、プラグインなど）がバックアップに追加されます</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>Fügt das OBS Profil zur Datensicherung hinzu</value>
+    <value>OBSプロファイルをバックアップに追加します</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft noch.</value>
+    <value>この OBS バージョンはまだ実行中です。</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Datensicherungen</value>
+    <value>バックアップ</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt.</value>
+    <value>{0} を正常に作成しました。</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>About</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Datensicherung</value>
+    <value>バックアップ</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Schliessen</value>
+    <value>閉じる</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>ダッシュボード</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>選択したバージョンをダウンロード</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>デフォルトドライブをマップ</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>OBSバージョン</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>設定</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Starte OBS</value>
+    <value>OBSを開始</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>キャンセル</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk beim Start der App</value>
+    <value>アプリ起動時にデフォルトのドライブを自動的にマップする</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Entferne Standardlaufwerk beim Schliessen der App</value>
+    <value>アプリケーションを閉じたときにデフォルトのドライブを自動的に削除する</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Starte Standard OBS-Version beim Start der App</value>
+    <value>アプリ起動時にデフォルトOBSバージョンを自動的に開始</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Prüfe einmal täglich auf Updates</value>
+    <value>毎日更新を確認</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Ungültiger Wert für die Einstellung 'autoMapDefaultDrive' oder 'autoStartDefaultOBS' erkannt. Fehler:</value>
+    <value>パラメータ「autoMapDefaultDrive」または「autoStartDefaultOBS」の設定が無効です。エラー:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>Es wurde keine Standard OBS Version eingestellt. Bitte mache dies im Menüpunkt OBS Versionen.</value>
+    <value>あなたはまだデフォルトのOBSバージョンを選択していません。OBS バージョンメニューで行ってください。</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>nicht eingestellt</value>
+    <value>未設定</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Laufwerk {0}: erfolgreich entfernt.</value>
+    <value>マッピングされたドライブ {0} を削除しました:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
+    <value>このOBSバージョンはすでに実行されていますが、フォアグラウンドに移動することはできません。それを終了して新しいインスタンスを開始しますか？</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standard</value>
+    <value>デフォルト</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+    <value>デフォルトのOBSバージョンが削除されました</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Lösche</value>
+    <value>削除</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Herunterladen und Entpacken abgebrochen.</value>
+    <value>ダウンロードと抽出がキャンセルされました。</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Herunterladen und entpacken erfolgreich abgeschlossen.</value>
+    <value>ダウンロードと抽出が正常に完了しました。</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>選択したバージョンをダウンロード</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Herunterladen</value>
+    <value>ダウンロード中</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Herunterladen oder Entpacken läuft noch. Dies wird abgebrochen, wenn das Fenster geschlossen wird. Fortfahren?</value>
+    <value>ダウンロードまたは抽出がまだ実行中です。ウィンドウを閉じるとキャンセルされます。続行しますか？</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>エラー</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Entpacken</value>
+    <value>抽出</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>フォルダ</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Verzeichnis existiert bereits</value>
+    <value>フォルダは既に存在します</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>フォルダ</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>Das Zielverzeichnis existiert bereits. Soll es überschrieben werden oder die Aktion abgebrochen werden?{newline}{newline}Ja - Überschreiben{newline}Nein - Umbenennen{newline}Abbrechen - Aktion abbrechen</value>
+    <value>ターゲットフォルダは既に存在します。 上書きする必要がありますか、それともアクションをキャンセルしますか? {newline}{newline}はい - 上書き{newline}いいえ - 名前の変更{newline}キャンセル - アクションのキャンセル</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>Das GitHub API Limit wurde erreicht. Bitte später nochmal versuchen.</value>
+    <value>GitHub API レート制限に達しました。後でもう一度やり直してください。</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>Funktionswünsche, Bug gefunden oder du möchtest bei der Übersetzung des Projekts helfen? Besuche die GitHub Projektseite.</value>
+    <value>機能提案やバグを見つけたり、プロジェクトの翻訳を手伝いたい場合は、GitHubページをご覧ください。</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Wähle Standard Laufwerksbuchstabe:</value>
+    <value>デフォルトのドライブ文字を設定:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Benutzte Bibliotheken</value>
+    <value>使用されているライブラリ</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>Lizenz für</value>
+    <value>ライセンス：</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Übersetzer</value>
+    <value>翻訳</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Lizenz anzeigen</value>
+    <value>ライセンスを表示</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>Lizenzinformation</value>
+    <value>ライセンス情報</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS Installation auf diesem PC</value>
+    <value>このPCでOBSをインストールする</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>デフォルトドライブをマップ</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
+    <value>デフォルトのドライブ文字が設定されていません。設定を確認してください。</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Noch nicht implementiert, sorry!</value>
+    <value>まだ実装されていません、申し訳ありません！</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>OBS sichern</value>
+    <value>OBSのバックアップ</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>OBSバージョン</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>Es ist ein Fehler aufgetreten. Fehler:</value>
+    <value>エラーが発生しました。エラー:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>Mindestens eine OBS Version ist noch aktiv. Bitte beende diese vorm Entfernen des Laufwerks.</value>
+    <value>少なくとも 1 つの OBS バージョンがまだ実行中です。マップされたドライブを削除する前に閉じてください</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS Version</value>
+    <value>OBSバージョン</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits.</value>
+    <value>この OBS バージョンは既に実行されています。</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Sicher, dass die ausgewählte Version gelöscht werden soll?</value>
+    <value>選択したバージョンを削除してもよろしいですか？</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Die OBS Version konnte nicht gelöscht werden. Fehler::</value>
+    <value>OBSのバージョンを削除できませんでした。エラー:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Bitte entferne die lokale OBS Installation über die Systemsteuerung.</value>
+    <value>コントロールパネルからローカルOBSを削除してください。</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Fehler beim Abrufen der OBS Versionen von GitHub. Prüfe Internetverbindung.</value>
+    <value>OBSバージョンの取得中にエラーが発生しました。インターネット接続を確認してください</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>Die ausgewählte OBS Version ist noch aktiv. Bitte schliesse diese bevor du versuchst sie zu löschen.</value>
+    <value>選択されたOBSバージョンは現在実行中です。削除する前に閉じてください。</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits aber reagiert nicht. Soll sie beendet werden und erneut gestarten werden?</value>
+    <value>このOBSバージョンはすでに実行されていますが、フォアグラウンドに移動することはできません。それを終了して新しいインスタンスを開始しますか？</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS Version erfolgreich entfernt</value>
+    <value>OBSのバージョンを削除しました</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Öffne Verzeichnis</value>
+    <value>フォルダを開く</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Pfad zur OBS-Version</value>
+    <value>OBSバージョンへのパス</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Bitte wähle eine Version aus.</value>
+    <value>ダウンロードするリリースを選択してください</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profil sichern</value>
+    <value>バックアップ プロファイル</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>更新</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Versionshinweise für</value>
+    <value>次のリリースノート:</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Veröffentlicht am</value>
+    <value>リリース日</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Verbleibend</value>
+    <value>残り</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Entferne Laufwerk</value>
+    <value>ドライブを削除</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>復元</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Als Standard setzen</value>
+    <value>既定に設定</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Starten</value>
+    <value>開始</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>更新</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Nur OBS Versionen mit .ZIP-Datei werden hier angezeigt</value>
+    <value>.ZIP ファイルを含む OBS リリースのみがここに表示されます</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>Zeige Versionshinweise auf GitHub</value>
+    <value>GitHub でリリース ノートを表示</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Problem beim Erstellen des virtuellen Laufwerks</value>
+    <value>仮想ドライブの作成エラー</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich erstellt</value>
+    <value>仮想ドライブの作成に成功しました</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Problem beim Entfernen des virtuellen Laufwerks</value>
+    <value>仮想ドライブの削除エラー</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich entfernt</value>
+    <value>仮想ドライブを削除しました</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>警告</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Es wurde keine ZIP-Datei für diese Version gefunden.</value>
+    <value>このリリースの Zip ファイルが見つかりません。</value>
   </data>
 </root>

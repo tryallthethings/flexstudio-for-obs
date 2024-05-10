@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Über</value>
+    <value>حول</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Neue OBS Version herunterladen</value>
+    <value>تحميل إصدار OBS جديد</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Sichere</value>
+    <value>النسخ الاحتياطي</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Sichern</value>
+    <value>النسخ الاحتياطي</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
+    <value>تعذر إنشاء النسخ الاحتياطي. خطأ:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
+    <value>تحتاج إلى تحديد عنصر واحد على الأقل لإدراجه في النسخة الاحتياطية!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>Fügt die restlichen Daten (Programmdaten, Plugins, etc.) zur Datensicherung hinzu</value>
+    <value>سيؤدي هذا إلى إضافة أي شيء آخر له صلة بOBS (القناصير، الإضافات، إلخ.) إلى النسخة الاحتياطية</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>Fügt das OBS Profil zur Datensicherung hinzu</value>
+    <value>سيؤدي هذا إلى إضافة ملف تعريف OBS إلى النسخة الاحتياطية</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft noch.</value>
+    <value>لا يزال إصدار OBS قيد التشغيل.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Datensicherungen</value>
+    <value>النسخ الاحتياطية</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt.</value>
+    <value>تم إنشاء النسخ الاحتياطي {0} بنجاح.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>حول</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Datensicherung</value>
+    <value>النسخ الاحتياطي</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Schliessen</value>
+    <value>أغلق</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>لوحة التحكم</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>تحميل الإصدار المحدد</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>خريطة القرص الافتراضي</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>إصدارات OBS</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>الإعدادات</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Starte OBS</value>
+    <value>بدء OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>إلغاء</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk beim Start der App</value>
+    <value>تعيين القرص الافتراضي تلقائياً عند بدء التطبيق</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Entferne Standardlaufwerk beim Schliessen der App</value>
+    <value>إزالة القرص الافتراضي تلقائياً عند إغلاق التطبيق</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Starte Standard OBS-Version beim Start der App</value>
+    <value>بدء إصدار OBS الافتراضي تلقائياً عند بدء التطبيق</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Prüfe einmal täglich auf Updates</value>
+    <value>التحقق يومياً من وجود تحديثات</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Ungültiger Wert für die Einstellung 'autoMapDefaultDrive' oder 'autoStartDefaultOBS' erkannt. Fehler:</value>
+    <value>الإعداد غير صالح للمعلمة 'AutoMapDefaultDrive' أو 'AutoStartDefaultOBS'. خطأ:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>Es wurde keine Standard OBS Version eingestellt. Bitte mache dies im Menüpunkt OBS Versionen.</value>
+    <value>لم تقم بتحديد إصدار OBS الافتراضي بعد. الرجاء القيام بذلك في قائمة إصدارات OBS.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>nicht eingestellt</value>
+    <value>لم يتم تعيينه</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Laufwerk {0}: erfolgreich entfernt.</value>
+    <value>تمت إزالة القرص المعين {0} بنجاح:</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
+    <value>إصدار OBS هذا قيد التشغيل بالفعل ولكن لا يمكن إحضاره إلى المقدمة. هل تريد إنهاؤه وبدء مثيل جديد؟</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standard</value>
+    <value>الافتراضي</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+    <value>تم حذف إصدار OBS الافتراضي</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Lösche</value>
+    <value>حذف</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Herunterladen und Entpacken abgebrochen.</value>
+    <value>تم إلغاء التحميل والاستخراج.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Herunterladen und entpacken erfolgreich abgeschlossen.</value>
+    <value>انتهى التحميل والاستخراج بنجاح.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>تحميل الإصدار المحدد</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Herunterladen</value>
+    <value>تنزيل</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Herunterladen oder Entpacken läuft noch. Dies wird abgebrochen, wenn das Fenster geschlossen wird. Fortfahren?</value>
+    <value>لا يزال التحميل أو الاستخراج قيد التشغيل. سيتم إلغاء هذا إذا أغلقت النافذة. هل تريد المتابعة؟</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>خطأ</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Entpacken</value>
+    <value>استخراج</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>مجلد</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Verzeichnis existiert bereits</value>
+    <value>المجلد موجود بالفعل</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>مجلد</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>Das Zielverzeichnis existiert bereits. Soll es überschrieben werden oder die Aktion abgebrochen werden?{newline}{newline}Ja - Überschreiben{newline}Nein - Umbenennen{newline}Abbrechen - Aktion abbrechen</value>
+    <value>المجلد المستهدف موجود بالفعل. هل ينبغي تجاوزها أو هل تريد إلغاء الإجراء؟ {newline}{newline}نعم - الكتابة فوق{newline}لا - إعادة تسمية{newline}إلغاء - إلغاء الإجراء</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>Das GitHub API Limit wurde erreicht. Bitte später nochmal versuchen.</value>
+    <value>لقد وصلت إلى حد معدل الـ GitHub API. الرجاء المحاولة مرة أخرى لاحقاً.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>Funktionswünsche, Bug gefunden oder du möchtest bei der Übersetzung des Projekts helfen? Besuche die GitHub Projektseite.</value>
+    <value>إذا كان لديك اقتراحات الميزات، العثور على الأخطاء أو الرغبة في المساعدة في ترجمة المشروع، يرجى زيارة صفحة GitHub.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Wähle Standard Laufwerksbuchstabe:</value>
+    <value>تعيين حرف القرص الافتراضي:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Benutzte Bibliotheken</value>
+    <value>المكتبات المستخدمة</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>Lizenz für</value>
+    <value>ترخيص لـ</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Übersetzer</value>
+    <value>المترجمون</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Lizenz anzeigen</value>
+    <value>إظهار الترخيص</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>Lizenzinformation</value>
+    <value>معلومات الترخيص</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS Installation auf diesem PC</value>
+    <value>تثبيت OBS على هذا الكمبيوتر</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>خريطة القرص الافتراضي</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
+    <value>لم يتم تعيين حرف القرص الافتراضي. الرجاء التحقق من الإعدادات.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Noch nicht implementiert, sorry!</value>
+    <value>لم يتم التنفيذ بعد، آسف!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>OBS sichern</value>
+    <value>النسخ الاحتياطي OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>إصدارات OBS</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>Es ist ein Fehler aufgetreten. Fehler:</value>
+    <value>حدث خطأ. خطأ:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>Mindestens eine OBS Version ist noch aktiv. Bitte beende diese vorm Entfernen des Laufwerks.</value>
+    <value>لا يزال إصدار واحد على الأقل من OBS قيد التشغيل. الرجاء إغلاقه قبل إزالة محرك الأقراص المعين</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS Version</value>
+    <value>إصدار OBS</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits.</value>
+    <value>هذا الإصدار OBS قيد التشغيل بالفعل.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Sicher, dass die ausgewählte Version gelöscht werden soll?</value>
+    <value>هل أنت متأكد من أنك تريد حذف الإصدار المحدد؟</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Die OBS Version konnte nicht gelöscht werden. Fehler::</value>
+    <value>تعذر حذف إصدار OBS. خطأ:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Bitte entferne die lokale OBS Installation über die Systemsteuerung.</value>
+    <value>الرجاء إزالة تثبيت OBS المحلي عن طريق لوحة التحكم.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Fehler beim Abrufen der OBS Versionen von GitHub. Prüfe Internetverbindung.</value>
+    <value>خطأ في استرداد إصدارات OBS. تحقق من اتصال الإنترنت</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>Die ausgewählte OBS Version ist noch aktiv. Bitte schliesse diese bevor du versuchst sie zu löschen.</value>
+    <value>إصدار OBS المحدد قيد التشغيل حاليا. الرجاء إغلاقه قبل محاولة الحذف.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits aber reagiert nicht. Soll sie beendet werden und erneut gestarten werden?</value>
+    <value>إصدار OBS هذا قيد التشغيل بالفعل ولكن لا يمكن إحضاره إلى المقدمة. هل تريد إنهاؤه وبدء مثيل جديد؟</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS Version erfolgreich entfernt</value>
+    <value>تمت إزالة إصدار OBS بنجاح</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Öffne Verzeichnis</value>
+    <value>فتح المجلد</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Pfad zur OBS-Version</value>
+    <value>المسار إلى إصدار OBS</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Bitte wähle eine Version aus.</value>
+    <value>الرجاء تحديد إصدار للتحميل</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profil sichern</value>
+    <value>ملف النسخ الاحتياطي</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>تحديث</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Versionshinweise für</value>
+    <value>ملاحظات الإصدار لـ</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Veröffentlicht am</value>
+    <value>تم إصداره في</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Verbleibend</value>
+    <value>المتبقي</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Entferne Laufwerk</value>
+    <value>إزالة القرص</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>إستعادة</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Als Standard setzen</value>
+    <value>تعيين كافتراضي</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Starten</value>
+    <value>ابدأ</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>تحديث</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Nur OBS Versionen mit .ZIP-Datei werden hier angezeigt</value>
+    <value>فقط إصدارات OBS مع ملف .ZIP سوف تظهر هنا</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>Zeige Versionshinweise auf GitHub</value>
+    <value>عرض ملاحظات الإصدار على GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Problem beim Erstellen des virtuellen Laufwerks</value>
+    <value>خطأ في إنشاء محرك أقراص افتراضي</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich erstellt</value>
+    <value>تم إنشاء القرص الافتراضي بنجاح</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Problem beim Entfernen des virtuellen Laufwerks</value>
+    <value>خطأ في إزالة القرص الافتراضي</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich entfernt</value>
+    <value>تمت إزالة القرص الافتراضي بنجاح</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>تحذير</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Es wurde keine ZIP-Datei für diese Version gefunden.</value>
+    <value>لم يتم العثور على ملف مضغوط لهذا الإصدار.</value>
   </data>
 </root>

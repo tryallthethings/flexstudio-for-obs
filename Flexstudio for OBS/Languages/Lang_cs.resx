@@ -118,273 +118,273 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Über</value>
+    <value>O aplikaci</value>
   </data>
   <data name="addNewOBSbtn" xml:space="preserve">
-    <value>Neue OBS Version herunterladen</value>
+    <value>Stáhnout novou verzi OBS</value>
   </data>
   <data name="Backing up" xml:space="preserve">
-    <value>Sichere</value>
+    <value>Zálohování</value>
   </data>
   <data name="Backup" xml:space="preserve">
-    <value>Sichern</value>
+    <value>Záloha</value>
   </data>
   <data name="backupErrorHint" xml:space="preserve">
-    <value>Datensicherung konnte nicht erstellt werden. Fehler:</value>
+    <value>Zálohování nelze vytvořit. Chyba:</value>
   </data>
   <data name="backupNeedsOneItemHint" xml:space="preserve">
-    <value>Es muss mindestens eine Option für die Sicherung ausgewählt werden!</value>
+    <value>Musíte vybrat alespoň jednu položku, kterou chcete zahrnout do zálohy!</value>
   </data>
   <data name="backupOBSbinariesHint" xml:space="preserve">
-    <value>Fügt die restlichen Daten (Programmdaten, Plugins, etc.) zur Datensicherung hinzu</value>
+    <value>Toto přidá do zálohy cokoliv jiného související s OBS (binární moduly, pluginy atd.)</value>
   </data>
   <data name="backupOBSprofileHint" xml:space="preserve">
-    <value>Fügt das OBS Profil zur Datensicherung hinzu</value>
+    <value>Toto přidá OBS profil do zálohy</value>
   </data>
   <data name="backupOBSstillRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft noch.</value>
+    <value>Tato verze OBS stále běží.</value>
   </data>
   <data name="Backups" xml:space="preserve">
-    <value>Datensicherungen</value>
+    <value>Zálohy</value>
   </data>
   <data name="backupSuccessHint" xml:space="preserve">
-    <value>Datensicherung {0} erfolgreich erstellt.</value>
+    <value>Záloha {0} byla úspěšně vytvořena.</value>
   </data>
   <data name="btnAbout" xml:space="preserve">
-    <value>Über</value>
+    <value>O aplikaci</value>
   </data>
   <data name="btnBackup" xml:space="preserve">
-    <value>Datensicherung</value>
+    <value>Záloha</value>
   </data>
   <data name="btnClose" xml:space="preserve">
-    <value>Schliessen</value>
+    <value>Zavřít</value>
   </data>
   <data name="btnDashboard" xml:space="preserve">
-    <value>Dashboard</value>
+    <value>Nástěnka</value>
   </data>
   <data name="btnDownloadSelected" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Stáhnout vybranou verzi</value>
   </data>
   <data name="btnMapDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Výchozí disk mapy</value>
   </data>
   <data name="btnOBSversions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>OBS verze</value>
   </data>
   <data name="btnSettings" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Nastavení</value>
   </data>
   <data name="btnStartOBS" xml:space="preserve">
-    <value>Starte OBS</value>
+    <value>Spustit OBS</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Zrušit</value>
   </data>
   <data name="cbAutoMapDefaultDrive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk beim Start der App</value>
+    <value>Automaticky mapovat výchozí disk při spuštění aplikace</value>
   </data>
   <data name="cbAutoRemoveDefaultDrive" xml:space="preserve">
-    <value>Entferne Standardlaufwerk beim Schliessen der App</value>
+    <value>Automaticky odebrat výchozí disk při zavření aplikace</value>
   </data>
   <data name="cbAutoStartOBS" xml:space="preserve">
-    <value>Starte Standard OBS-Version beim Start der App</value>
+    <value>Automaticky spustit výchozí OBS verzi při spuštění aplikace</value>
   </data>
   <data name="cbCheckUpdatesDaily" xml:space="preserve">
-    <value>Prüfe einmal täglich auf Updates</value>
+    <value>Denní kontrola aktualizací</value>
   </data>
   <data name="dashboardInvalidSettingHint" xml:space="preserve">
-    <value>Ungültiger Wert für die Einstellung 'autoMapDefaultDrive' oder 'autoStartDefaultOBS' erkannt. Fehler:</value>
+    <value>Neplatné nastavení pro parametr 'autoMapDefaultDrive' nebo 'autoStartDefaultOBS' zjištěno. Chyba:</value>
   </data>
   <data name="dashboardNoDefaultOBSerror" xml:space="preserve">
-    <value>Es wurde keine Standard OBS Version eingestellt. Bitte mache dies im Menüpunkt OBS Versionen.</value>
+    <value>Zatím jste nevybrali výchozí verzi OBS. Proveďte to v nabídce OBS verzí.</value>
   </data>
   <data name="dashboardOBSdefaultVersionNotSetHint" xml:space="preserve">
-    <value>nicht eingestellt</value>
+    <value>nenastaveno</value>
   </data>
   <data name="dashboardRemovedMappedDriveSuccess" xml:space="preserve">
-    <value>Laufwerk {0}: erfolgreich entfernt.</value>
+    <value>Mapovaný disk {0} byl úspěšně odstraněn</value>
   </data>
   <data name="dashboardUnresponsiveOBSinstanceWarning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits, aber reagiert nicht. Soll sie beendet werden und erneut gestartet werden?</value>
+    <value>Tato verze OBS je již spuštěna, ale nelze ji dovést do popředí. Chcete ji ukončit a spustit novou instanci?</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standard</value>
+    <value>Výchozí</value>
   </data>
   <data name="defaultOBSversionRemoved" xml:space="preserve">
-    <value>Die als Standard gesetzte OBS version wurde gelöscht.</value>
+    <value>Výchozí verze OBS byla odstraněna</value>
   </data>
   <data name="deleteToolStripMenuItem" xml:space="preserve">
-    <value>Lösche</value>
+    <value>Vymazat</value>
   </data>
   <data name="Download and extraction cancelled." xml:space="preserve">
-    <value>Herunterladen und Entpacken abgebrochen.</value>
+    <value>Stahování a extrakce byla zrušena.</value>
   </data>
   <data name="Download and extraction completed successfully." xml:space="preserve">
-    <value>Herunterladen und entpacken erfolgreich abgeschlossen.</value>
+    <value>Stahování a extrakce byly úspěšně dokončeny.</value>
   </data>
   <data name="Download selected version" xml:space="preserve">
-    <value>Lade ausgewählte Version herunter</value>
+    <value>Stáhnout vybranou verzi</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Herunterladen</value>
+    <value>Stahování</value>
   </data>
   <data name="downloadOBScancelWarning" xml:space="preserve">
-    <value>Herunterladen oder Entpacken läuft noch. Dies wird abgebrochen, wenn das Fenster geschlossen wird. Fortfahren?</value>
+    <value>Stahování nebo rozbalení stále probíhá. Bude zrušeno, pokud zavřete okno. Pokračovat?</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Fehler</value>
+    <value>Chyba</value>
   </data>
   <data name="Extracting" xml:space="preserve">
-    <value>Entpacken</value>
+    <value>Extrahování</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Složka</value>
   </data>
   <data name="Folder exists" xml:space="preserve">
-    <value>Verzeichnis existiert bereits</value>
+    <value>Složka již existuje</value>
   </data>
   <data name="FolderName" xml:space="preserve">
-    <value>Verzeichnis</value>
+    <value>Složka</value>
   </data>
   <data name="formClosingWarningDownload" xml:space="preserve">
-    <value>Das Zielverzeichnis existiert bereits. Soll es überschrieben werden oder die Aktion abgebrochen werden?{newline}{newline}Ja - Überschreiben{newline}Nein - Umbenennen{newline}Abbrechen - Aktion abbrechen</value>
+    <value>Cílová složka již existuje. Měla by být přepsána nebo chcete akci zrušit? {newline}{newline}Ano - Přepsat{newline}Ne - Přejmenovat{newline}Storno - Zrušit akci</value>
   </data>
   <data name="githubApiLimitReached" xml:space="preserve">
-    <value>Das GitHub API Limit wurde erreicht. Bitte später nochmal versuchen.</value>
+    <value>Dosáhli jste limitu API pro GitHub. Opakujte akci později.</value>
   </data>
   <data name="lblAppHint" xml:space="preserve">
-    <value>Funktionswünsche, Bug gefunden oder du möchtest bei der Übersetzung des Projekts helfen? Besuche die GitHub Projektseite.</value>
+    <value>Pokud máte návrhy funkcí, nalezli chyby nebo chcete pomoci s překladem projektu, navštivte stránku GitHub.</value>
   </data>
   <data name="lblDefaultDrive" xml:space="preserve">
-    <value>Wähle Standard Laufwerksbuchstabe:</value>
+    <value>Nastavit výchozí písmeno na disku:</value>
   </data>
   <data name="lblLibraries" xml:space="preserve">
-    <value>Benutzte Bibliotheken</value>
+    <value>Použité knihovny</value>
   </data>
   <data name="lblLicense" xml:space="preserve">
-    <value>Lizenz für</value>
+    <value>Licence pro</value>
   </data>
   <data name="lblTranslators" xml:space="preserve">
-    <value>Übersetzer</value>
+    <value>Překladatelé</value>
   </data>
   <data name="License" xml:space="preserve">
-    <value>Lizenz anzeigen</value>
+    <value>Zobrazit licenci</value>
   </data>
   <data name="License information" xml:space="preserve">
-    <value>Lizenzinformation</value>
+    <value>Informace o licenci</value>
   </data>
   <data name="localOBSinstall" xml:space="preserve">
-    <value>OBS Installation auf diesem PC</value>
+    <value>Instalace OBS na tomto PC</value>
   </data>
   <data name="Map default drive" xml:space="preserve">
-    <value>Verbinde Standardlaufwerk</value>
+    <value>Výchozí disk mapy</value>
   </data>
   <data name="NoDefaultDriveSet" xml:space="preserve">
-    <value>Kein Standard Laufwerksbuchstabe ausgewählt. Einstellungen überprüfen.</value>
+    <value>Není nastaveno žádné výchozí písmeno na disku. Zkontrolujte nastavení.</value>
   </data>
   <data name="notImplementedYet" xml:space="preserve">
-    <value>Noch nicht implementiert, sorry!</value>
+    <value>Zatím neimplementováno, omlouvám se!</value>
   </data>
   <data name="OBS" xml:space="preserve">
-    <value>OBS sichern</value>
+    <value>Zálohovat OBS</value>
   </data>
   <data name="OBS versions" xml:space="preserve">
-    <value>OBS Versionen</value>
+    <value>OBS verze</value>
   </data>
   <data name="obsDownloadErrorHint" xml:space="preserve">
-    <value>Es ist ein Fehler aufgetreten. Fehler:</value>
+    <value>Došlo k chybě. Chyba:</value>
   </data>
   <data name="obsStillRunning" xml:space="preserve">
-    <value>Mindestens eine OBS Version ist noch aktiv. Bitte beende diese vorm Entfernen des Laufwerks.</value>
+    <value>Stále je spuštěna alespoň jedna verze OBS. Před odebráním mapovaného disku ji prosím zavřete</value>
   </data>
   <data name="OBSversion" xml:space="preserve">
-    <value>OBS Version</value>
+    <value>Verze OBS</value>
   </data>
   <data name="OBSversionAlreadyRunning" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits.</value>
+    <value>Tato verze OBS již běží.</value>
   </data>
   <data name="obsVersionConfirmDelete" xml:space="preserve">
-    <value>Sicher, dass die ausgewählte Version gelöscht werden soll?</value>
+    <value>Jste si jisti, že chcete odstranit vybranou verzi?</value>
   </data>
   <data name="obsVersionErrorDeleteHint" xml:space="preserve">
-    <value>Die OBS Version konnte nicht gelöscht werden. Fehler::</value>
+    <value>Nelze odstranit verzi OBS. Chyba:</value>
   </data>
   <data name="obsVersionLocalDeleteHint" xml:space="preserve">
-    <value>Bitte entferne die lokale OBS Installation über die Systemsteuerung.</value>
+    <value>Odstraňte prosím místní instalaci OBS pomocí ovládacího panelu.</value>
   </data>
   <data name="obsVersionNoConnectionError" xml:space="preserve">
-    <value>Fehler beim Abrufen der OBS Versionen von GitHub. Prüfe Internetverbindung.</value>
+    <value>Chyba při načítání verzí OBS. Zkontrolujte připojení k internetu</value>
   </data>
   <data name="obsVersionRunningDeleteHint" xml:space="preserve">
-    <value>Die ausgewählte OBS Version ist noch aktiv. Bitte schliesse diese bevor du versuchst sie zu löschen.</value>
+    <value>Vybraná verze OBS právě běží. Prosím, zavřete ji před pokusem o odstranění.</value>
   </data>
   <data name="obsVersionRunningForegroundErrorHint" xml:space="preserve">
-    <value>Diese OBS Version läuft bereits aber reagiert nicht. Soll sie beendet werden und erneut gestarten werden?</value>
+    <value>Tato verze OBS je již spuštěna, ale nelze ji dovést do popředí. Chcete ji ukončit a spustit novou instanci?</value>
   </data>
   <data name="obsVersionSuccessDeleteHint" xml:space="preserve">
-    <value>OBS Version erfolgreich entfernt</value>
+    <value>Verze OBS byla úspěšně odstraněna</value>
   </data>
   <data name="openFolderToolStripMenuItem" xml:space="preserve">
-    <value>Öffne Verzeichnis</value>
+    <value>Otevřít složku</value>
   </data>
   <data name="Path to OBS version" xml:space="preserve">
-    <value>Pfad zur OBS-Version</value>
+    <value>Cesta k verzi OBS</value>
   </data>
   <data name="Please select a release to download." xml:space="preserve">
-    <value>Bitte wähle eine Version aus.</value>
+    <value>Vyberte prosím verzi ke stažení</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Profil sichern</value>
+    <value>Zálohovat profil</value>
   </data>
   <data name="refreshBtn" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>Aktualizovat</value>
   </data>
   <data name="Release notes for" xml:space="preserve">
-    <value>Versionshinweise für</value>
+    <value>Poznámky k vydání pro</value>
   </data>
   <data name="Released on" xml:space="preserve">
-    <value>Veröffentlicht am</value>
+    <value>Vydáno</value>
   </data>
   <data name="Remaining" xml:space="preserve">
-    <value>Verbleibend</value>
+    <value>Zbývající</value>
   </data>
   <data name="Remove drive" xml:space="preserve">
-    <value>Entferne Laufwerk</value>
+    <value>Odstranit disk</value>
   </data>
   <data name="Restore" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>Obnovit</value>
   </data>
   <data name="setAsDefaultToolStripMenuItem" xml:space="preserve">
-    <value>Als Standard setzen</value>
+    <value>Nastavit jako výchozí</value>
   </data>
   <data name="StartOBS" xml:space="preserve">
-    <value>Starten</value>
+    <value>Začít</value>
   </data>
   <data name="updateToolStripMenuItem" xml:space="preserve">
-    <value>Update</value>
+    <value>Aktualizovat</value>
   </data>
   <data name="versionHint" xml:space="preserve">
-    <value>Nur OBS Versionen mit .ZIP-Datei werden hier angezeigt</value>
+    <value>Zde budou zobrazeny pouze verze OBS se souborem .ZIP</value>
   </data>
   <data name="View release notes on GitHub" xml:space="preserve">
-    <value>Zeige Versionshinweise auf GitHub</value>
+    <value>Zobrazit poznámky k vydání na GitHub</value>
   </data>
   <data name="virtualDriveCreationError" xml:space="preserve">
-    <value>Problem beim Erstellen des virtuellen Laufwerks</value>
+    <value>Chyba při vytváření virtuální jednotky</value>
   </data>
   <data name="virtualDriveCreationSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich erstellt</value>
+    <value>Virtuální disk úspěšně vytvořen</value>
   </data>
   <data name="virtualDriveRemoveError" xml:space="preserve">
-    <value>Problem beim Entfernen des virtuellen Laufwerks</value>
+    <value>Chyba při odstraňování virtuálního disku</value>
   </data>
   <data name="virtualDriveRemoveSuccess" xml:space="preserve">
-    <value>Virtuelles Laufwerk erfolgreich entfernt</value>
+    <value>Virtuální disk byl úspěšně odstraněn</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warnung</value>
+    <value>Varování</value>
   </data>
   <data name="Zip file not found for this release." xml:space="preserve">
-    <value>Es wurde keine ZIP-Datei für diese Version gefunden.</value>
+    <value>Soubor Zip nebyl pro tuto verzi nalezen.</value>
   </data>
 </root>
